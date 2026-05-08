@@ -1,50 +1,84 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @plugin '@tailwindcss/typography';
 @plugin '@tailwindcss/forms';
 @import "tailwindcss-animated";
 @import "tailwindcss-intersect";
 
-@font-face {
-  font-family: 'Honk';
-  src: url('/fonts/Honk-Regular-VariableFont_MORF,SHLN.ttf') format('truetype');
+/* @font-face {
+  font-family: "Honk";
+  src: url("/fonts/Honk-Regular-VariableFont_MORF,SHLN.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'Quicksand';
-  src: url('/fonts/Quicksand-VariableFont_wght.ttf') format('truetype');
+  font-family: "Quicksand";
+  src: url("/fonts/Quicksand-VariableFont_wght.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'Domine';
-  src: url('/fonts/Domine-Regular.ttf') format('truetype');
-}
+  font-family: "Domine";
+  src: url("/fonts/Domine-Regular.ttf") format("truetype");
+} */
 
 @theme {
   /* Her tilføjes theme variable // tokens */
 
-  /*Farver */
-  --color-primary-400: #00E4F5;
-  --color-primary-500: #006269;
-  --color-primary-600: #006D75;
-  --color-secondary-400: #F5E400;
-  --color-secondary-500: #F5A600;
-  --color-secondary-600: #F57A00;
+  /*FARVER*/
+  /* Backgrounds */
+  --color-bg-beige-200: #e1d8bc;
+  --color-bg-beige-300: #d0c49d;
+  --color-bg-beige-opacity: rgba(208, 196, 157, 0.75);
+  --color-bg-beige-400: #c2b17d;
+  --color-bg-beige-500: #af9b58;
+  --color-bg-coral-400: #fe4559;
+  --color-bg-army-700: #505c3f;
+  --color-bg-army-opacity: rgba(54, 61, 41, 0.8);
+  --color-bg-black-800: #323232;
 
+  /* General colors */
+  --color-neongreen-200: #f6ff97;
+  --color-neongreen-400: #ecff37;
+
+  /* Fills buttons */
+  --color-primary: #ecff37;
+  --color-secondary: #d0c49d;
+  --color-tertiary: #e1d8bc;
+
+  /* Interactions (hover) */
+  --color-primary: #323232;
+  --color-secondary: #af9b58;
+  --color-tertiary: #af9b58;
+
+  /* Text */
+  --color-strongest: #1a1a1a;
+  --color-stronger: #323232;
+  --color-strong: #808080;
+  --color-weak: #af9b58;
+  --color-weakest: #e1d8bc;
+
+  /* Icons */
+  --color-icon-primary-accent: #ecff37;
+  --color-icon-secondary-accent: #fe4559;
+  --color-icon-dark: #323232;
+  --color-icon-light: #d0c49d;
+
+  /* Stroke */
+  --color-stroke-dark: #323232;
+  --color-stroke-primary-accent: #ecff37;
+  --color-stroke-secondary-accent: #fe4559;
+
+  /* TYPOGRAFI */
   /*Typografi */
-  --font-display: 'Honk', monospace;
-  --font-sans: 'Quicksand', sans-serif;
-  --font-serif: 'Domine', serif;
+  --font-display: "Boldonse", sans-serif;
+  --font-heading: "Oswald", sans-serif;
+  --font-body: "DM Sans", sans-serif;
 }
 
 @layer base {
-
 }
 
-@layer components{
-
+@layer components {
 }
 
-@layer utilities{
-  
+@layer utilities {
 }

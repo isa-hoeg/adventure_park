@@ -5,16 +5,18 @@ const Htmlheading = htmlheading;
  
 //Definer den styling (Tailwind classes), der gør sig gældende for de forskellige størrelser.
 const sizeClasses = {
-"large": "text-3xl lg:text-6xl",
-"medium": "text-2xl lg:text-3xl",
-"small": "text-xl",
+"display": "text-6xl lg:text-9xl", //h1 på forsiden i hero
+"large": "text-5xl lg:text-8xl",   //h1 på øvrige sider
+"medium": "text-3xl lg:text-5xl",  //h2
+"small": "text-xl lg:text-2xl",    //h3
+"xsmall": "text-sm lg:text-xl",    //h4
 };
 
 //Definer den styling (Tailwind classes), der gør sig gældende for de forskellige skrifttyper.
 const fontClasses = {
 "display": "font-display",
-"sans": "font-sans",
-"serif": "font-serif",
+"heading": "font-heading",
+"body": "font-body",
 };
 ---
 <Htmlheading class:list={[stylingclasses, sizeClasses[size], fontClasses[font]]}><slot /></Htmlheading>

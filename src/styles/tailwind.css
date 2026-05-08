@@ -40,9 +40,9 @@
   --color-neongreen-400: #ecff37;
 
   /* Fills buttons */
-  --color-primary: #ecff37;
-  --color-secondary: #d0c49d;
-  --color-tertiary: #e1d8bc;
+  --color-primary-accent: #ecff37;
+  --color-secondary-beige: #d0c49d;
+  --color-tertiary-beige: #e1d8bc;
 
   /* Interactions (hover) */
   --color-primary: #323232;

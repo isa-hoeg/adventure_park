@@ -1,6 +1,7 @@
 ---
 import Heading from "./Heading.astro";
 import Link from "../components/Link.astro";
+import Text from "./Text.astro";
 ---
 <footer class="bg-bg-black-800 text-weakest">
     <div class="container mx-auto py-30 px-15 flex flex-col lg:flex-row gap-10 lg:justify-between">
@@ -28,7 +29,7 @@ import Link from "../components/Link.astro";
                     <Heading htmlheading="h3" size="small" font="heading" stylingclasses="text-weakest mb-4">kontakt os</Heading>
                     <div class="flex gap-2 py-2">
                         <img src="/icons/phone.svg" alt="phone" class="w-6 h-6">
-                        <p class="text-weakest py-auto">+45 60 88 77 66</p>
+                         <Text teksttype="brødtekst-body" stylingclasses="text-weakest">+45 60 88 77 66</Text>
                     </div>
                     <div class="flex gap-2 py-2">
                         <img src="/icons/mail.svg" alt="mail" class="w-6 h-6">
@@ -48,9 +49,9 @@ import Link from "../components/Link.astro";
                 </div>
                 <div class="flex flex-col">
                     <Heading htmlheading="h3" size="small" font="heading" stylingclasses="text-weakest mb-4">firmaoplysninger</Heading>
-                    <p class="text-weakest">Nykredit Bank:</p>
-                    <p class="text-weakest">Reg. 8113, Konto nr. 157 2638</p>   
-                    <p class="text-weakest">CVR: 2767 6057</p>
+                    <Text teksttype="brødtekst-body" stylingclasses="text-weakest">Nykredit Bank:</Text>
+                    <Text teksttype="brødtekst-body" stylingclasses="text-weakest">Reg. 8113, Konto nr. 157 2638</Text>
+                    <Text teksttype="brødtekst-body" stylingclasses="text-weakest">CVR: 2767 6057</Text>
                 </div>
             </div>
              <div class="h-2 bg-stroke-primary-accent w-full my-10 hidden lg:block"></div>

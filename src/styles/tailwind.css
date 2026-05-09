@@ -40,9 +40,9 @@
   --color-neongreen-400: #ecff37;
 
   /* Fills buttons */
-  --color-primary-accent: #ecff37;
-  --color-secondary-beige: #d0c49d;
-  --color-tertiary-beige: #e1d8bc;
+  --color-primary: #ecff37;
+  --color-secondary: #d0c49d;
+  --color-tertiary: #e1d8bc;
 
   /* Interactions (hover) */
   --color-primary: #323232;
@@ -72,6 +72,23 @@
   --font-display: "Boldonse", sans-serif;
   --font-heading: "Oswald", sans-serif;
   --font-body: "DM Sans", sans-serif;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 40s linear infinite;
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
 }
 
 @layer base {

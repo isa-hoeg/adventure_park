@@ -1,0 +1,23 @@
+---
+import Heading from "./Heading.astro";
+import Text from "./Text.astro";
+import Link from "../components/Link.astro";
+
+const {url="#", userimage="", userimagealt="", username="", rating1="", rating2="", rating3="", rating4="", rating5="", ratingsalt="", cardtekst1="", cardtekst2=""} = Astro.props;
+---
+<anmeldelse class="bg-bg-black-800 rounded-xl flex flex-col p-8 lg:p-10 max-w-sm lg:max-w-lg flex-shrink-0">
+    <div class="flex flex-row gap-5">
+        <img src={userimage} alt={userimagealt} class="w-12 h-12 rounded-full">
+        <Heading htmlheading="h4" size="xsmall" font="heading" stylingclasses="text-weakest pt-3 lg:pt-2">{username}</Heading>
+    </div>
+    <div class="flex flex-row py-3 lg:py-5 gap-1">
+        <img src={rating1} alt={ratingsalt} class="w-5 h-5 lg:w-7 lg:h-7">
+        <img src={rating2} alt={ratingsalt} class="w-5 h-5 lg:w-7 lg:h-7">
+        <img src={rating3} alt={ratingsalt} class="w-5 h-5 lg:w-7 lg:h-7">
+        <img src={rating4} alt={ratingsalt} class="w-5 h-5 lg:w-7 lg:h-7">
+        <img src={rating5} alt={ratingsalt} class="w-5 h-5 lg:w-7 lg:h-7">
+    </div>
+   <div class="border-t border-bg-beige-200 w-full"></div>
+   <Text teksttype="brødtekst-card" stylingclasses="text-weakest py-2">{cardtekst1}</Text>
+   <Text teksttype="brødtekst-card" stylingclasses="text-weakest py-2">{cardtekst2}</Text>
+</anmeldelse>

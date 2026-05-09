@@ -1,7 +1,59 @@
 ---
+import Heading from "./Heading.astro";
+import Link from "../components/Link.astro";
 ---
-<footer class="bg-primary-500 text-white">
-    <div class="container mx-auto p-4">
-        <p>&copy; 2025</p>
+<footer class="bg-bg-black-800 text-weakest">
+    <div class="container mx-auto py-30 px-15 flex flex-col lg:flex-row gap-10 lg:justify-between">
+        <div>
+            <img src="/icons/footer_logo.svg" alt="Footer logo" class="mx-auto w-40 h-auto">
+            <div class="flex justify-center gap-6 mt-10">
+                <a href="https://www.instagram.com/adventurepark.dk/" target="_blank" aria-label="Instagram">
+                    <img src="/icons/instagram.svg" alt="Instagram" class="w-10 h-10">
+                </a>
+
+                <a href="https://www.facebook.com/AdventurePark.dk?locale=da_DK" target="_blank" aria-label="Facebook">
+                    <img src="/icons/facebook.svg" alt="Facebook" class="w-10 h-10">
+                 </a>
+
+                <a href="https://www.youtube.com/@adventureparkinfo3482" target="_blank" aria-label="YouTube">
+                    <img src="/icons/youtube.svg" alt="YouTube" class="w-10 h-10">
+                </a>
+                <!-- //target="_blank"	åbner link i ny fane -->
+            </div>
+        </div>
+        <div>
+            <div class="h-2 bg-stroke-primary-accent w-full my-10 lg:hidden"></div>
+            <div class="flex flex-col lg:flex-row gap-10 lg:gap-20">
+                <div>
+                    <Heading htmlheading="h3" size="small" font="heading" stylingclasses="text-weakest mb-4">kontakt os</Heading>
+                    <div class="flex gap-2 py-2">
+                        <img src="/icons/phone.svg" alt="phone" class="w-6 h-6">
+                        <p class="text-weakest py-auto">+45 60 88 77 66</p>
+                    </div>
+                    <div class="flex gap-2 py-2">
+                        <img src="/icons/mail.svg" alt="mail" class="w-6 h-6">
+                        <Link href="mailto:info@adventurepark.dk" variant="textlink" size="large">info@adventurepark.dk</Link>
+                    </div>
+                    <div class="flex gap-2 py-2">
+                        <img src="/icons/compass.svg" alt="compass" class="w-6 h-6">
+                        <Link href="https://www.google.com/maps/dir//AdventurePark,+Jagtvej,+3400+Hiller%C3%B8d/@55.91378,12.3068957,17z/data=!4m17!1m7!3m6!1s0x465240c50c2f8445:0x5716ee33179e4617!2sAdventurePark!8m2!3d55.913777!4d12.309476!16s%2Fg%2F1thsp_fq!4m8!1m0!1m5!1m1!1s0x465240c50c2f8445:0x5716ee33179e4617!2m2!1d12.309476!2d55.913777!3e1?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D" variant="textlink" size="large">Jagtvej, 3400 Hillerød</Link>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <Heading htmlheading="h3" size="small" font="heading" stylingclasses="text-weakest mb-4">information</Heading>
+                    <Link href="/om_os" variant="textlink" size="large">Om os</Link>
+                    <Link href="/praktisk_info" variant="textlink" size="large">Åbningstider</Link>
+                    <Link href="" variant="textlink" size="large">Privatlivspolitik</Link>
+                    <Link href="/praktisk_info" variant="textlink" size="large">Praktisk info</Link>
+                </div>
+                <div class="flex flex-col">
+                    <Heading htmlheading="h3" size="small" font="heading" stylingclasses="text-weakest mb-4">firmaoplysninger</Heading>
+                    <p class="text-weakest">Nykredit Bank:</p>
+                    <p class="text-weakest">Reg. 8113, Konto nr. 157 2638</p>   
+                    <p class="text-weakest">CVR: 2767 6057</p>
+                </div>
+            </div>
+             <div class="h-2 bg-stroke-primary-accent w-full my-10 hidden lg:block"></div>
+        </div>
     </div>
 </footer>

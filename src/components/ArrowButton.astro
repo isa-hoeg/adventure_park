@@ -1,0 +1,12 @@
+---
+const { variant = "closed" } = Astro.props as { variant: "closed" | "open" };
+
+const variantClasses = {
+  closed: "bg-bg-beige-200",
+  open: "bg-bg-black-800",
+};
+---
+
+<button class={`w-10 h-10 rounded-full flex items-center justify-center ${variantClasses[variant]}`}>
+  {variant === "open" ? <img src="/icons/arrow-right.svg" alt="luk" class="w-5 h-5" /> : <img src="/icons/arrow-diagonal.svg" alt="åbn" class="w-5 h-5" />}
+</button>

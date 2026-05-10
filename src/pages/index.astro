@@ -8,6 +8,8 @@ import Text from "../components/Text.astro";
 import Button from "../components/Button.astro";
 import Anmeldelse_card from "../components/Anmeldelse_card.astro";
 import Kategori_card from "../components/Kategori_card.astro";
+
+import Fold_ud_card from "../components/Fold_ud_card.astro";
 ---
 
 <MainLayout title="Titel">
@@ -30,6 +32,16 @@ import Kategori_card from "../components/Kategori_card.astro";
     <!-- KNAP: "SE ALLE AKTIVITETER" -->
     <div class="flex justify-center mt-8">
       <Link href="/aktiviteter" variant="secondary">SE ALLE AKTIVITETER</Link>
+    </div>
+  </div>
+  <!-- NYHEDSSEKTION-->
+  <div class="bg-bg-beige-400 py-[112px] px-[40px]">
+    <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-stronger mb-8">Nyheder</Heading>
+    <div class="flex flex-col lg:flex-row gap-4">
+      <Fold_ud_card billede="/img/nyheder_1.webp" titel="Mystery Run" tekst="Forestil dig spænding fra Escape Rooms – men udendørs." href="/nyheder" open={true} />
+      <Fold_ud_card billede="/img/paintball.webp" titel="Nye Lasertag Pistoler!" tekst="Lorem ipsum lorem ipsum" href="/nyheder" />
+      <Fold_ud_card billede="/img/nyheder_2.webp" titel="Sommer Camp 2026!" tekst="Lorem ipsum lorem ipsum" href="/nyheder" />
+      <Fold_ud_card billede="/img/kategori_1.webp" titel="Baner gjort sommerklar!" tekst="Lorem ipsum lorem ipsum" href="/nyheder" />
     </div>
   </div>
 

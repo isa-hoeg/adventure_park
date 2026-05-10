@@ -1,6 +1,12 @@
 ---
 // Henter parametrene fra Astro.props
-const { href="#", target="_self", variant= "textlink", size = "default" } = Astro.props; 
+const {
+  href="#",
+  target="_self",
+  variant= "textlink",
+  size = "default",
+  class: extraClass = ""
+} = Astro.props;
  
 //Definer den styling (Tailwind classes, der gør sig gældende for alle links
 const linkStyling = ""; 
@@ -8,9 +14,9 @@ const linkStyling = "";
 //Definer den styling (Tailwind classes), der gør sig gældende for de forskellige varianter 
 const variantClasses = {
 "textlink": "underline text-blue-500", /* text-primary-500 */
-"primary": "inline-block border-1 px-16 py-4 border-stroke-dark bg-primary-accent font-heading font-semibold text-stronger hover:bg-primary hover:text-neongreen-400", /* border-primary-500 */
-"secondary": "inline-block border-1 px-16 py-4 border-stroke-dark bg-secondary-beige font-heading font-semibold text-stronger hover:bg-secondary", /* border-secondary-500 */
-"tertiary": "inline-block border-1 px-16 py-4 border-stroke-dark bg-tertiary-beige font-heading font-semibold text-stronger hover:bg-secondary" /* border-tertiary-500 */
+"primary": "flex border-1 justify-center px-4 py-2 border-stroke-dark bg-primary-accent font-heading font-semibold text-stronger hover:bg-primary hover:text-neongreen-400", /* border-primary-500 */
+"secondary": "flex border-1 justify-center px-4 py-2 border-stroke-dark bg-secondary-beige font-heading font-semibold text-stronger hover:bg-secondary", /* border-secondary-500 */
+"tertiary": "flex border-1 justify-center px-4 py-2 border-stroke-dark bg-tertiary-beige font-heading font-semibold text-stronger hover:bg-secondary" /* border-tertiary-500 */
 };
  
 //Definer den styling (Tailwind classes), der gør sig gældende for de forskelligeog størrelser.
@@ -20,4 +26,15 @@ const sizeClasses = {
 };
 ---
 <!--Sæt classes for den pågældende knap sammen ved hjælp af Astros class:list -->
-<a href={href} target={target} class:list={[linkStyling, variantClasses[variant], sizeClasses[size]]}><slot /></a>
+<a
+  href={href}
+  target={target}
+  class:list={[
+    linkStyling,
+    variantClasses[variant],
+    sizeClasses[size],
+    extraClass
+  ]}
+>
+  <slot />
+</a>

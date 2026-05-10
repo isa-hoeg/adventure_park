@@ -1,0 +1,48 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Pris_card from "../components/Pris_card.astro";
+import Heading from "../components/Heading.astro";
+---
+
+<MainLayout title="">
+    <main class="">
+    <section class="flex flex-col px-10 py-20 lg:px-20 bg-bg-black-800 gap-8">
+        <div class="flex flex-col items-center">
+            <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-weakest">Priser pr. person</Heading>
+        </div>
+        <div class="grid grid-cols-1 gap-6 justify-center items-center lg:grid-cols-3">
+            <Pris_card
+            height="h-120"
+            bg="bg-bg-beige-200"
+            title1="spil +300 kugler"
+            pris="375 kr"
+            tid="1 time"
+            info1="3oo kugler"
+            info2="Spiludstyr"
+            info3="Instruktion"
+            />
+            <Pris_card
+            badge="Mest populære"
+            height="h-140"
+            bg="bg-bg-coral-400"
+            title1="spil +300 kugler"
+            pris="375 kr"
+            tid="1 time"
+            info1="3oo kugler"
+            info2="Spiludstyr"
+            info3="Instruktion"
+            />
+            <Pris_card
+            height="h-120"
+            bg="bg-bg-beige-200"
+            title1="spil +300 kugler"
+            pris="375 kr"
+            tid="1 time"
+            info1="3oo kugler"
+            info2="Spiludstyr"
+            info3="Instruktion"
+            />
+        </div>
+    </section>
+    </main>
+</MainLayout>

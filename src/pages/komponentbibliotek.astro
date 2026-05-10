@@ -6,6 +6,7 @@ import Link from "../components/Link.astro";
 import Button from "../components/Button.astro";
 import Aktivitet_card from "../components/Aktivitet_card.astro";
 import Insta_card from "../components/Insta_card.astro";
+import Pris_card from "../components/Pris_card.astro";
 import { Image } from "astro:assets";
 import AktivitetCard from "../components/Aktivitet_card.astro";
 
@@ -76,7 +77,7 @@ import AktivitetCard from "../components/Aktivitet_card.astro";
             badge="LEG"
             />
         </section>
-        <section class="grid grid-cols-2 gap-2 lg:flex">
+        <section class="grid grid-cols-2 gap-2 lg:flex my-10">
             <Insta_card
             likes="254"
             comments="5"
@@ -100,6 +101,39 @@ import AktivitetCard from "../components/Aktivitet_card.astro";
             comments="5"
             caption="Kom ud i naturen og mærk suset 🌿Hos Adventure Park danner omgivelserne rammen for oplevelser, du ikke glemmer."
             img="/img/instapost4.webp"
+            />
+        </section>
+        <section class="grid grid-cols-1 gap-6 justify-center items-center lg:grid-cols-3">
+            <Pris_card
+            height="h-120"
+            bg="bg-bg-beige-200"
+            title1="spil +300 kugler"
+            pris="375 kr"
+            tid="1 time"
+            info1="3oo kugler"
+            info2="Spiludstyr"
+            info3="Instruktion"
+            />
+            <Pris_card
+            badge="Mest populære"
+            height="h-140"
+            bg="bg-bg-coral-400"
+            title1="spil +300 kugler"
+            pris="375 kr"
+            tid="1 time"
+            info1="3oo kugler"
+            info2="Spiludstyr"
+            info3="Instruktion"
+            />
+            <Pris_card
+            height="h-120"
+            bg="bg-bg-beige-200"
+            title1="spil +300 kugler"
+            pris="375 kr"
+            tid="1 time"
+            info1="3oo kugler"
+            info2="Spiludstyr"
+            info3="Instruktion"
             />
         </section>
 	</main>

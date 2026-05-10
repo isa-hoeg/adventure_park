@@ -1,0 +1,38 @@
+---
+const { title1, tid, info1, info2, info3, badge, pris, bg, height, class: extraClass = "" } = Astro.props;
+import Heading from "./Heading.astro";
+import Text from "./Text.astro";
+import Link from "./Link.astro";
+import '../styles/tailwind.css';
+---
+
+<article
+  class:list={[
+    "flex flex-col justify-between w-full rounded-lg p-8", bg, height]}>
+    <div class="bg-neongreen-400 px-2 py-1 rounded-md w-fit">
+        <Heading htmlheading="h4" size="xsmall" font="heading" stylingclasses="text-stronger">{badge}</Heading>
+    </div>
+    <div class=" flex flex-col gap-6">
+        <div class="flex flex-col justify-center items-center">
+            <Heading htmlheading="h4" size="xsmall" font="heading" stylingclasses="text-stronger">{title1}</Heading>
+            <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-stronger">{pris}</Heading>
+            <Heading htmlheading="h4" size="xsmall" font="heading" stylingclasses="text-stronger">{tid}</Heading>
+        </div>
+        <div class="border-2 border-stroke-dark w-full"></div>
+        <div class="flex flex-col gap-2">
+            <div class="flex flex-row gap-2">
+                <img src="/icons/checkcircle.svg" alt="check">
+                <Text teksttype="brødtekst" stylingclasses="text-stronger">{info1}</Text>
+            </div>
+            <div class="flex flex-row gap-2">
+                <img src="/icons/checkcircle.svg" alt="check">
+                <Text teksttype="brødtekst" stylingclasses="text-stronger">{info2}</Text>
+            </div>
+            <div class="flex flex-row gap-2">
+                <img src="/icons/checkcircle.svg" alt="check">
+                <Text teksttype="brødtekst" stylingclasses="text-stronger">{info3}</Text>
+            </div>
+        </div>
+    </div>
+    <Link href="#" variant="primary" size="large">book</Link>
+</article>

@@ -1,0 +1,38 @@
+---
+const { likes, comments, caption, img, class: extraClass = "" } = Astro.props;
+import Heading from "./Heading.astro";
+import Text from "./Text.astro";
+import '../styles/tailwind.css';
+---
+
+<a href="" class="group relative block overflow-hidden rounded-lg h-60 lg:w-70 lg:h-88">
+    <img src={img} alt="" class="w-full rounded-lg">
+    <div class="bg-bg-black-800/90 hidden
+                p-4
+                
+                flex-col
+                justify-center
+                items-center
+                gap-4
+
+                lg:flex
+                lg:absolute
+                lg:inset-0
+                lg:opacity-0
+                lg:group-hover:opacity-100
+                lg:transition-opacity
+                lg:duration-300">
+
+        <div class="flex flex-row gap-6">
+            <div class="flex flex-row gap-2 items-center">
+                <img src="/icons/Heart.svg" alt="heart" class="w-7">
+                <Heading htmlheading="h4"size="xsmall" font="heading" stylingclasses="text-weakest">{likes}</Heading>
+            </div>
+            <div class="flex flex-row gap-2 items-center">
+                <img src="/icons/comment.svg" alt="comment" class="w-7">
+                <Heading htmlheading="h4" size="xsmall" font="heading" stylingclasses="text-weakest">{comments}</Heading>
+            </div>
+        </div>
+        <Text tekstype="brødtekst" stylingclasses="text-weakest text-center">{caption}</Text>
+    </div>
+</a>

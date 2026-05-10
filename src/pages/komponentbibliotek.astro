@@ -5,6 +5,7 @@ import Text from "../components/Text.astro";
 import Link from "../components/Link.astro";
 import Button from "../components/Button.astro";
 import Aktivitet_card from "../components/Aktivitet_card.astro";
+import Insta_card from "../components/Insta_card.astro";
 import { Image } from "astro:assets";
 import AktivitetCard from "../components/Aktivitet_card.astro";
 
@@ -64,6 +65,7 @@ import AktivitetCard from "../components/Aktivitet_card.astro";
             tid="1 time"
             img="/sumobrydning.webp"
             pris="FRA 2500"
+            badge="LEG"
             />
              <Aktivitet_card
             title="Sumobrydning"
@@ -71,6 +73,33 @@ import AktivitetCard from "../components/Aktivitet_card.astro";
             tid="1 time"
             img="/sumobrydning.webp"
             pris="FRA 2500"
+            badge="LEG"
+            />
+        </section>
+        <section class="grid grid-cols-2 gap-2 lg:flex">
+            <Insta_card
+            likes="254"
+            comments="5"
+            caption="Kom ud i naturen og mærk suset🌿 Hos Adventure Park danner omgivelserne rammen for oplevelser, du ikke glemmer."
+            img="/img/Instapost1.webp"
+            />
+            <Insta_card
+            likes="254"
+            comments="5"
+            caption="Kom ud i naturen og mærk suset 🌿Hos Adventure Park danner omgivelserne rammen for oplevelser, du ikke glemmer."
+            img="/img/instapost2.webp"
+            />
+            <Insta_card
+            likes="254"
+            comments="5"
+            caption="Kom ud i naturen og mærk suset 🌿Hos Adventure Park danner omgivelserne rammen for oplevelser, du ikke glemmer."
+            img="/img/instapost3.webp"
+            />
+            <Insta_card
+            likes="254"
+            comments="5"
+            caption="Kom ud i naturen og mærk suset 🌿Hos Adventure Park danner omgivelserne rammen for oplevelser, du ikke glemmer."
+            img="/img/instapost4.webp"
             />
         </section>
 	</main>

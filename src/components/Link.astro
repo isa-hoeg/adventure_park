@@ -24,15 +24,15 @@ const variantClasses = {
   textlink: "underline text-blue-500",
   primary: "flex border-1 justify-center px-4 py-2 border-stroke-dark bg-primary-accent font-heading font-semibold text-stronger hover:bg-primary hover:text-neongreen-400",
   secondary: "flex border-1 justify-center px-4 py-2 border-stroke-dark bg-secondary-beige font-heading font-semibold text-stronger hover:bg-secondary",
-  tertiary: "flex border-1 justify-center px-4 py-2 border-stroke-dark bg-tertiary font-heading font-semibold text-stronger hover:bg-secondary",
+  tertiary: "flex border-1 justify-center px-4 py-2 border-stroke-dark bg-tertiary font-heading font-semibold text-stronger hover:bg-secondary ",
 };
 
 //Definer den styling (Tailwind classes), der gør sig gældende for de forskellige størrelser.
 const sizeClasses = {
   default: "",
-  small: "text-xs lg:text-sm w-fit", //button i card
+  small: "text-xs lg:text-sm w-fit uppercase", //button i card
   //w-fit er nødvendigt for at knappen ikke skal fylde hele bredden i small size, da den ellers arver flex-1 fra cardet
-  large: "text-lg lg:text-2xl", //button i mobil og desktop
+  large: "text-lg lg:text-2xl uppercase", //button i mobil og desktop
 };
 ---
 

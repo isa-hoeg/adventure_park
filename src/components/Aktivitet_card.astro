@@ -7,7 +7,7 @@ import '../styles/tailwind.css';
 ---
 <!-- Vi kan ikke lave hele kortet klikbart med to link inde i også.....?! -->
 
-<article class="flex flex-col w-full lg:flex-row ">
+<article class:list={["flex flex-col w-full lg:flex-row", extraClass]}>
 
     <div class="bg-bg-army-700 relative rounded-t-lg lg:rounded-l-lg lg:rounded-tr-none">
         <img src={img} alt="" class="w-full h-50 object-cover opacity-60 rounded-t-lg lg:rounded-l-lg lg:rounded-tr-none lg:h-70">

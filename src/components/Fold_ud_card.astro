@@ -1,0 +1,34 @@
+---
+import ArrowButton from "./ArrowButton.astro";
+import Heading from "./Heading.astro";
+import Text from "./Text.astro";
+import Link from "./Link.astro";
+
+const { billede, titel, tekst, href, open = false } = Astro.props;
+---
+
+<div x-data={`{ open: ${open} }`} :class="open ? 'flex-[2]' : 'flex-1'">
+  <!-- ÅBEN VERSION -->
+  <div x-show="open" class="bg-bg-beige-200 rounded-xl relative h-[313px] flex flex-col justify-between p-6">
+    <div class="flex justify-between items-start">
+      <div class="border-l-4 border-bg-coral-400 pl-4">
+        <Heading htmlheading="h3" size="small" font="heading" stylingclasses="text-stronger">{titel}</Heading>
+        <Text stylingclasses="text-stronger">{tekst}</Text>
+      </div>
+      <div x-on:click="open = !open">
+        <ArrowButton variant="open" />
+      </div>
+    </div>
+    <Link href={href} variant="secondary" size="small">LÆS MERE!</Link>
+  </div>
+
+  <!-- LUKKET VERSION -->
+  <div x-show="!open" x-on:click="open = !open" class="relative rounded-xl overflow-hidden bg-bg-army-700 h-[313px]">
+    <img src={billede} alt={titel} class="w-full h-full object-cover opacity-60" />
+    <div class="absolute inset-0 bg-gradient-to-b from-bg-army-700 to-transparent"></div>
+    <div class="absolute top-0 left-0 right-0 p-4 flex justify-between items-start">
+      <Heading htmlheading="h3" size="small" font="heading" stylingclasses="text-weakest">{titel}</Heading>
+      <ArrowButton variant="closed" />
+    </div>
+  </div>
+</div>

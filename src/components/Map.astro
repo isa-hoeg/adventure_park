@@ -1,0 +1,38 @@
+---
+import Heading from "./Heading.astro";
+import Text from "./Text.astro";
+import Link from "./Link.astro";
+---
+<map class="w-full bg-cover bg-center py-20">
+  <div class="max-w-6xl mx-auto px-6 lg:px-10">
+    
+    <!-- GRID WRAPPER -->
+    <div class="grid grid-cols-1 grid-rows-2 lg:grid-rows-1 lg:grid-cols-2 gap-10 items-center">
+
+      <!-- TEKSTBOKS -->
+      <div class="bg-bg-beige-200 p-8 lg:p-12 rounded-xl">
+        
+        <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-stronger mb-4">Sådan finder du os</Heading>
+        <Text teksttype="brødtekst-body" stylingclasses="text-stronger">
+          Adventure Park ligger i udkanten af Hillerød – bag Frederiksborg Centret for enden af Jagtvej. Kommer du i bil, skal du køre via Jagtvej, da de øvrige stier til området ikke er tilgængelige med bil.
+        </Text>
+
+        <Text teksttype="brødtekst-body" stylingclasses="text-stronger mt-4">
+          Følg Jagtvej helt til vejen stopper, hvor du finder indgangen til parken. Vi ligger i et naturskønt område, så hold øje med skilte mod Adventure Park det sidste stykke.
+        </Text>
+
+        <Text teksttype="brødtekst-body" stylingclasses="text-stronger mt-4">
+          Fra Hillerød Station er der ca. 5–10 minutters kørsel.
+        </Text>
+
+        <Link
+          href="https://www.google.com/maps/dir//AdventurePark,+Jagtvej,+3400+Hiller%C3%B8d/@55.9137561,12.306853,17z/data=!4m18!1m8!3m7!1s0x465240c50c2f8445:0x5716ee33179e4617!2sAdventurePark!8m2!3d55.913777!4d12.309476!15sChhhZHZlbnR1cmUgcGFyayBoaWxsZXLDuGSSAQRwYXJr4AEA!16s%2Fg%2F1thsp_fq!4m8!1m0!1m5!1m1!1s0x465240c50c2f8445:0x5716ee33179e4617!2m2!1d12.309476!2d55.913777!3e1" target="_blank" variant="secondary" size="large" stylingclasses="mt-6 inline-block">
+          Se rute
+        </Link>
+     </div>
+
+      <!-- HØJRE SIDE (MAP VISUELT / TOM TIL BALANCE) -->
+      <div class="hidden lg:block"></div>
+    </div>
+  </div>
+</map>

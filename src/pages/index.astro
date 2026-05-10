@@ -8,17 +8,29 @@ import Text from "../components/Text.astro";
 import Button from "../components/Button.astro";
 import Anmeldelse_card from "../components/Anmeldelse_card.astro";
 import Kategori_card from "../components/Kategori_card.astro";
-
+import Selling_card from "../components/Selling_card.astro";
+import Map from "../components/Map.astro";
 import Fold_ud_card from "../components/Fold_ud_card.astro";
 ---
 
 <MainLayout title="Titel">
-  <!-- <main class="">
-    <Heading htmlheading="h1" font="display" stylingclasses="bg-coral-400">Så bliver Anders glad:-)</Heading>
-    <Text stylingclasses="text-bg-coral-400">Her kan du skrive en brødtekst.</Text> -->
+  <!-- START PÅ HERO -->
+	<div class="w-full bg-cover bg-center pb-50 lg:pb-0 bg-[url('/img/hero_mobile.webp')] grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+		<div class="bg-bg-army-opacity p-15 lg:ml-20 w-full">
+			<Heading htmlheading="h1" size="display" font="display" stylingclasses="text-neongreen-400 text-center">Klar til <br class="hidden lg:block"> kamp?</Heading>
+			<Text teksttype="brødtekst-body" stylingclasses="text-weakest text-center mt-4 lg:mt-10 mb-8 font-semibold">Vi har Sjællands største baner. Saml vennerne, kollegaerne eller familien og book en oplevelse fyldt med fart, grin og konkurrence.</Text>
+			<div class="flex flex-row">
+				<Link href="/booking" variant="primary" size="large" stylingclasses="mx-auto block">Book nu</Link>
+				<Link href="/alle_aktiviteter" variant="secondary" size="large" stylingclasses="mx-auto block">Se alle aktiviteter</Link>
+			</div>
+	
+		</div>
+   
+   </div>
 
+  <!-- SLUT PÅ MAP SEKTION -->
   <!-- KATEGORICARDS -->
-  <div class="bg-bg-beige-200 py-10 lg:py-40">
+  <div class="bg-bg-beige-200 py-10 lg:py-20">
     <div class="container mx-auto px-[42px]">
       <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-stronger text-center mb-10">
         Find jeres næste <span class="border-b-5 border-bg-coral-400">oplevelse</span>
@@ -34,7 +46,53 @@ import Fold_ud_card from "../components/Fold_ud_card.astro";
       <Link href="/aktiviteter" variant="secondary">SE ALLE AKTIVITETER</Link>
     </div>
   </div>
-  <!-- NYHEDSSEKTION-->
+  <!-- SLUT PÅ KATEGORICARDS -->
+    <!-- START PÅ SELLING POINTS -->
+	<div class="relative w-full bg-cover bg-center py-20 lg:py-20" style="background-image: url('/img/selling_points_bg.webp');">
+		 <div class="flex items-center justify-center">
+       		 <div class="bg-bg-army-opacity mx-8 px-8 py-10 lg:py-15 flex flex-col gap-6 rounded-xl max-w-5xl">
+					<div class="flex flex-row gap-4 lg:mx-auto">
+						<div class="w-2 h-18 lg:h-12 bg-stroke-secondary-accent"></div>
+						<Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-weakest">
+  							<span class="block lg:inline">Derfor vælger</span>
+  							<span class="block lg:inline">gæsterne os</span>
+						</Heading>
+					</div>
+					<Text teksttype="brødtekst-body" stylingclasses="text-weakest lg:max-w-xl lg:mx-auto">
+						Hos os får I mere end bare en aktivitet. I får en gennemført oplevelse fra start til slut. Med Sjællands største baner, skarpe priser og fokus på sikkerhed skaber vi rammerne for action, grin og stærke fællesskaber. Vi sørger for, at jeres dag bliver både nem at planlægge og svær at glemme.
+					</Text>
+				<div class="grid grid-cols-2 lg:grid-cols-4 gap-x-4 lg:gap-x-8 gap-y-15 pt-10">
+                 <Selling_card 
+					icon="/icons/fleksibilitet.svg"
+					iconalt="ikon for fleksibilitet"
+					title="Fleksibilitet"
+					cardtekst="Åbent efter aftale: Vi kan afvikle events inde og ude hele døgnet."
+			 	 />
+			 	<Selling_card 
+					icon="/icons/sikkerhed.svg"
+					iconalt="ikon for sikkerhed"
+					title="Sikkerhed"
+					cardtekst="Alle vores aktiviteter er godkendt og alle kunder er forsikret gennem os."
+			 	/>
+				 	<Selling_card
+					icon="/icons/erfaring.svg"
+					iconalt="ikon for erfaring"
+					title="Erfaring"
+					cardtekst="Vi har udviklet og afholdt fornøjelses- og teambuildings-arrangementer i ca. 20 år."
+			 		/>
+			  		<Selling_card 
+					icon="/icons/kapacitet.svg"
+					iconalt="ikon for kapacitet"
+					title="Kapacitet"
+					cardtekst="Vi har en udendørs park med 80.000 m2 til afvikling af arrangementer og afholder events for grupper i alle størrelser."
+			   		/>
+             </div> 
+        </div>
+    </div>
+	</div>
+    <!-- SLUT PÅ SELLING POINTS -->
+  
+	<!-- NYHEDSSEKTION-->
   <div class="bg-bg-beige-400 py-[112px] px-[40px]">
     <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-stronger mb-8">Nyheder</Heading>
     <div class="flex flex-col lg:flex-row gap-4">
@@ -44,9 +102,9 @@ import Fold_ud_card from "../components/Fold_ud_card.astro";
       <Fold_ud_card billede="/img/kategori_1.webp" titel="Baner gjort sommerklar!" tekst="Lorem ipsum lorem ipsum" href="/nyheder" />
     </div>
   </div>
-
+  <!-- SLUT PÅ NYHEDSSEKTION -->
   <!-- START PÅ ANMELDELSESSEKTION -->
-  <div class="bg-bg-coral-400 flex flex-col lg:flex-row py-10 lg:py-40">
+  <div class="bg-bg-coral-400 flex flex-col lg:flex-row py-10 lg:py-20">
     <div class="flex flex-col px-20 py-5 lg:py-25">
       <img src="/icons/situationstegn.svg" alt="situationstegn" class="w-12 h-12 lg:w-20 lg:h-20" />
       <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-strongest text-center">Det siger gæsterne</Heading>
@@ -66,4 +124,23 @@ import Fold_ud_card from "../components/Fold_ud_card.astro";
     </div>
   </div>
   <!-- SLUT PÅ ANMELDELSESSEKTION -->
+
+  <!-- START PÅ MAP SEKTION -->
+	<div class="w-full bg-cover bg-center py-20
+         bg-[url('/img/map_mobile.webp')]
+         lg:bg-[url('/img/map.webp')]">
+    <Map />
+   </div>
+
+  <!-- SLUT PÅ MAP SEKTION -->
+
+  <!-- START PÅ SOME SEKTION -->
+   <div class="bg-bg-beige-400 py-10 lg:py-20">
+	 <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-stronger text-center">Følg med på sociale medier</Heading>
+   </div>
+
+  <!-- SLUT PÅ SOME SEKTION -->
+
+  
+
 </MainLayout>

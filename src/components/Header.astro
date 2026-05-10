@@ -8,9 +8,8 @@ const currentPath = pathname.slice(1); // fjerner det første "/"
   <!-- DESKTOP -->
   <div class="container mx-auto px-4 py-3 flex flex-row justify-between items-center">
     <!-- LOGO -->
-    <a href="/" class="border-l-4 border-bg-coral-400 pl-2 leading-tight">
-      <span class="font-heading font-bold text-stronger uppercase text-xl block">Adventure Park</span>
-      <span class="font-heading text-stronger uppercase text-xs block">Hillerød</span>
+    <a href="/">
+      <img src="/icons/header_logo.svg" alt="Adventure Park Hillerød" />
     </a>
 
     <!-- DESKTOPMENU - skjult på mobil, synlig fra lg (1024px) -->
@@ -20,7 +19,7 @@ const currentPath = pathname.slice(1); // fjerner det første "/"
       <a href="/praktisk-info" class={`font-heading font-bold uppercase text-stronger relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-1/2 after:h-0.5 after:bg-bg-coral-400 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left ${currentPath === "praktisk-info/" ? "after:scale-x-100" : ""}`}> Praktisk info </a>
 
       <!-- BOOK NU KNAP -->
-      <Link href="/book" variant="primary"> BOOK NU </Link>
+      <Link href="/book" variant="primary" stylingclasses="px-5 py-2">BOOK NU</Link>
     </nav>
 
     <!-- BURGERKNAP - kun synlig på mobil -->

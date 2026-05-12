@@ -1,40 +1,37 @@
 ---
-const { title, tid, personer, img, badge, pris, class: extraClass = "" } = Astro.props;
+const { title, tid, personer, img, badge, pris, href = "/aktiviteter", class: extraClass = "" } = Astro.props;
 import Heading from "./Heading.astro";
 import Text from "./Text.astro";
 import Link from "./Link.astro";
-import '../styles/tailwind.css';
+import "../styles/tailwind.css";
 ---
-<!-- Vi kan ikke lave hele kortet klikbart med to link inde i også.....?! -->
 
-<article class:list={["flex flex-col w-full lg:flex-row", extraClass]}>
-
-    <div class="bg-bg-army-700 relative rounded-t-lg lg:rounded-l-lg lg:rounded-tr-none">
-        <img src={img} alt="" class="w-full h-50 object-cover opacity-60 rounded-t-lg lg:rounded-l-lg lg:rounded-tr-none lg:h-70">
-        <div class="bg-neongreen-200 rounded-md px-2 py-1 inline-block absolute left-3 top-4">
-             <Heading htmlheaing="h4" size="xsmall" font="heading">{badge}</Heading>
-        </div>
+<article onclick={`window.location='${href}'`} class:list={["flex flex-col w-full lg:flex-row cursor-pointer", extraClass]}>
+  <div class="bg-bg-army-700 relative rounded-t-lg lg:rounded-l-lg lg:rounded-tr-none">
+    <img src={img} alt="" class="w-full h-50 object-cover opacity-60 rounded-t-lg lg:rounded-l-lg lg:rounded-tr-none lg:h-70" />
+    <div class="bg-neongreen-200 rounded-md px-2 py-1 inline-block absolute left-3 top-4">
+      <Heading htmlheaing="h4" size="xsmall" font="heading">{badge}</Heading>
     </div>
-    <div class="flex flex-col justify-between bg-bg-beige-300 hover:bg-bg-beige-400 rounded-b-lg p-2 h-58 lg:rounded-r-lg lg:rounded-bl-none lg:h-70 lg:w-70 lg:p-4">
-        <div>
-            <Heading htmlheaing="h3" size="small" font="heading">{title}</Heading>
-            <div class="border-2 w-14 border-stroke-secondary-accent"></div>
-        </div>
-        <div class="flex flex-col gap-2 ">
-            <div class="flex gap-3">
-                <img src="/personer_ikon.svg" alt="personer" class="w-6">
-                <Text stylingclasses="text-stronger">{personer}</Text>
-            </div>
-            <div class="flex gap-3">
-                <img src="/ur_ikon.svg" alt="ur" class="w-6">
-                <Text stylingclasses="text-stronger">{tid}</Text>
-            </div>
-            <Heading htmlheaing="h4" size="xsmall" font="heading">{pris}</Heading>
-        </div>
-        <div class="flex flex-row gap-2">
-            <Link href="" variant="tertiary"  class="flex-1" size="small">Læs mere</Link>
-            <Link href="" variant="primary"  class="flex-1" size="small">BOOK</Link>
-        </div>
+  </div>
+  <div class="flex flex-col justify-between bg-bg-beige-300 hover:bg-bg-beige-400 rounded-b-lg p-2 h-58 lg:rounded-r-lg lg:rounded-bl-none lg:h-70 lg:w-70 lg:p-4">
+    <div>
+      <Heading htmlheaing="h3" size="small" font="heading">{title}</Heading>
+      <div class="border-2 w-14 border-stroke-secondary-accent"></div>
     </div>
-  
+    <div class="flex flex-col gap-2">
+      <div class="flex gap-3">
+        <img src="/personer_ikon.svg" alt="personer" class="w-6" />
+        <Text stylingclasses="text-stronger">{personer}</Text>
+      </div>
+      <div class="flex gap-3">
+        <img src="/ur_ikon.svg" alt="ur" class="w-6" />
+        <Text stylingclasses="text-stronger">{tid}</Text>
+      </div>
+      <Heading htmlheaing="h4" size="xsmall" font="heading">{pris}</Heading>
+    </div>
+    <div class="flex flex-row gap-2">
+      <Link href={href} variant="tertiary" stylingclasses="flex-1" size="small" onclick="event.stopPropagation()">Læs mere</Link>
+      <Link href="/booking" variant="primary" stylingclasses="flex-1" size="small" onclick="event.stopPropagation()">BOOK</Link>
+    </div>
+  </div>
 </article>

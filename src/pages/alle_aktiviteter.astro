@@ -7,52 +7,52 @@ import Aktivitet_card from "../components/Aktivitet_card.astro";
 ---
 
 <MainLayout title="Alle Aktiviteter">
-    <main class="bg-bg-beige-200">
-        <!-- START HERO PÅ AKTIVITETER -->
-         <section class="flex flex-col justify-center items-center gap-10">
-            <Heading htmlheading="h1" size="large" font="heading" stylingclasses="py-4 text-stronger text-center">Alle aktiviteter</Heading>
-            <form class="w-80 lg:w-120">   
-                <label for="search" class=" text-sm font-medium text-heading sr-only ">Search</label>
-                <div class="relative">
-                    <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                        <svg class="w-4 h-4 text-body" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"/></svg>
-                    </div>
-                    <input type="search" id="search" class="block w-full p-3 ps-9 bg-bg-beige-300 text-heading text-sm rounded-base border-1 border-stroke-dark placeholder:text-body transition-colors focus:outline-none focus:border-2 focus:ring-0 focus:border-stroke-primary-accent" placeholder="Søg" required/>
-                </div>
-            </form>
-         </section>
-        <!-- SLUT HERO PÅ AKTIVITETER -->
+  <main class="bg-bg-beige-200">
+    <!-- START HERO PÅ AKTIVITETER -->
+    <section class="flex flex-col justify-center items-center gap-10">
+      <Heading htmlheading="h1" size="large" font="heading" stylingclasses="py-4 text-stronger text-center">Alle aktiviteter</Heading>
+      <form class="w-80 lg:w-120">
+        <label for="search" class="text-sm font-medium text-heading sr-only">Search</label>
+        <div class="relative">
+          <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+            <svg class="w-4 h-4 text-body" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"></path></svg>
+          </div>
+          <input type="search" id="search" class="block w-full p-3 ps-9 bg-bg-beige-300 text-heading text-sm rounded-base border-1 border-stroke-dark placeholder:text-body transition-colors focus:outline-none focus:border-2 focus:ring-0 focus:border-stroke-primary-accent" placeholder="Søg" required />
+        </div>
+      </form>
+    </section>
+    <!-- SLUT HERO PÅ AKTIVITETER -->
 
-        <!-- START PÅ CARDS OVERSIGT -->    
-         <section class="grid grid-cols-2 gap-2 px-4 py-20 justify-items-center lg:grid-cols-4 lg:mx-40 lg:gap-5">
-            <Aktivitet_card class="col-span-1 lg:col-span-2 order-1" title="Sumobrydning" personer="+2 personer" tid="1 time" img="/sumobrydning.webp" pris="FRA 2500" badge="LEG" />
+    <!-- START PÅ CARDS OVERSIGT -->
+    <section class="grid grid-cols-2 gap-2 px-4 py-20 justify-items-center lg:grid-cols-4 lg:mx-40 lg:gap-5">
+      <Aktivitet_card class="col-span-1 lg:col-span-2 order-1" title="Sumobrydning" personer="+2 personer" tid="1 time" img="/sumobrydning.webp" pris="FRA 2500" badge="LEG" href="/singleview" />
 
-            <Aktivitet_card class="col-span-1 lg:col-span-2 order-2" title="Sumobrydning" personer="+2 personer" tid="1 time" img="/sumobrydning.webp" pris="FRA 2500" badge="LEG" />
+      <Aktivitet_card class="col-span-1 lg:col-span-2 order-2" title="Sumobrydning" personer="+2 personer" tid="1 time" img="/sumobrydning.webp" pris="FRA 2500" badge="LEG" />
 
-            <Aktivitet_card class="col-span-1 lg:col-span-2 order-3" title="Sumobrydning" personer="+2 personer" tid="1 time" img="/sumobrydning.webp" pris="FRA 2500" badge="LEG" />
+      <Aktivitet_card class="col-span-1 lg:col-span-2 order-3" title="Sumobrydning" personer="+2 personer" tid="1 time" img="/sumobrydning.webp" pris="FRA 2500" badge="LEG" />
 
-            <Aktivitet_card class="col-span-1 lg:col-span-2 order-4 lg:order-5" title="Sumobrydning" personer="+2 personer" tid="1 time" img="/sumobrydning.webp" pris="FRA 2500" badge="LEG" />
+      <Aktivitet_card class="col-span-1 lg:col-span-2 order-4 lg:order-5" title="Sumobrydning" personer="+2 personer" tid="1 time" img="/sumobrydning.webp" pris="FRA 2500" badge="LEG" />
 
-            <img src="/img/img1_oversigt.webp" alt="Hardball" class="col-span-2 lg:col-span-2 lg:row-span-2 order-5 lg:order-4 rounded-lg h-100 lg:h-full lg:w-full object-cover">
+      <img src="/img/img1_oversigt.webp" alt="Hardball" class="col-span-2 lg:col-span-2 lg:row-span-2 order-5 lg:order-4 rounded-lg h-100 lg:h-full lg:w-full object-cover" />
 
-            <Aktivitet_card class="col-span-1 lg:col-span-2 order-6" title="Sumobrydning" personer="+2 personer" tid="1 time" img="/sumobrydning.webp" pris="FRA 2500" badge="LEG" />
+      <Aktivitet_card class="col-span-1 lg:col-span-2 order-6" title="Sumobrydning" personer="+2 personer" tid="1 time" img="/sumobrydning.webp" pris="FRA 2500" badge="LEG" />
 
-            <Aktivitet_card class="col-span-1 lg:col-span-2 order-7" title="Sumobrydning" personer="+2 personer" tid="1 time" img="/sumobrydning.webp" pris="FRA 2500" badge="LEG" />
+      <Aktivitet_card class="col-span-1 lg:col-span-2 order-7" title="Sumobrydning" personer="+2 personer" tid="1 time" img="/sumobrydning.webp" pris="FRA 2500" badge="LEG" />
 
-            <Aktivitet_card class="col-span-1 lg:col-span-2 order-8" title="Sumobrydning" personer="+2 personer" tid="1 time" img="/sumobrydning.webp" pris="FRA 2500" badge="LEG" />
+      <Aktivitet_card class="col-span-1 lg:col-span-2 order-8" title="Sumobrydning" personer="+2 personer" tid="1 time" img="/sumobrydning.webp" pris="FRA 2500" badge="LEG" />
 
-            <Aktivitet_card class="col-span-1 lg:col-span-2 order-9" title="Sumobrydning" personer="+2 personer" tid="1 time" img="/sumobrydning.webp" pris="FRA 2500" badge="LEG" />
+      <Aktivitet_card class="col-span-1 lg:col-span-2 order-9" title="Sumobrydning" personer="+2 personer" tid="1 time" img="/sumobrydning.webp" pris="FRA 2500" badge="LEG" />
 
-            <img src="/img/aktivitetside2.webp" alt="" class="col-span-2 order-10 rounded-lg h-100 w-full object-cover lg:col-span-2 lg:h-full lg:row-span-2">
+      <img src="/img/aktivitetside2.webp" alt="" class="col-span-2 order-10 rounded-lg h-100 w-full object-cover lg:col-span-2 lg:h-full lg:row-span-2" />
 
-            <Aktivitet_card class="col-span-1 lg:col-span-2 order-11" title="Sumobrydning" personer="+2 personer" tid="1 time" img="/sumobrydning.webp" pris="FRA 2500" badge="LEG" />
+      <Aktivitet_card class="col-span-1 lg:col-span-2 order-11" title="Sumobrydning" personer="+2 personer" tid="1 time" img="/sumobrydning.webp" pris="FRA 2500" badge="LEG" />
 
-            <Aktivitet_card class="col-span-1 lg:col-span-2 order-12" title="Sumobrydning" personer="+2 personer" tid="1 time" img="/sumobrydning.webp" pris="FRA 2500" badge="LEG" />
+      <Aktivitet_card class="col-span-1 lg:col-span-2 order-12" title="Sumobrydning" personer="+2 personer" tid="1 time" img="/sumobrydning.webp" pris="FRA 2500" badge="LEG" />
 
-            <Aktivitet_card class="col-span-1 lg:col-span-2 order-13" title="Sumobrydning" personer="+2 personer" tid="1 time" img="/sumobrydning.webp" pris="FRA 2500" badge="LEG" />
+      <Aktivitet_card class="col-span-1 lg:col-span-2 order-13" title="Sumobrydning" personer="+2 personer" tid="1 time" img="/sumobrydning.webp" pris="FRA 2500" badge="LEG" />
 
-            <Aktivitet_card class="col-span-1 lg:col-span-2 order-14" title="Sumobrydning" personer="+2 personer" tid="1 time" img="/sumobrydning.webp" pris="FRA 2500" badge="LEG" />
-        </section>
-        <!-- SLUT PÅ CARDS OVERSIGT -->
-    </main>
+      <Aktivitet_card class="col-span-1 lg:col-span-2 order-14" title="Sumobrydning" personer="+2 personer" tid="1 time" img="/sumobrydning.webp" pris="FRA 2500" badge="LEG" />
+    </section>
+    <!-- SLUT PÅ CARDS OVERSIGT -->
+  </main>
 </MainLayout>

@@ -7,6 +7,7 @@ const {
   size = "default",
   class: extraClass = "",
   stylingclasses = "",
+  onclick = "",
 } = Astro.props as {
   href?: string;
   target?: string;
@@ -14,6 +15,7 @@ const {
   size?: "default" | "small" | "large";
   class?: string;
   stylingclasses?: string;
+  onclick?: string;
 };
 
 //Definer den styling (Tailwind classes, der gør sig gældende for alle links
@@ -30,14 +32,13 @@ const variantClasses = {
 //Definer den styling (Tailwind classes), der gør sig gældende for de forskellige størrelser.
 const sizeClasses = {
   default: "",
-  small: "text-xs lg:text-sm w-fit", //button i card
-  //w-fit er nødvendigt for at knappen ikke skal fylde hele bredden i small size, da den ellers arver flex-1 fra cardet
-  large: "text-lg lg:text-2xl", //button i mobil og desktop
-  textlink: "text-base lg:text-xl" //textlink
+  small: "text-xs lg:text-sm w-fit",
+  large: "text-lg lg:text-2xl",
+  textlink: "text-base lg:text-xl",
 };
 ---
 
 <!--Sæt classes for den pågældende knap sammen ved hjælp af Astros class:list -->
-<a href={href} target={target} class:list={[linkStyling, variantClasses[variant], sizeClasses[size], extraClass, stylingclasses]}>
+<a href={href} target={target} onclick={onclick} class:list={[linkStyling, variantClasses[variant], sizeClasses[size], extraClass, stylingclasses]}>
   <slot />
 </a>

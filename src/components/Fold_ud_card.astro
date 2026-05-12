@@ -9,7 +9,7 @@ const { billede, titel, tekst, href, open = false } = Astro.props;
 
 <div x-data={`{ open: ${open} }`} :class="open ? 'flex-[2]' : 'flex-1'">
   <!-- ÅBEN VERSION -->
-  <div x-show="open" class="bg-bg-beige-200 rounded-xl relative h-[313px] flex flex-col justify-between p-6">
+  <div x-show="open" x-transition duration.800ms class="bg-bg-beige-200 rounded-xl relative h-[313px] flex flex-col justify-between p-6">
     <div class="flex justify-between items-start">
       <div class="border-l-4 border-bg-coral-400 pl-4">
         <Heading htmlheading="h3" size="small" font="heading" stylingclasses="text-stronger">{titel}</Heading>
@@ -27,8 +27,10 @@ const { billede, titel, tekst, href, open = false } = Astro.props;
     <img src={billede} alt={titel} class="w-full h-full object-cover opacity-60" />
     <div class="absolute inset-0 bg-gradient-to-b from-bg-army-700 to-transparent"></div>
     <div class="absolute top-0 left-0 right-0 p-4 flex justify-between items-start">
-      <Heading htmlheading="h3" size="small" font="heading" stylingclasses="text-weakest">{titel}</Heading>
-      <ArrowButton variant="closed" />
+      <Heading htmlheading="h3" size="small" font="heading" stylingclasses="text-weakest flex-1 mr-2">{titel}</Heading>
+      <div class="flex-shrink-0">
+        <ArrowButton variant="closed" />
+      </div>
     </div>
   </div>
 </div>

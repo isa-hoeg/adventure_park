@@ -4,33 +4,112 @@ import Link from "../components/Link.astro";
 import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
 import Fold_ud_card from "../components/Fold_ud_card.astro";
+import Map from "../components/Map.astro";
+import FAQ_card from "../components/FAQ_card.astro";
+import Book_section from "../components/Book_section.astro";
 ---
 
 <MainLayout title="Titel">
-  <!-- HERO-->
-  <div class="relative w-full bg-cover bg-center lg:bg-bottom h-[300px] lg:h-[500px] bg-[url('/img/praktisk_info_hero.webp')]">
+  <!-- HERO -->
+  <div class="relative w-full bg-cover bg-center lg:bg-bottom h-80 lg:h-[500px] bg-[url('/img/praktisk_info_hero.webp')]">
     <div class="absolute inset-0 bg-bg-army-700 opacity-60"></div>
 
-    <!-- OBJEKT BILLEDE - kun på desktop -->
-    <img src="/img/object-praktisk.webp" alt="udstyr" class="absolute scale-50 left-34 top-28 lg:scale-105 lg:right-15 lg:left-210 lg:top-30" />
+    <!-- OBJEKT BILLEDE -->
+    <img src="/img/object-praktisk.webp" alt="udstyr" class="absolute scale-54 left-37 top-32 lg:scale-105 lg:left-[840px] lg:top-30" />
 
     <!-- TEKST -->
-    <div class="relative h-full flex items-center px-[42px]">
+    <div class="relative h-full flex items-center px-10">
       <div>
         <Heading htmlheading="h1" size="large" font="display" stylingclasses="text-weakest text-center lg:text-left">Praktisk info</Heading>
-        <div class="border-4 w-30 lg:w-80 border-bg-coral-400 mx-auto lg:mx-0"></div>
+        <div class="border-4 w-32 lg:w-80 border-bg-coral-400 mx-auto lg:mx-0"></div>
       </div>
     </div>
   </div>
 
-  <!--SPISNING-->
-  <div class="bg-bg-beige-400 py-[112px] px-[40px]">
-    <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-stronger mb-8">Nyheder</Heading>
-    <div class="flex flex-col lg:flex-row gap-4">
-      <Fold_ud_card billede="/img/nyheder_1.webp" titel="Mystery Run" tekst="Forestil dig spænding fra Escape Rooms – men udendørs." href="/nyheder" open={true} />
-      <Fold_ud_card billede="/img/paintball.webp" titel="Nye Lasertag Pistoler!" tekst="Lorem ipsum lorem ipsum" href="/nyheder" />
-      <Fold_ud_card billede="/img/nyheder_2.webp" titel="Sommer Camp 2026!" tekst="Lorem ipsum lorem ipsum" href="/nyheder" />
-      <Fold_ud_card billede="/img/kategori_1.webp" titel="Baner gjort sommerklar!" tekst="Lorem ipsum lorem ipsum" href="/nyheder" />
+  <!-- SPISNING -->
+  <div class="bg-bg-beige-400 py-10 px-8 lg:py-20">
+    <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-stronger">Spisning i parken</Heading>
+    <Text teksttype="brødtekst-body" stylingclasses="text-stronger py-4 lg:w-1/2">Spisning i parken er et tilkøb, som kun kan vælges sammen med en booket aktivitet. Det er samtidig helt i orden at medbringe egen mad.</Text>
+    <div class="flex flex-col lg:flex-row gap-4 items-stretch">
+      <Fold_ud_card accentColor="#ecff37" billede="/img/mad_1.webp" titel="Mystery Run" tekst="Forestil dig spænding fra Escape Rooms – men udendørs." href="/nyheder" open={true} />
+      <Fold_ud_card accentColor="#ecff37" billede="/img/mad_2.webp" titel="Nye Lasertag Pistoler!" tekst="Lorem ipsum lorem ipsum" href="/nyheder" />
+      <Fold_ud_card accentColor="#ecff37" billede="/img/mad_3.webp" titel="Sommer Camp 2026!" tekst="Lorem ipsum lorem ipsum" href="/nyheder" />
+      <Fold_ud_card accentColor="#ecff37" billede="/img/mad_4.webp" titel="Baner gjort sommerklar!" tekst="Lorem ipsum lorem ipsum" href="/nyheder" />
     </div>
   </div>
+
+  <!-- ÅBNINGSTIDER -->
+  <section class="bg-[url('/img/paintball_bane_mobil.webp')] bg-cover h-[600px] w-full lg:h-[600px] lg:bg-[url('/img/paintball_bane.webp')]">
+    <div class="flex lg:justify-end h-full">
+      <div class="bg-bg-army-opacity p-10 grid grid-cols-1 lg:w-[760px] lg:h-full items-center">
+        <div class="flex flex-col gap-6">
+          <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-weakest">Åbningstider – hvad betyder "åbent efter aftale"?</Heading>
+          <div class="w-28 h-1.5 bg-stroke-secondary-accent -mt-4"></div>
+          <Text teksttype="brødtekst-body" stylingclasses="text-weakest">Hos Adventure Park har vi ikke faste åbningstider, da parken kun er åben i forbindelse med bookede aktiviteter. Det betyder, at jeres besøg planlægges efter jeres ønsker og behov.</Text>
+          <Text teksttype="brødtekst-body" stylingclasses="text-weakest">Vi er meget fleksible og tilbyder aktiviteter både på hverdage og i weekender – samt morgen, dag og aften. Vi anbefaler dog, at I booker i god tid, da vi skal planlægge jeres aktivitet, finde instruktører og klargøre banerne, så I får den bedst mulige oplevelse.</Text>
+          <Text teksttype="brødtekst-body" stylingclasses="text-weakest">I er altid velkomne til at ringe, hvis I har spørgsmål eller ønsker at høre om mulighederne på en specifik dag og tidspunkt.</Text>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- START PÅ MAP SEKTION -->
+  <div class="w-full bg-cover bg-center py-20
+         bg-[url('/img/map_mobile.webp')]
+         lg:bg-[url('/img/map.webp')]">
+    <Map />
+  </div>
+
+  <!-- SLUT PÅ MAP SEKTION -->
+
+  <!-- START PÅ FAQ -->
+  <div class="bg-bg-beige-400 py-20 px-8 lg:px-20">
+    <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-stronger text-center mb-10">Få svar på dine spørgsmål</Heading>
+
+    <div class="max-w-3xl mx-auto">
+      <FAQ_card spørgsmål="Hvor fysisk krævende er aktiviteterne?" svar="Vores aktiviteter varierer i intensitet, men de fleste kræver et moderat niveau af fysisk aktivitet. Sværhedsgrad og tempo kan tilpasses jeres gruppe, så alle kan være med – uanset erfaring og niveau." />
+      <FAQ_card spørgsmål="Hvad skal vi selv have med?" svar="I skal som udgangspunkt blot møde op i praktisk tøj, der passer til vejret. Alt nødvendigt udstyr, såsom sikkerhedsudstyr og spillegrej, bliver stillet til rådighed. Det er også muligt at medbringe egen mad eller tilkøbe spisning i parken." />
+      <FAQ_card spørgsmål="Kan vi kombinere flere aktiviteter på samme dag?" svar="Ja, vi tilbyder et bredt udvalg af aktiviteter, som kan kombineres efter jeres ønsker. Vi hjælper gerne med at sammensætte en aktivitetspakke, der passer til jeres gruppe og arrangement." />
+      <FAQ_card spørgsmål="Hvis nogen i gruppen ikke vil deltage i alle aktiviteter?" svar="Det er helt i orden. Vi tilpasser arrangementet, så det fungerer for hele gruppen. Deltagelse kan variere, og der er mulighed for at tage pauser eller være tilskuer undervejs." />
+      <FAQ_card spørgsmål="Hvornår skal vi møde op?" svar="Vi har ikke faste åbningstider, da alle aktiviteter foregår efter booking. Mødetidspunkt aftales i forbindelse med jeres booking, og vi anbefaler, at I ankommer i god tid, så vi kan starte til tiden." />
+      <FAQ_card spørgsmål="Hvad hvis det regner på dagen?" svar="Vi afholder aktiviteter i al slags vejr, og mange af dem egner sig godt til udendørs forhold. Derudover har vi også indendørs faciliteter, så jeres arrangement kan gennemføres uanset vejret." />
+    </div>
+  </div>
+  <!-- SLUT PÅ FAQ -->
+  <!-- START PÅ KONTAKT -->
+  <div class="bg-bg-army-700 py-20 px-8 lg:px-20">
+    <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-weakest text-center mb-6">Kontakt</Heading>
+
+    <Text teksttype="brødtekst-body" stylingclasses="text-weakest text-center max-w-2xl mx-auto mb-10">
+      Har du spørgsmål, eller vil du booke en tid? Udfyld formularen, så vender vi tilbage til dig hurtigst muligt. Du er også altid velkommen til at ringe direkte på <a href="tel:60887766" class="underline">60 88 77 66</a> – vi sidder klar til at hjælpe.
+    </Text>
+
+    <form class="max-w-4xl mx-auto">
+      <Heading htmlheading="h3" size="small" font="heading" stylingclasses="text-weakest mb-6">Send os en e-mail</Heading>
+
+      <div class="flex flex-col lg:flex-row gap-4 mb-6">
+        <div class="flex-1">
+          <Text teksttype="brødtekst-card" stylingclasses="text-weakest font-heading mb-2">FORNAVN</Text>
+          <input type="text" id="fornavn" name="fornavn" class="w-full bg-bg-beige-200 p-3 border-stroke-dark" />
+        </div>
+        <div class="flex-1">
+          <Text teksttype="brødtekst-card" stylingclasses="text-weakest font-heading mb-2">EFTERNAVN</Text>
+          <input type="text" id="efternavn" name="efternavn" class="w-full bg-bg-beige-200 p-3 border-stroke-dark" />
+        </div>
+      </div>
+
+      <div class="mb-6">
+        <Text teksttype="brødtekst-card" stylingclasses="text-weakest font-heading mb-2">SKRIV DIN HENVENDELSE HER</Text>
+        <textarea id="besked" name="besked" rows="6" class="w-full bg-bg-beige-200 p-3 border-stroke-dark"></textarea>
+      </div>
+
+      <div class="flex justify-center">
+        <Link href="#" variant="secondary" size="large">Send</Link>
+      </div>
+    </form>
+  </div>
+  <!-- SLUT PÅ KONTAKT -->
+
+  <!-- START PÅ BOOK SECTION -->
+  <Book_section heading="Klar til at give os et besøg?" linktext="Book nu" />
+  <!-- SLUT PÅ BOOK SECTION -->
 </MainLayout>

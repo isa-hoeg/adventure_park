@@ -12,15 +12,16 @@ import Selling_card from "../components/Selling_card.astro";
 import Map from "../components/Map.astro";
 import Fold_ud_card from "../components/Fold_ud_card.astro";
 import Insta_card from "../components/Insta_card.astro";
+
 ---
 
 <MainLayout title="Titel">
   <!-- START PÅ HERO -->
   <div class="w-full bg-cover bg-center pb-50 lg:pb-0 bg-[url('/img/hero_mobile.webp')] grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
     <div class="bg-bg-army-opacity p-15 lg:ml-20 w-full">
-      <Heading htmlheading="h1" size="display" font="display" stylingclasses="text-neongreen-400 text-center">Klar til <br class="hidden lg:block" /> kamp?</Heading>
-      <Text teksttype="brødtekst-body" stylingclasses="text-weakest text-center mt-4 lg:mt-10 mb-8 font-semibold">Vi har Sjællands største baner. Saml vennerne, kollegaerne eller familien og book en oplevelse fyldt med fart, grin og konkurrence.</Text>
-      <div class="flex flex-row">
+      <Heading htmlheading="h1" size="display" font="display" stylingclasses="text-neongreen-400 text-center intersect:animate-fade-down animate-once animate-duration-[2000ms]">Klar til <br class="hidden lg:block" /> kamp?</Heading>
+      <Text teksttype="brødtekst-body" stylingclasses="text-weakest text-center mt-4 lg:mt-10 mb-8 font-semibold intersect:animate-fade-right animate-once animate-duration-[2000ms]">Vi har Sjællands største baner. Saml vennerne, kollegaerne eller familien og book en oplevelse fyldt med fart, grin og konkurrence.</Text>
+      <div class="flex flex-row intersect:animate-fade-left animate-once animate-duration-[2000ms]">
         <Link href="/booking" variant="primary" size="large" stylingclasses="">Book nu</Link>
         <Link href="/alle_aktiviteter" variant="secondary" size="large" stylingclasses="">Se alle aktiviteter</Link>
       </div>
@@ -31,17 +32,17 @@ import Insta_card from "../components/Insta_card.astro";
   <!-- KATEGORICARDS -->
   <div class="bg-bg-beige-200 py-10 lg:py-20">
     <div class="container mx-auto px-[42px]">
-      <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-stronger text-center mb-10">
+      <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-stronger text-center mb-10 intersect:animate-fade-right animate-once animate-duration-[2000ms]">
         Find jeres næste <span class="border-b-5 border-bg-coral-400">oplevelse</span>
       </Heading>
       <div class="flex flex-col lg:flex-row gap-4">
-        <Kategori_card billede="/img/kategori_1.webp" titel="Firmaer" tag1="Samarbejde" tag2="Fællesskab" href="/aktiviteter" />
-        <Kategori_card billede="/img/kategori_2.webp" titel="Børn & Unge" tag1="Leg" tag2="Sjov" href="/aktiviteter" />
-        <Kategori_card billede="/img/kategori_3.webp" titel="Private" tag1="Fødselsdag" tag2="Polterabend" href="/aktiviteter" />
+        <Kategori_card billede="/img/kategori_1.webp" titel="Firmaer" tag1="Samarbejde" tag2="Fællesskab" href="/alle_aktiviteter" />
+        <Kategori_card billede="/img/kategori_2.webp" titel="Børn & Unge" tag1="Leg" tag2="Sjov" href="/alle_aktiviteter" />
+        <Kategori_card billede="/img/kategori_3.webp" titel="Private" tag1="Fødselsdag" tag2="Polterabend" href="/alle_aktiviteter" />
       </div>
     </div>
     <!-- KNAP: "SE ALLE AKTIVITETER" -->
-    <div class="flex justify-center mt-8">
+    <div class="flex justify-center mt-8 intersect:animate-fade-up animate-once animate-duration-[2000ms]">
       <Link href="/alle_aktiviteter" variant="secondary" size="large">SE ALLE AKTIVITETER</Link>
     </div>
   </div>
@@ -53,17 +54,25 @@ import Insta_card from "../components/Insta_card.astro";
       <div class="bg-bg-army-opacity mx-8 px-8 py-10 lg:py-15 flex flex-col gap-6 rounded-xl max-w-5xl">
         <div class="flex flex-row gap-4 lg:mx-auto">
           <div class="w-2 h-18 lg:h-18 bg-stroke-secondary-accent"></div>
-          <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-weakest">
+          <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-weakest intersect:animate-fade-left animate-once animate-duration-[2000ms]">
             <span class="block lg:inline">Derfor vælger</span>
             <span class="block lg:inline">gæsterne os</span>
           </Heading>
         </div>
         <Text teksttype="brødtekst-body" stylingclasses="text-weakest lg:max-w-xl lg:mx-auto"> Hos os får I mere end bare en aktivitet. I får en gennemført oplevelse fra start til slut. Med Sjællands største baner, skarpe priser og fokus på sikkerhed skaber vi rammerne for action, grin og stærke fællesskaber. Vi sørger for, at jeres dag bliver både nem at planlægge og svær at glemme. </Text>
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-x-4 lg:gap-x-8 gap-y-15 pt-10">
-          <Selling_card icon="/icons/fleksibilitet.svg" iconalt="ikon for fleksibilitet" title="Fleksibilitet" cardtekst="Åbent efter aftale: Vi kan afvikle events inde og ude hele døgnet." />
+          <div class="intersect:animate-fade-up animate-once animate-duration-[2000ms]">
+          <Selling_card icon="/icons/fleksibilitet.svg" iconalt="ikon for fleksibilitet" title="Fleksibilitet" cardtekst="Åbent efter aftale: Vi kan afvikle events inde og ude hele døgnet."/>
+          </div>
+          <div class="intersect:animate-fade-down animate-once animate-duration-[2000ms]">
           <Selling_card icon="/icons/sikkerhed.svg" iconalt="ikon for sikkerhed" title="Sikkerhed" cardtekst="Alle vores aktiviteter er godkendt og alle kunder er forsikret gennem os." />
+          </div>
+          <div class="intersect:animate-fade-up animate-once animate-duration-[2000ms]">    
           <Selling_card icon="/icons/erfaring.svg" iconalt="ikon for erfaring" title="Erfaring" cardtekst="Vi har udviklet og afholdt fornøjelses- og teambuildings-arrangementer i ca. 20 år." />
+          </div>
+          <div class="intersect:animate-fade-down animate-once animate-duration-[2000ms]">
           <Selling_card icon="/icons/kapacitet.svg" iconalt="ikon for kapacitet" title="Kapacitet" cardtekst="Vi har en udendørs park med 80.000 m2 til afvikling af arrangementer og afholder events for grupper i alle størrelser." />
+          </div>
         </div>
       </div>
     </div>
@@ -72,12 +81,12 @@ import Insta_card from "../components/Insta_card.astro";
 
   <!-- NYHEDSSEKTION-->
   <div class="bg-bg-beige-400 py-[112px] px-[40px]">
-    <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-stronger mb-8">Nyheder</Heading>
-    <div class="flex flex-col lg:flex-row gap-4">
-      <Fold_ud_card billede="/img/nyheder_1.webp" titel="Mystery Run" tekst="Forestil dig spænding fra Escape Rooms – men udendørs." href="/nyheder" open={true} />
-      <Fold_ud_card billede="/img/paintball.webp" titel="Nye Lasertag Pistoler!" tekst="Lorem ipsum lorem ipsum" href="/nyheder" />
-      <Fold_ud_card billede="/img/nyheder_2.webp" titel="Sommer Camp 2026!" tekst="Lorem ipsum lorem ipsum" href="/nyheder" />
-      <Fold_ud_card billede="/img/kategori_1.webp" titel="Baner gjort sommerklar!" tekst="Lorem ipsum lorem ipsum" href="/nyheder" />
+    <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-stronger mb-8 intersect:animate-fade-right animate-once animate-duration-[2000ms]">Nyheder</Heading>
+    <div class="flex flex-col lg:flex-row gap-4 intersect:animate-fade-left animate-once animate-duration-[2000ms]">
+      <Fold_ud_card billede="/img/nyheder_1.webp" titel="Mystery Run" tekst="Forestil dig spænding fra Escape Rooms – men udendørs. I bevæger jer fra sted til sted, mens I løser gåder, knækker koder samt optjener og stjæler point undervejs." href="/nyheder" open={true} />
+      <Fold_ud_card billede="/img/paintball.webp" titel="Nye Lasertag Pistoler!" tekst="Oplev næste niveau af lasertag med vores nye pistoler. Hurtigere reaktion, bedre præcision og endnu mere intens gameplay – perfekt til både venner og firmaevents." href="/nyheder" />
+      <Fold_ud_card billede="/img/nyheder_2.webp" titel="Sommer Camp 2026!" tekst="En uge fyldt med action, fællesskab og uforglemmelige oplevelser. Vores sommer camp kombinerer sjove aktiviteter med nye venskaber i trygge rammer." href="/nyheder" />
+      <Fold_ud_card billede="/img/kategori_1.webp" titel="Baner gjort sommerklar!" tekst="Vores baner er klargjort til sommerens mange events. Glæd jer til forbedrede faciliteter, nye udfordringer og endnu bedre rammer for jeres oplevelse." href="/nyheder" />
     </div>
   </div>
   <!-- SLUT PÅ NYHEDSSEKTION -->
@@ -86,7 +95,7 @@ import Insta_card from "../components/Insta_card.astro";
   <div class="bg-bg-coral-400 flex flex-col lg:flex-row py-10 lg:py-20">
     <div class="flex flex-col px-20 py-5 lg:py-25">
       <img src="/icons/situationstegn.svg" alt="situationstegn" class="w-12 h-12 lg:w-20 lg:h-20" />
-      <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-strongest text-center">Det siger gæsterne</Heading>
+      <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-strongest text-center intersect:animate-fade-down animate-once animate-duration-[2000ms]">Det siger gæsterne</Heading>
     </div>
 
     <div class="overflow-hidden w-full">
@@ -115,7 +124,7 @@ import Insta_card from "../components/Insta_card.astro";
 
   <!--  SOME SEKTION -->
   <div class="bg-bg-beige-400 py-10 lg:py-20">
-    <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-stronger text-center mb-8">Følg med på sociale medier</Heading>
+    <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-stronger text-center mb-8 intersect:animate-fade-up animate-once animate-duration-[2000ms]">Følg med på sociale medier</Heading>
 
     <div x-data="{ current: 0 }" class="relative flex items-center gap-4 px-[40px]">
       <!-- PIL VENSTRE -->
@@ -124,7 +133,7 @@ import Insta_card from "../components/Insta_card.astro";
       <!-- </button> -->
 
       <!-- KORT CONTAINER -->
-      <div class="overflow-hidden flex-1">
+      <div class="overflow-hidden flex-1 intersect:animate-fade-right animate-once animate-duration-[2000ms]">
         <div class="flex gap-4 transition-transform duration-300" :style="`transform: translateX(calc(-${current} * (280px + 1rem)))`">
           <Insta_card img="/img/instapost1.webp" likes="120" comments="14" caption="Fed dag i parken!" />
           <Insta_card img="/img/instapost2.webp" likes="98" comments="8" caption="Paintball er det bedste!" />

@@ -1,0 +1,11 @@
+---
+import Heading from "./Heading.astro";
+import Link from "./Link.astro";
+
+const {heading="", linktext=""} = Astro.props;
+---
+
+<book_section class="bg-bg-coral-400 flex flex-col gap-8 py-10 lg:py-20 px-20 items-center">
+        <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-strongest text-center">{heading}</Heading>
+        <Link href=/booking variant="primary" size="large" stylingclasses="w-fit">{linktext}</Link>
+</book_section>

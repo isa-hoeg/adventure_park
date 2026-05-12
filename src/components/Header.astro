@@ -6,7 +6,7 @@ const currentPath = pathname.slice(1); // fjerner det første "/"
 
 <header x-data="{ showmenu: false }" class="bg-bg-beige-200">
   <!-- DESKTOP -->
-  <div class="container mx-auto px-4 py-3 flex flex-row justify-between items-center">
+  <div class="container mx-auto px-4 py-5 flex flex-row justify-between items-center">
     <!-- LOGO -->
     <a href="/">
       <img src="/icons/header_logo.svg" alt="Adventure Park Hillerød" />
@@ -14,12 +14,12 @@ const currentPath = pathname.slice(1); // fjerner det første "/"
 
     <!-- DESKTOPMENU - skjult på mobil, synlig fra lg (1024px) -->
     <nav class="hidden lg:flex flex-row items-center gap-8">
-      <a href="/aktiviteter" class={`font-heading font-bold uppercase text-stronger relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-1/2 after:h-0.5 after:bg-bg-coral-400 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left ${currentPath === "aktiviteter/" ? "after:scale-x-100" : ""}`}> Aktiviteter </a>
-      <a href="/om-os" class={`font-heading font-bold uppercase text-stronger relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-1/2 after:h-0.5 after:bg-bg-coral-400 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left ${currentPath === "om-os/" ? "after:scale-x-100" : ""}`}> Om os </a>
-      <a href="/praktisk-info" class={`font-heading font-bold uppercase text-stronger relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-1/2 after:h-0.5 after:bg-bg-coral-400 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left ${currentPath === "praktisk-info/" ? "after:scale-x-100" : ""}`}> Praktisk info </a>
+      <a href="/alle_aktiviteter" class={`font-heading font-bold uppercase text-stronger relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-1/2 after:h-0.5 after:bg-bg-coral-400 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left ${currentPath === "aktiviteter/" ? "after:scale-x-100" : ""}`}> Aktiviteter </a>
+      <a href="/om_os" class={`font-heading font-bold uppercase text-stronger relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-1/2 after:h-0.5 after:bg-bg-coral-400 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left ${currentPath === "om-os/" ? "after:scale-x-100" : ""}`}> Om os </a>
+      <a href="/praktisk_info" class={`font-heading font-bold uppercase text-stronger relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-1/2 after:h-0.5 after:bg-bg-coral-400 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left ${currentPath === "praktisk-info/" ? "after:scale-x-100" : ""}`}> Praktisk info </a>
 
       <!-- BOOK NU KNAP -->
-      <Link href="/book" variant="primary" stylingclasses="px-5 py-2">BOOK NU</Link>
+      <Link href="/booking" variant="primary" stylingclasses="px-5 py-2">BOOK NU</Link>
     </nav>
 
     <!-- BURGERKNAP - kun synlig på mobil -->
@@ -34,16 +34,16 @@ const currentPath = pathname.slice(1); // fjerner det første "/"
   <nav class="lg:hidden bg-bg-beige-200 border-t-2 border-bg-beige-300" x-show="showmenu" x-transition x-on:click="showmenu = false" x-on:click.outside="showmenu = false">
     <ul class="flex flex-col">
       <li class="border-b border-bg-beige-300">
-        <a href="/aktiviteter" class="font-heading font-bold uppercase text-stronger block px-4 py-3">Aktiviteter</a>
+        <a href="/alle_aktiviteter" class="font-heading font-bold uppercase text-stronger block px-4 py-3">Aktiviteter</a>
       </li>
       <li class="border-b border-bg-beige-300">
-        <a href="/om-os" class="font-heading font-bold uppercase text-stronger block px-4 py-3">Om os</a>
+        <a href="/om_os" class="font-heading font-bold uppercase text-stronger block px-4 py-3">Om os</a>
       </li>
       <li class="border-b border-bg-beige-300">
-        <a href="/praktisk-info" class="font-heading font-bold uppercase text-stronger block px-4 py-3">Praktisk info</a>
+        <a href="/praktisk_info" class="font-heading font-bold uppercase text-stronger block px-4 py-3">Praktisk info</a>
       </li>
       <li class="p-4">
-        <Link href="/book" variant="primary"> BOOK NU </Link>
+        <Link href="/booking" variant="primary"> BOOK NU </Link>
       </li>
     </ul>
   </nav>

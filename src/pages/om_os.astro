@@ -1,0 +1,99 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Link from "../components/Link.astro";
+import { Image } from "astro:assets";
+import thumbsup from "../assets/images/thumbsup.png";
+import Heading from "../components/Heading.astro";
+import Text from "../components/Text.astro";
+import Button from "../components/Button.astro";
+import Book_section from "../components/Book_section.astro";
+---
+<MainLayout title="Om os">
+    <!-- START PÅ HERO -->
+    <div class="w-full h-[700px] bg-cover bg-no-repeat bg-center bg-[url('/img/om_hero_mob.webp')]">
+       <div class="flex flex-col gap-2 py-20">
+         <Heading htmlheading="h1" size="large" font="display" stylingclasses="text-weakest text-center">Om os</Heading>
+         <div class="ml-20 w-28 h-2 bg-stroke-secondary-accent"></div>
+        </div>
+    </div>
+    <!-- SLUT PÅ HERO -->
+
+    <!-- START PÅ "HVAD ER" SEKTION -->
+     <div class="bg-bg-beige-200">
+        <div class="py-10 px-8">       
+          <div class="flex flex-row gap-2">
+            <div class="w-10 h-25 bg-stroke-secondary-accent"></div>
+            <div>
+                <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-stronger">Hvad er Adventure Park?</Heading>
+                <Text teksttype="brødtekst-body" stylingclasses="text-stronger py-4">Adventure Park er en 80.000 m² stor udendørs eventpark, hvor oplevelser i naturen kombineres med sjove og udfordrende opgaver, der kræver både fysisk aktivitet og samarbejde. Ud over de store udeområder råder parken også over et 540 m² indendørs område, som kan bruges året rundt.</Text>
+                <Text teksttype="brødtekst-body" stylingclasses="text-stronger">Aktiviteterne tager udgangspunkt i adventuresportens verden og kan sammensættes fleksibelt, så de passer til alt fra polterabender og fødselsdage til firmaarrangementer, teambuilding og lederkurser.</Text>
+            </div>
+          </div>
+        </div>
+     </div>
+
+    <!-- SLUT PÅ "HVAD ER" SEKTION -->
+
+    <!-- START PÅ "HVEM ER" SEKTION -->
+      <div class="bg-bg-army-700">
+        <div class="px-8 py-10">
+            <div class="flex flex-col">
+                <img src="/img/om_hvem_er.webp" alt="Hvem er Adventure Park?" class="w-full h-auto lg:w-20 lg:h-20" />
+                <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-weakest pt-5">Hvem er Adventure Park?</Heading>
+                <Text teksttype="brødtekst-body" stylingclasses="text-weakest py-4">AdventurePark ledes af en lille gruppe livsnydere med passion for oplevelser, fællesskab og mennesker. Selvom vi kommer fra forskellige baggrunde, har vi alle mange års erfaring med oplevelsesevents, personaleudvikling og samarbejdskurser både i Danmark og internationalt.</Text>
+                <Text teksttype="brødtekst-body" stylingclasses="text-weakest">Derudover har vi arbejdet med sociale indsatser for blandt andet plejebørn, unge med udfordringer, tidligere kriminelle og mennesker med handicap. Den erfaring har givet os en stærk forståelse for mennesker og vigtigheden af gode rammer, hvor alle kan være med.</Text>
+                <Text teksttype="brødtekst-body" stylingclasses="text-weakest py-4">Det er den kombination af faglighed og menneskeligt fokus, der præger alt, hvad vi laver i Adventure Park.</Text>
+            </div>
+        </div>
+      </div>
+    <!-- SLUT PÅ "HVEM ER" SEKTION -->
+
+    <!-- START PÅ "FILOSOFIEN BAG" SEKTION -->
+      <div class="bg-bg-beige-400">
+        <div class="px-8 py-10">
+            <div class="flex flex-col">
+                <div class="flex flex-row gap-2">
+                    <div class="w-10 h-25 bg-stroke-primary-accent"></div>
+                    <div>
+                    <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-stronger">Filosofien bag adventure park</Heading>
+                    <Text teksttype="brødtekst-body" stylingclasses="text-stronger py-4">AdventurePark ledes af en lille gruppe livsnydere med passion for oplevelser, fællesskab og mennesker. Selvom vi kommer fra forskellige baggrunde, har vi alle mange års erfaring med oplevelsesevents, personaleudvikling og samarbejdskurser både i Danmark og internationalt.</Text>
+                    <Text teksttype="brødtekst-body" stylingclasses="text-stronger">Derudover har vi arbejdet med sociale indsatser for blandt andet plejebørn, unge med udfordringer, tidligere kriminelle og mennesker med handicap. Den erfaring har givet os en stærk forståelse for mennesker og vigtigheden af gode rammer, hvor alle kan være med.</Text>
+                    <Text teksttype="brødtekst-body" stylingclasses="text-stronger py-4">Det er den kombination af faglighed og menneskeligt fokus, der præger alt, hvad vi laver i Adventure Park.</Text>
+                    </div>
+                </div>
+                <img src="/img/om_filosofi.webp" alt="Filosofien bag Adventure Park" class="w-full h-auto lg:w-20 lg:h-20" />
+          </div>
+        </div>
+      </div>
+    <!-- SLUT PÅ "FILOSOFIEN BAG" SEKTION -->
+
+    <!-- START PÅ "PLANLÆGNING I ADVENTURE PARK" SEKTION -->
+        <div class="bg-bg-beige-200">
+            <div class="px-8 py-10">
+               <div class="flex flex-col">
+                 <img src="/img/om_planlaegning.webp" alt="Planlægning i Adventure Park" class="w-full h-auto lg:w-20 lg:h-20" />
+                 <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-stronger pt-5">Planlægning i Adventure Park</Heading>
+                 <Text teksttype="brødtekst-body" stylingclasses="text-stronger py-4">Vi har valgt at have et stort udvalg af aktiviter, som kan kombineres på mange forskellige måder, afhængig af arrangementets formål. Det er meget vigtigt, at arrangementet fungerer som en helhed, og derfor lægger vi stor vægt på at finde den rette aktivitetspakke til hver enkelt gruppe. </Text>
+                 <Text teksttype="brødtekst-body" stylingclasses="text-stronger">Vi sørger for at skræddersy et arrangement, så det passer til kundens forventninger og temperament. Dette resulterer i en samlet aktivitetspakke, der tilfredsstiller alle typer kunder – eksempelvis børnefødselsdag, firma events eller elite sportsholdet. De enkelte aktiviteter tilpasses desuden så sværhedsgrad og fysiske krav matcher kundens behov og ambitioner.</Text>
+            </div>
+        </div>
+      </div>
+    <!-- SLUT PÅ "PLANLÆGNING I ADVENTURE PARK" SEKTION -->
+
+    <!-- START PÅ "SIKKERHED I ADVENTURE PARK" SEKTION -->
+      <div class="bg-bg-army-700">
+        <div class="px-8 py-10">
+            <div class="flex flex-col">
+                <div class="flex flex-col gap-2">
+                    <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-weakest">Filosofien bag adventure park</Heading>
+                    <div class="w-28 h-1.5 bg-stroke-primary-accent"></div>
+                </div>
+                    <Text teksttype="brødtekst-body" stylingclasses="text-weakest py-4">Da vores aktiviteter er discipliner fra adventure- og ekstremsportens verden, er det oftest ikke noget vores kunder har den store erfaring med. Det er derfor vores ansvar at være ekstra opmærksom på, at arrangementet bliver afviklet sikkert og forsvarligt. Dette kan vi garantere ved at sørge for rigeligt med instruktører, der alle er grundigt uddannede.</Text>
+                    <Text teksttype="brødtekst-body" stylingclasses="text-weakest">Baner, anlæg og udstyr bliver løbende efterset, og godkendt af tekniske eksperter (f.eks. Force Technologies) og politimyndighederne. Der er selvfølgelig alligevel tegnet behørig forsikring på alle vores aktiviteter.</Text>
+                    <Text teksttype="brødtekst-body" stylingclasses="text-weakest py-4">Denne kombination af forholdsregler, gør at vi kan tilbyde både underholdende og grænsesøgende oplevelser, hvor kvalitet og sikkerhed er i top.</Text>
+            </div>
+      </div>
+    <!-- SLUT PÅ "SIKKERHED I ADVENTURE PARK" SEKTION -->
+
+ <Book_section heading="Klar til at give os et besøg?" linktext="Book her" />
+</MainLayout>

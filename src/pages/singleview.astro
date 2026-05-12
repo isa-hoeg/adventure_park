@@ -59,33 +59,39 @@ import Book_section from "../components/Book_section.astro";
         </div>
         <div class="grid grid-cols-1 gap-6 justify-center items-center lg:grid-cols-3">
             <Pris_card
-            height="h-120"
+            height="h-115 lg:h-130"
             bg="bg-bg-beige-200"
-            title1="spil +300 kugler"
-            pris="375 kr"
+            title1="spil 200 kugler"
+            pris="300 kr"
+            pris2="350 kr"
             tid="1 time"
+            tid2="2 timer"
             info1="3oo kugler"
             info2="Spiludstyr"
             info3="Instruktion"
             />
             <Pris_card
             badge="Mest populære"
-            height="h-140"
+            height="h-115 lg:h-145"
             bg="bg-bg-coral-400"
-            title1="spil +300 kugler"
+            title1="spil 300 kugler"
             pris="375 kr"
+            pris2="400 kr"
             tid="1 time"
+            tid2="2 timer"
             info1="3oo kugler"
             info2="Spiludstyr"
             info3="Instruktion"
             />
             <Pris_card
-            height="h-120"
+            height="h-115 lg:h-130"
             bg="bg-bg-beige-200"
-            title1="spil +300 kugler"
-            pris="375 kr"
+            title1="spil fri antal kugler"
+            pris="400 kr"
+            pris2="500 kr"
             tid="1 time"
-            info1="3oo kugler"
+            tid2="2 timer"
+            info1="Fri antal kugler"
             info2="Spiludstyr"
             info3="Instruktion"
             />
@@ -175,7 +181,10 @@ import Book_section from "../components/Book_section.astro";
     </section>
 
     <section>
-        <Book_section/>
+        <Book_section
+        heading="Klar til at booke jeres aktivitet?"
+        linktext="Book paintball her"
+        />
     </section>
     </main>
 </MainLayout>

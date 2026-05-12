@@ -4,14 +4,14 @@ import Heading from "./Heading.astro";
 import Text from "./Text.astro";
 import Link from "./Link.astro";
 
-const { billede, titel, tekst, href, open = false } = Astro.props;
+const { billede, titel, tekst, href, open = false, accentColor = "#fe4559" } = Astro.props;
 ---
 
-<div x-data={`{ open: ${open} }`} :class="open ? 'flex-[2]' : 'flex-1'">
+<div x-data={`{ open: ${open} }`} class="flex-1 self-stretch transition-all duration-300" :class="{ 'flex-[1.5]': open }">
   <!-- ÅBEN VERSION -->
-  <div x-show="open" x-transition duration.800ms class="bg-bg-beige-200 rounded-xl relative h-[313px] flex flex-col justify-between p-6">
+  <div x-show="open" class="bg-bg-beige-200 rounded-xl relative h-[313px] flex flex-col justify-between p-6">
     <div class="flex justify-between items-start">
-      <div class="border-l-4 border-bg-coral-400 pl-4">
+      <div class="border-l-4 pl-4" style={`border-color: ${accentColor}`}>
         <Heading htmlheading="h3" size="small" font="heading" stylingclasses="text-stronger">{titel}</Heading>
         <Text stylingclasses="text-stronger">{tekst}</Text>
       </div>

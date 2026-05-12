@@ -4,6 +4,7 @@ import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
 import Button from "../components/Button.astro";
 import Aktivitet_card from "../components/Aktivitet_card.astro";
+import Book_section from "../components/Book_section.astro";
 ---
 
 <MainLayout title="Alle Aktiviteter">
@@ -25,34 +26,127 @@ import Aktivitet_card from "../components/Aktivitet_card.astro";
 
     <!-- START PÅ CARDS OVERSIGT -->
     <section class="grid grid-cols-2 gap-2 px-4 py-20 justify-items-center lg:grid-cols-4 lg:mx-40 lg:gap-5">
-      <Aktivitet_card class="col-span-1 lg:col-span-2 order-1" title="Sumobrydning" personer="+2 personer" tid="1 time" img="/sumobrydning.webp" pris="FRA 2500" badge="LEG" href="/singleview" />
+      <Aktivitet_card class="col-span-1 lg:col-span-2 order-1" 
+      title="Sumobrydning" 
+      personer="+2 personer" 
+      tid="1 time" 
+      img="/sumobrydning.webp" 
+      pris="FRA 2500 kr" 
+      badge="LEG" 
+      href="/singleview"/>
 
-      <Aktivitet_card class="col-span-1 lg:col-span-2 order-2" title="Sumobrydning" personer="+2 personer" tid="1 time" img="/sumobrydning.webp" pris="FRA 2500" badge="LEG" />
+      <Aktivitet_card class="col-span-1 lg:col-span-2 order-2" 
+      title="Paintball" 
+      personer="+4 personer" 
+      tid="1-2 timer" 
+      img="/img/paintball.webp" 
+      pris="FRA 300 kr" 
+      badge="action"
+      href="/singleview"/>
 
-      <Aktivitet_card class="col-span-1 lg:col-span-2 order-3" title="Sumobrydning" personer="+2 personer" tid="1 time" img="/sumobrydning.webp" pris="FRA 2500" badge="LEG" />
+      <Aktivitet_card class="col-span-1 lg:col-span-2 order-3" 
+      title="Bowtag" 
+      personer="+10 personer" 
+      tid="1 time" 
+      img="/img/bow_tag.webp" 
+      pris="FRA 2500 kr" 
+      badge="præcision"
+      href="/singleview"/>
 
-      <Aktivitet_card class="col-span-1 lg:col-span-2 order-4 lg:order-5" title="Sumobrydning" personer="+2 personer" tid="1 time" img="/sumobrydning.webp" pris="FRA 2500" badge="LEG" />
+      <Aktivitet_card class="col-span-1 lg:col-span-2 order-4 lg:order-5" 
+      title="Bueskydning" 
+      personer="+10 personer" 
+      tid="30 time" 
+      img="/img/bueskydning.webp" 
+      pris="FRA 2500 kr" 
+      badge="præcision"
+      href="/singleview" />
 
       <img src="/img/img1_oversigt.webp" alt="Hardball" class="col-span-2 lg:col-span-2 lg:row-span-2 order-5 lg:order-4 rounded-lg h-100 lg:h-full lg:w-full object-cover" />
 
-      <Aktivitet_card class="col-span-1 lg:col-span-2 order-6" title="Sumobrydning" personer="+2 personer" tid="1 time" img="/sumobrydning.webp" pris="FRA 2500" badge="LEG" />
+      <Aktivitet_card class="col-span-1 lg:col-span-2 order-6" 
+      title="Dødningebold" 
+      personer="+8 personer" 
+      tid="1 time" 
+      img="/img/dødningebold.webp" 
+      pris="FRA 2500 kr" 
+      badge="LEG"
+      href="/singleview" />
 
-      <Aktivitet_card class="col-span-1 lg:col-span-2 order-7" title="Sumobrydning" personer="+2 personer" tid="1 time" img="/sumobrydning.webp" pris="FRA 2500" badge="LEG" />
+      <Aktivitet_card class="col-span-1 lg:col-span-2 order-7" 
+      title="forhindringsbane" 
+      personer="+3 personer" 
+      tid="1 time" 
+      img="/img/forhindringsbane.webp" 
+      pris="FRA 2500 kr" 
+      badge="samarbejde"
+      href="/singleview" />
 
-      <Aktivitet_card class="col-span-1 lg:col-span-2 order-8" title="Sumobrydning" personer="+2 personer" tid="1 time" img="/sumobrydning.webp" pris="FRA 2500" badge="LEG" />
+      <Aktivitet_card class="col-span-1 lg:col-span-2 order-8" 
+      title="Harball" 
+      personer="+4 personer" 
+      tid="2 timer" 
+      img="/img/hardball.webp" 
+      pris="FRA 400 kr" 
+      badge="action"
+      href="/singleview" />
 
-      <Aktivitet_card class="col-span-1 lg:col-span-2 order-9" title="Sumobrydning" personer="+2 personer" tid="1 time" img="/sumobrydning.webp" pris="FRA 2500" badge="LEG" />
+      <Aktivitet_card class="col-span-1 lg:col-span-2 order-9" 
+      title="Kæmpe Bordfodbold" 
+      personer="+8 personer" 
+      tid="1 time" 
+      img="/img/kæmpe_bordfodbold.webp" 
+      pris="FRA 2500 kr" 
+      badge="samarbejde"
+      href="/singleview" />
 
       <img src="/img/aktivitetside2.webp" alt="" class="col-span-2 order-10 rounded-lg h-100 w-full object-cover lg:col-span-2 lg:h-full lg:row-span-2" />
 
-      <Aktivitet_card class="col-span-1 lg:col-span-2 order-11" title="Sumobrydning" personer="+2 personer" tid="1 time" img="/sumobrydning.webp" pris="FRA 2500" badge="LEG" />
+      <Aktivitet_card class="col-span-1 lg:col-span-2 order-11" 
+      title="lasertag" 
+      personer="+10 personer" 
+      tid="1 time" 
+      img="/img/lasertag.webp" 
+      pris="FRA 2500 kr" 
+      badge="action"
+      href="/singleview" />
 
-      <Aktivitet_card class="col-span-1 lg:col-span-2 order-12" title="Sumobrydning" personer="+2 personer" tid="1 time" img="/sumobrydning.webp" pris="FRA 2500" badge="LEG" />
+      <Aktivitet_card class="col-span-1 lg:col-span-2 order-12" 
+      title="Mega boksning" 
+      personer="+2 personer" 
+      tid="1 time" 
+      img="/img/megaboksning.webp" 
+      pris="FRA 2500 kr" 
+      badge="LEG"
+      href="/singleview" />
 
-      <Aktivitet_card class="col-span-1 lg:col-span-2 order-13" title="Sumobrydning" personer="+2 personer" tid="1 time" img="/sumobrydning.webp" pris="FRA 2500" badge="LEG" />
+      <Aktivitet_card class="col-span-1 lg:col-span-2 order-13" 
+      title="Stokkekamp" 
+      personer="+2 personer" 
+      tid="1 time" 
+      img="/img/stokkekamp.webp" 
+      pris="FRA 2500 kr" 
+      badge="LEG" 
+      href="/singleview"/>
 
-      <Aktivitet_card class="col-span-1 lg:col-span-2 order-14" title="Sumobrydning" personer="+2 personer" tid="1 time" img="/sumobrydning.webp" pris="FRA 2500" badge="LEG" />
+      <Aktivitet_card class="col-span-1 lg:col-span-2 order-14" 
+      title="spydkast" 
+      personer="+2 personer" 
+      tid="1 time" 
+      img="/img/spydkast.webp" 
+      pris="FRA 2500 kr" 
+      badge="action"
+      href="/singleview" />
     </section>
     <!-- SLUT PÅ CARDS OVERSIGT -->
+
+     <section>
+        <Book_section
+        heading="Vil i spise i parken?"
+        linktext="Se vores menu"
+        bg="bg-bg-beige-400"
+        linkvariant="tertiary"
+        />
+    </section>
   </main>
 </MainLayout>

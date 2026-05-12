@@ -1,5 +1,5 @@
 ---
-const { title1, tid, info1, info2, info3, badge, pris, bg, height, class: extraClass = "" } = Astro.props;
+const { title1, tid, tid2, info1, info2, info3, badge, pris, pris2, bg, height, class: extraClass = "" } = Astro.props;
 import Heading from "./Heading.astro";
 import Text from "./Text.astro";
 import Link from "./Link.astro";
@@ -13,10 +13,28 @@ import '../styles/tailwind.css';
         <Heading htmlheading="h4" size="xsmall" font="heading" stylingclasses="text-stronger">{badge}</Heading>
     </div>
     <div class=" flex flex-col gap-6">
-        <div class="flex flex-col justify-center items-center">
+        <div class="flex flex-col justify-center items-center gap-2">
             <Heading htmlheading="h4" size="xsmall" font="heading" stylingclasses="text-stronger">{title1}</Heading>
-            <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-stronger">{pris}</Heading>
-            <Heading htmlheading="h4" size="xsmall" font="heading" stylingclasses="text-stronger">{tid}</Heading>
+            <div class="flex flex-row gap-2">
+                <Text teksttype="brødtekst-body" stylingclasses="text-stronger lg:pt-3">Fra</Text>
+                <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-stronger">{pris}</Heading>
+            </div>
+        </div>
+        <div class="flex flex-row justify-center items-center gap-6">
+            <div class="flex flex-col gap-2 justify-center items-center">
+                <div class="flex flex-row gap-2">
+                    <img src="/icons/ur_dark.svg" alt="ur">
+                    <Text teksttype="brødtekst-body" stylingclasses="text-stronger">{tid}</Text>
+                </div>
+                <Heading htmlheading="h4" size="xsmall" font="heading" stylingclasses="text-stronger">{pris}</Heading>
+            </div>
+            <div class="flex flex-col gap-2 justify-center items-center">
+                <div class="flex flex-row gap-2">
+                    <img src="/icons/ur_dark.svg" alt="ur">
+                    <Text teksttype="brødtekst-body" stylingclasses="text-stronger">{tid2}</Text>
+                </div>
+                <Heading htmlheading="h4" size="xsmall" font="heading" stylingclasses="text-stronger">{pris2}</Heading>
+            </div>
         </div>
         <div class="border-2 border-stroke-dark w-full"></div>
         <div class="flex flex-col gap-2">

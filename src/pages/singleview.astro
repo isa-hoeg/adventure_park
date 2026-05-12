@@ -2,11 +2,57 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import Pris_card from "../components/Pris_card.astro";
 import Heading from "../components/Heading.astro";
+import Link from "../components/Link.astro";
+import Text from "../components/Text.astro";
+import Fold_ud_card from "../components/Fold_ud_card.astro";
 ---
 
 <MainLayout title="">
     <main class="">
-    <section class="flex flex-col px-10 py-20 lg:px-20 bg-bg-black-800 gap-8">
+        <!-- START PÅ HERO SEKTION -->
+        <section class="bg-bg-army-700 relative h-150 w-full bg-cover bg-[77%_center] bg-[url('/img/hero_paintball_bg.webp')] pt-20 flex flex-col justify-between lg:pt-40 lg:h-157">
+            <div class="flex flex-col justify-center items-center gap-7">
+                <Heading htmlheading="h1" size="large" font="display" stylingclasses="text-weakest">Paintball</Heading>
+                <Link href="#" variant="primary" size="large" stylingclasses="w-fit">book</Link>
+            </div>
+            <img src="/img/hero_paintball_overlay.webp" alt="Paintball overlay" class="absolute top-47 left-4 scale-102 z-0 origin-top lg:scale-31 lg:top-47 lg:left-77">
+            <div class="z-20 grid grid-cols-2 gap-6 px-10 bg-bg-beige-opacity py-5 lg:flex lg:flex-row lg:justify-between lg:px-60 lg:py-10">
+                <div class="flex flex-row gap-2">
+                    <img src="/icons/personer_ikon_neon.svg" alt="ikon personer" class="w-7">
+                    <Heading htmlheading="h3" size="small" font="heading" stylingclasses="text-stronger">8-24 pers</Heading>
+                </div>
+                <div class=" flex flex-row gap-2">
+                    <img src="/icons/ur_ikon_neon.svg" alt="ikon personer" class="w-7">
+                    <Heading htmlheading="h3" size="small" font="heading" stylingclasses="text-stronger">1-2 timer</Heading>
+                </div>
+                <div class="flex flex-row gap-2">
+                    <img src="/icons/plus_ikon_neon.svg" alt="ikon personer" class="w-7">
+                    <Heading htmlheading="h3" size="small" font="heading" stylingclasses="text-stronger">+ 16</Heading>
+                </div>
+                <div class=" flex flex-row gap-2">
+                    <img src="/icons/penge_ikon_neon.svg" alt="ikon personer" class="w-5">
+                    <Heading htmlheading="h3" size="small" font="heading" stylingclasses="text-stronger">fra 300 kr</Heading>
+                </div>
+            </div>
+        </section>
+         <!-- SLUT PÅ HERO SEKTION -->
+
+         <!-- START PÅ OM PAINTBALL I AP SEKTION -->
+         <section class="bg-bg-beige-200 grid grid-cols-1 px-8 gap-10 lg:grid-cols-2 lg:items-center py-20">
+            <div class="flex flex-col gap-6">
+                <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-stronger">paintball i adventure park</Heading>
+                <Text teksttype="brødtekst-body" stylingclasses="text-stronger">Velkommen til Adventure Parks varierede udvalg af paintball baner. Paintball er en fantastisk sjov aktivitet, der kan spilles på mange niveauer. Derfor har vi valgt at have et varieret udvalg af paintball scenarier der kan tilfredsstille et hvert ønske.</Text>
+                <Text teksttype="brødtekst-body" stylingclasses="text-stronger">Vi spiller med kvalitets udstyr fra Tippmann og med kvalitet paintballs fra en af verdens førende producenter. Når I spiller paintball i Adventure Park, er I altid sikre på at få udleveret rent og nyvasket udstyr (sikkerhedsmaske og heldragt). </Text>
+                <Text teksttype="brødtekst-body" stylingclasses="text-stronger">Vi sætter en ære i at vores kunder forlader os med en god oplevelse.</Text>
+            </div>
+            <div>
+                <img src="/img/paintball1.webp" alt="paintball">
+            </div>
+         </section>
+         <!-- SLUT PÅ OM PAINTBALL I AP SEKTION -->
+
+         <!-- START PÅ PRIS SEKTION -->
+    <section class="flex flex-col px-10 py-20 lg:px-20 bg-bg-black-800 gap-8">        
         <div class="flex flex-col items-center">
             <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-weakest">Priser pr. person</Heading>
         </div>
@@ -42,6 +88,88 @@ import Heading from "../components/Heading.astro";
             info2="Spiludstyr"
             info3="Instruktion"
             />
+        </div>
+        <div class="flex flex-row gap-2 bg-bg-beige-200 p-4 rounded-lg items-center lg:gap-4 lg:p-8">
+            <img src="/icons/procent_ikon.svg" alt="">
+            <Text teksttype="brødtekst-body">Ved 20+ deltagere tilbyder vi 10% rabat på vejledende priser.</Text>
+        </div>
+         <!-- SLUT PÅ PRIS SEKTION -->
+    </section>
+
+    <!-- START PÅ OM SPILLET -->
+    <section class="bg-[url('/img/paintball_bane_mobil.webp')] bg-cover h-300 w-full lg:h-150 lg:bg-[url('/img/paintball_bane.webp')] ">
+        <div class="bg-bg-army-opacity p-10 grid grid-cols-1 lg:w-190 lg:h-full items-center">
+            <div class="flex flex-col gap-6">
+                <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-weakest">om spillet</Heading>
+                <Text teksttype="brødtekst-body" stylingclasses="text-weakest">Paintball er et holdspil, hvor det grundlæggende gælder om at fjerne modspillere fra banen, ved at markere dem med en farvemarkering.</Text>
+                <Text teksttype="brødtekst-body" stylingclasses="text-weakest">Måske er der lagt missioner ind i spillet, som holdet skal samarbejde om at fuldføre. Når alle modstandere er markeret, eller når missionen er fuldført, er spillet færdigt og alle gør klar til et nyt spil.</Text>
+                <Text teksttype="brødtekst-body" stylingclasses="text-weakest">Alle spillere er udstyret med en paintballmarkør, en sikkerhedsmaske der dækker hele ansigtet og en heldragt. Der spilles i 2 eller flere hold på et afgrænset område (bane), der er tilpasset antallet af deltagere.</Text>
+            </div>
+        </div>
+    </section>
+    <!-- SLUT PÅ OM SPILLET -->
+
+    <section class="bg-bg-beige-200 p-8 grid grid-cols-1 gap-10 lg:grid-cols-2 lg:py-20">
+        <div class="flex flex-col gap-6 lg:order-2">
+            <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-stronger">praktisk info:</Heading>
+            <ul class="list-disc pl-4">
+                <li>
+                    <div class="flex flex-col">
+                        <Heading htmlheading="h4" size="xsmall" font="heading" stylingclasses="text-stronger">deltagere:</Heading>
+                        <Text teksttype="brødtekst-body" stylingclasses="text-stronger">8–24 personer (større grupper efter aftale)</Text>
+                    </div>
+                </li>
+                <li>
+                    <div class="flex flex-col pt-4">
+                        <Heading htmlheading="h4" size="xsmall" font="heading" stylingclasses="text-stronger">Varighed:</Heading>
+                        <Text teksttype="brødtekst-body" stylingclasses="text-stronger">Mellem 1–2 timer</Text>
+                    </div>
+                </li>
+                <li>
+                    <div class="flex flex-col pt-4">
+                        <Heading htmlheading="h4" size="xsmall" font="heading" stylingclasses="text-stronger">Alder:</Heading>
+                        <Text teksttype="brødtekst-body" stylingclasses="text-stronger">Minimum 16 år</Text>
+                    </div>
+                </li>
+                <li>
+                    <div class="flex flex-col pt-4">
+                        <Heading htmlheading="h4" size="xsmall" font="heading" stylingclasses="text-stronger ">Udstyr inkluderet:</Heading>
+                        <Text teksttype="brødtekst-body" stylingclasses="text-stronger">Sikkerhedsmaske, heldragt og paintballmarkør</Text>
+                    </div>
+                </li>
+                <li>
+                    <div class="flex flex-col pt-4">
+                        <Heading htmlheading="h4" size="xsmall" font="heading" stylingclasses="text-stronger">Kugler:</Heading>
+                        <Text teksttype="brødtekst-body" stylingclasses="text-stronger">Vælg mellem 200, 300, 400 eller fri antal kugler pr. person</Text>
+                    </div>
+                </li>
+                <li>
+                    <div class="flex flex-col pt-4">
+                        <Heading htmlheading="h4" size="xsmall" font="heading" stylingclasses="text-stronger">Oplevelse:</Heading>
+                        <Text teksttype="brødtekst-body" stylingclasses="text-stronger">Holdspil med missioner og varierede baner i naturen</Text>
+                    </div>
+                </li>
+            </ul>
+            <div class="flex flex-col items-center">
+                <Link href="#" variant="secondary" size="large" stylingclasses="w-fit">HER FINDER DU OS</Link>
+            </div>
+        </div>
+        <div>
+            <img src="/img/paintball2.webp" alt="paintball close up">
+        </div>
+    </section>
+
+    <section class="bg-bg-beige-400 grid grid-cols-1 p-8 gap-8 lg:py-20 lg:gap-10">
+        <div class="flex flex-col gap-2 lg:gap-4 lg:w-180">
+            <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-stronger ">spisning</Heading>
+            <Text teksttype="brødtekst-body" stylingclasses="text-stronger">Spisning i parken er et tilkøb, som kun kan vælges sammen med en booket aktivitet. Det er samtidig helt i orden at medbringe egen mad.</Text>
+            <Text teksttype="brødtekst-body" stylingclasses="text-stronger">Vælg mellem vores forskellige menuer nedenfor og gør jeres oplevelse komplet.</Text>
+        </div>
+        <div class="flex flex-col lg:flex-row gap-4">
+            <Fold_ud_card billede="/img/nyheder_1.webp" titel="Mystery Run" tekst="Forestil dig spænding fra Escape Rooms – men udendørs." href="/nyheder" open={true} />
+            <Fold_ud_card billede="/img/paintball.webp" titel="Nye Lasertag Pistoler!" tekst="Lorem ipsum lorem ipsum" href="/nyheder" />
+            <Fold_ud_card billede="/img/nyheder_2.webp" titel="Sommer Camp 2026!" tekst="Lorem ipsum lorem ipsum" href="/nyheder" />
+            <Fold_ud_card billede="/img/kategori_1.webp" titel="Baner gjort sommerklar!" tekst="Lorem ipsum lorem ipsum" href="/nyheder" />
         </div>
     </section>
     </main>

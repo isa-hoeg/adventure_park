@@ -2,7 +2,7 @@
 import Heading from "./Heading.astro";
 import Link from "./Link.astro";
 
-const {heading="", linktext="", bg, linkvariant} = Astro.props;
+const {heading="", linktext="", bg="", linkvariant=""} = Astro.props;
 ---
 
 <book_section class:list={["flex flex-col gap-8 py-10 lg:py-20 px-20 items-center", bg]}>

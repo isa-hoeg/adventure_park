@@ -1,33 +1,135 @@
 ---
+// Importér de komponenter vi bruger inde i kortet
 import ArrowButton from "./ArrowButton.astro";
 import Heading from "./Heading.astro";
 import Text from "./Text.astro";
 import Link from "./Link.astro";
 
-const { billede, titel, tekst, href, open = false, accentColor = "#fe4559" } = Astro.props;
+// PROPS - dette er de "indstillinger" man kan sende ind når man bruger komponenten
+// Hver prop har en default-værdi efter "=" som bruges hvis man ikke sender noget ind
+const {
+  billede, // Billede der vises på det LUKKEDE kort
+  titel, // Overskriften på kortet (vises både åben og lukket)
+  tekst, // Brødtekst (valgfri - kan også sendes som slot-indhold)
+  href, // Link til "LÆS MERE" knappen
+  open = false, // Om kortet starter åbent (true) eller lukket (false)
+  accentColor = "#fe4559", // Farven på den lodrette streg (default = coral)
+  stregHøjde = "h-full", // Højden på stregen (h-full = fylder hele højden, h-20 = 80px osv.)
+  højde = "h-[380px]", // Højden på selve kortet (både åben og lukket version)
+  bredde = "lg:flex-1", // Bredden på DESKTOP (lg:flex-1 = fordeler pladsen, lg:w-[340px] = fast bredde)
+  mobilBredde = "w-[280px]", // Bredden på MOBIL (fast bredde da kortene scroller horisontalt)
+} = Astro.props;
 ---
 
-<div x-data={`{ open: ${open} }`} class="flex-1 self-stretch transition-all duration-300" :class="{ 'flex-[1.5]': open }">
-  <!-- ÅBEN VERSION -->
-  <div x-show="open" class="bg-bg-beige-200 rounded-xl relative h-[313px] flex flex-col justify-between p-6">
+<!-- 
+  YDERSTE WRAPPER - styrer kortets bredde og opførsel i flex-rækken
+  
+  x-data="{ open: ... }" = Alpine.js variabel der husker om kortet er åbent eller lukket
+  
+  class= (statisk klasser - gælder altid):
+  - ${mobilBredde}        = bredde på mobil (fx w-[280px])
+  - flex-shrink-0         = må IKKE krympe når der ikke er plads - vigtigt for horisontal scroll
+  - self-stretch          = strækker sig til samme højde som andre kort i flex-rækken
+  - transition-all        = animerer ændringer i størrelse smooth
+  - duration-300          = animationen tager 300ms
+  - ${bredde}             = bredde på desktop (fx lg:w-[340px])
+  
+  :class= (dynamisk klasser - ændres når open er true):
+  - lg:w-[500px]          = på desktop bliver det ÅBNE kort 500px bredt (større end de lukkede)
+-->
+<div x-data={`{ open: ${open} }`} class={`${mobilBredde} flex-shrink-0 self-stretch transition-all duration-300 ${bredde}`} :class="{ 'lg:w-[500px]': open }">
+  <!-- ============================================== -->
+  <!-- ÅBEN VERSION - vises når brugeren klikker åben -->
+  <!-- ============================================== -->
+  <!-- 
+    x-show="open"           = vises KUN når open er true
+    bg-bg-beige-200         = lys beige baggrund
+    rounded-xl              = afrundede hjørner
+    relative                = position relative (for at indre elementer kan placeres)
+    ${højde}                = højden styres af prop'en (fx h-[380px])
+    flex flex-col           = layout i kolonne (top og bund)
+    justify-between         = pusher første og sidste element til top og bund
+    p-6                     = padding 24px hele vejen rundt
+  -->
+  <div x-show="open" class={`bg-bg-beige-200 rounded-xl relative ${højde} flex flex-col justify-between p-6`}>
+    <!-- TOP: streg + titel/tekst + pil-knap til at lukke -->
     <div class="flex justify-between items-start">
-      <div class="border-l-4 pl-4" style={`border-color: ${accentColor}`}>
-        <Heading htmlheading="h3" size="small" font="heading" stylingclasses="text-stronger">{titel}</Heading>
-        <Text stylingclasses="text-stronger">{tekst}</Text>
+      <!-- Venstre side: den lodrette streg + indhold -->
+      <div class="flex gap-4">
+        <!-- 
+          DEN LODRETTE STREG
+          w-1                  = 4px bred
+          flex-shrink-0        = må ikke krympe
+          ${stregHøjde}        = højden styres af prop'en (fx h-20 = 80px)
+          style=               = farven styres dynamisk fra accentColor prop
+        -->
+        <div class={`w-1 flex-shrink-0 ${stregHøjde}`} style={`background-color: ${accentColor}`}></div>
+
+        <!-- Tekst-indholdet ved siden af stregen -->
+        <div>
+          <Heading htmlheading="h3" size="small" font="heading" stylingclasses="text-stronger">{titel}</Heading>
+
+          <!-- {tekst && ...} betyder: vis kun <Text> hvis tekst-prop'en er sendt ind -->
+          {tekst && <Text stylingclasses="text-stronger">{tekst}</Text>}
+
+          <!-- <slot /> = her vises alt det HTML man putter mellem <Fold_ud_card> og </Fold_ud_card> -->
+          <!-- Fx liste med punkter, pris osv. -->
+          <slot />
+        </div>
       </div>
+
+      <!-- Højre side: pil-knappen der lukker kortet ved klik -->
+      <!-- x-on:click="open = !open" = vender open fra true til false (lukker kortet) -->
       <div x-on:click="open = !open">
         <ArrowButton variant="open" />
       </div>
     </div>
+
+    <!-- BUND: "LÆS MERE" knappen -->
     <Link href={href} variant="secondary" size="small" stylingclasses="w-fit">LÆS MERE!</Link>
   </div>
 
-  <!-- LUKKET VERSION -->
-  <div x-show="!open" x-on:click="open = !open" class="relative rounded-xl overflow-hidden bg-bg-army-700 h-[313px]">
+  <!-- ================================================ -->
+  <!-- LUKKET VERSION - vises som standard med billede  -->
+  <!-- ================================================ -->
+  <!-- 
+    x-show="!open"          = vises KUN når open er false (modsat af åben)
+    x-on:click="..."        = HELE kortet er klikbart - åbner kortet
+    relative                = for at de absolute-elementer indeni kan placeres
+    rounded-xl              = afrundede hjørner
+    overflow-hidden         = skjuler indhold der går ud over kanten (vigtigt for billedet)
+    bg-bg-army-700          = mørk grøn baggrund hvis billedet ikke loader
+    ${højde}                = samme højde som åben version
+  -->
+  <div x-show="!open" x-on:click="open = !open" class={`relative rounded-xl overflow-hidden bg-bg-army-700 ${højde}`}>
+    <!-- BAGGRUNDSBILLEDE -->
+    <!-- 
+      w-full h-full            = fylder hele kortet
+      object-cover             = beskærer billedet pænt så det fylder uden at strækkes
+      opacity-60               = 60% gennemsigtighed så teksten kan ses ovenpå
+    -->
     <img src={billede} alt={titel} class="w-full h-full object-cover opacity-60" />
+
+    <!-- GRADIENT OVERLAY - lys i top, transparent i bund (for at titlen kan læses) -->
+    <!-- 
+      absolute inset-0         = fylder hele forælderen (top:0, right:0, bottom:0, left:0)
+      bg-gradient-to-b         = gradient fra top til bund
+      from-bg-army-700         = mørk grøn i toppen
+      to-transparent           = ingen farve i bunden
+    -->
     <div class="absolute inset-0 bg-gradient-to-b from-bg-army-700 to-transparent"></div>
+
+    <!-- TITEL + PIL-KNAP - placeret øverst med absolute -->
+    <!-- 
+      absolute top-0 left-0 right-0  = fastgjort til toppen og fylder bredden
+      p-4                            = padding 16px
+      flex justify-between           = titel til venstre, pil til højre
+    -->
     <div class="absolute top-0 left-0 right-0 p-4 flex justify-between items-start">
+      <!-- Titel - flex-1 lader den fylde tilgængelig plads, mr-2 = lille margin til pilen -->
       <Heading htmlheading="h3" size="small" font="heading" stylingclasses="text-weakest flex-1 mr-2">{titel}</Heading>
+
+      <!-- Pil-knappen - flex-shrink-0 sørger for den ikke krymper -->
       <div class="flex-shrink-0">
         <ArrowButton variant="closed" />
       </div>

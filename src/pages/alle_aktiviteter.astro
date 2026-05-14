@@ -150,3 +150,10 @@ import Book_section from "../components/Book_section.astro";
     </section>
   </main>
 </MainLayout>
+
+<script>
+import { animate, stagger, inView, scroll } from "motion";
+
+	/*Progress-baren/læseindikatoren */
+	scroll( animate(".progress-bar", { scaleX: [0, 1] }));
+</script>

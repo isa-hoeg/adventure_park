@@ -9,6 +9,7 @@ import Book_section from "../components/Book_section.astro";
 ---
 
 <MainLayout title="">
+     <div class="progress-bar h-4 z-110 fixed w-full bg-[url('/img/progress_bar.svg')] left-0 origin-top-left top-0 right-0"></div>
   <main class="">
     <!-- START PÅ HERO SEKTION -->
     <section class="bg-bg-army-700 relative h-150 w-full bg-cover bg-[77%_center] bg-[url('/img/hero_paintball_bg.webp')] pt-20 flex flex-col justify-between lg:pt-40 lg:h-157">
@@ -209,7 +210,19 @@ import Book_section from "../components/Book_section.astro";
     <!-- SLUT PÅ SPISNING -->
 
     <section>
-      <Book_section heading="Klar til at booke jeres aktivitet?" linktext="Book paintball her" />
+      <Book_section 
+      heading="Klar til at booke jeres aktivitet?" 
+      linktext="Book paintball her"
+      bg="bg-bg-coral-400"
+      linkvariant="primary"/>
+      
     </section>
   </main>
 </MainLayout>
+
+<script>
+import { animate, stagger, inView, scroll } from "motion";
+
+	/*Progress-baren/læseindikatoren */
+	scroll( animate(".progress-bar", { scaleX: [0, 1] }));
+</script>

@@ -13,6 +13,7 @@ import Book_section from "../components/Book_section.astro"; // Bunden af siden 
 ---
 
 <MainLayout title="Titel">
+  <div class="progress-bar h-4 z-110 fixed w-full bg-[url('/img/progress_bar.svg')] left-0 origin-top-left top-0 right-0"></div>
   <!-- ============================================== -->
   <!-- HERO SEKTION - første der ses på siden         -->
   <!-- ============================================== -->
@@ -55,7 +56,7 @@ import Book_section from "../components/Book_section.astro"; // Bunden af siden 
     -->
     <div class="relative h-full flex items-center px-10">
       <div>
-        <Heading htmlheading="h1" size="large" font="display" stylingclasses="text-weakest text-center lg:text-left">Praktisk info</Heading>
+        <Heading htmlheading="h1" size="large" font="display" stylingclasses="text-weakest text-center lg:text-left intersect:animate-fade-down animate-once animate-duration-[2000ms]">Praktisk info</Heading>
 
         <!-- CORAL STREG under overskriften -->
         <!-- 
@@ -64,7 +65,7 @@ import Book_section from "../components/Book_section.astro"; // Bunden af siden 
           border-bg-coral-400   = coral farve
           mx-auto lg:mx-0       = centreret på mobil, venstrejusteret på desktop
         -->
-        <div class="border-4 w-32 lg:w-80 border-bg-coral-400 mx-auto lg:mx-0"></div>
+        <div class="border-4 lg:border-6 w-32 lg:w-80 border-bg-coral-400 mx-auto lg:mx-0 intersect:animate-fade-right animate-once animate-duration-[2000ms]"></div>
       </div>
     </div>
   </div>
@@ -80,7 +81,7 @@ import Book_section from "../components/Book_section.astro"; // Bunden af siden 
     lg:py-20                 = padding 80px top/bund på desktop
   -->
   <div class="bg-bg-beige-400 py-10 px-8 lg:py-20">
-    <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-stronger">Spisning i parken</Heading>
+    <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-stronger intersect:animate-fade-left animate-once animate-duration-[2000ms]">Spisning i parken</Heading>
 
     <!-- Intro-tekst - py-4 = padding top/bund, lg:w-1/2 = halv bredde på desktop -->
     <Text teksttype="brødtekst-body" stylingclasses="text-stronger py-4 lg:w-1/2">Spisning i parken er et tilkøb, som kun kan vælges sammen med en booket aktivitet. Det er samtidig helt i orden at medbringe egen mad.</Text>
@@ -92,7 +93,7 @@ import Book_section from "../components/Book_section.astro"; // Bunden af siden 
       items-stretch             = alle kort strækkes til samme højde
       overflow-x-auto           = horisontal scroll når der ikke er plads
     -->
-    <div class="flex flex-row gap-4 items-stretch overflow-x-auto">
+    <div class="flex flex-row gap-4 items-stretch overflow-x-auto intersect:animate-fade-up animate-once animate-duration-[2000ms]">
       <!-- FOLD UD KORTENE - hvert kort kan klikkes for at åbne/lukke -->
       <!-- 
         accentColor="#ecff37"       = gul streg (neongrøn-400)
@@ -178,7 +179,7 @@ import Book_section from "../components/Book_section.astro"; // Bunden af siden 
       <div class="bg-bg-army-opacity p-10 grid grid-cols-1 lg:w-[760px] lg:h-full items-center">
         <!-- gap-6 = 24px afstand mellem elementerne -->
         <div class="flex flex-col gap-6">
-          <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-weakest">Åbningstider – hvad betyder "åbent efter aftale"?</Heading>
+          <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-weakest intersect:animate-fade-right animate-once animate-duration-[2000ms]">Åbningstider – hvad betyder "åbent efter aftale"?</Heading>
 
           <!-- CORAL STREG under overskriften -->
           <!-- 
@@ -187,7 +188,7 @@ import Book_section from "../components/Book_section.astro"; // Bunden af siden 
             bg-stroke-secondary-accent = coral farve
             -mt-4                   = NEGATIV margin-top -16px (rykker stregen tættere på overskriften)
           -->
-          <div class="w-28 h-1.5 bg-stroke-secondary-accent -mt-4"></div>
+          <div class="w-28 h-1.5 bg-stroke-secondary-accent -mt-4 intersect:animate-fade-left animate-once animate-duration-[2000ms]"></div>
 
           <Text teksttype="brødtekst-body" stylingclasses="text-weakest">Hos Adventure Park har vi ikke faste åbningstider, da parken kun er åben i forbindelse med bookede aktiviteter. Det betyder, at jeres besøg planlægges efter jeres ønsker og behov.</Text>
           <Text teksttype="brødtekst-body" stylingclasses="text-weakest">Vi er meget fleksible og tilbyder aktiviteter både på hverdage og i weekender – samt morgen, dag og aften. Vi anbefaler dog, at I booker i god tid, da vi skal planlægge jeres aktivitet, finde instruktører og klargøre banerne, så I får den bedst mulige oplevelse.</Text>
@@ -223,7 +224,7 @@ import Book_section from "../components/Book_section.astro"; // Bunden af siden 
     lg:px-20                 = padding sider 80px på desktop
   -->
   <div class="bg-bg-beige-400 py-20 px-8 lg:px-20">
-    <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-stronger text-center mb-10">Få svar på dine spørgsmål</Heading>
+    <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-stronger text-center mb-10 intersect:animate-fade-down animate-once animate-duration-[2000ms]">Få svar på dine spørgsmål</Heading>
 
     <!-- Wrapper for FAQ kortene - max-w-3xl = max 768px bred, mx-auto = centreret -->
     <div class="max-w-3xl mx-auto">
@@ -243,7 +244,7 @@ import Book_section from "../components/Book_section.astro"; // Bunden af siden 
   <!-- ============================================== -->
   <!-- bg-bg-army-700 = mørk grøn baggrund -->
   <div class="bg-bg-army-700 py-20 px-8 lg:px-20">
-    <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-weakest text-center mb-6">Kontakt</Heading>
+    <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-weakest text-center mb-6 intersect:animate-fade-right animate-once animate-duration-[2000ms]">Kontakt</Heading>
 
     <!-- Intro-tekst med klikbart telefonnummer -->
     <!-- max-w-2xl = max 672px bred, mx-auto = centreret -->
@@ -252,7 +253,7 @@ import Book_section from "../components/Book_section.astro"; // Bunden af siden 
     </Text>
 
     <!-- KONTAKTFORMULAR - max-w-4xl = max 896px bred -->
-    <form class="max-w-4xl mx-auto">
+    <form class="max-w-4xl mx-auto intersect:animate-fade-left animate-once animate-duration-[2000ms]">
       <Heading htmlheading="h3" size="small" font="heading" stylingclasses="text-weakest mb-6">Send os en e-mail</Heading>
 
       <!-- FORNAVN + EFTERNAVN i flex (under hinanden på mobil, ved siden af hinanden på desktop) -->
@@ -302,3 +303,9 @@ import Book_section from "../components/Book_section.astro"; // Bunden af siden 
   <Book_section heading="Klar til at give os et besøg?" linktext="Book nu" />
   <!-- SLUT PÅ BOOK SECTION -->
 </MainLayout>
+<script>
+import { animate, stagger, inView, scroll } from "motion";
+
+	/*Progress-baren/læseindikatoren */
+	scroll( animate(".progress-bar", { scaleX: [0, 1] }));
+</script>

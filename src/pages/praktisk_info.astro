@@ -300,12 +300,12 @@ import Book_section from "../components/Book_section.astro"; // Bunden af siden 
   <!-- BOOK SEKTION - CTA i bunden af siden           -->
   <!-- ============================================== -->
   <!-- Komponent med coral baggrund + overskrift + book knap -->
-  <Book_section heading="Klar til at give os et besøg?" linktext="Book nu" />
+  <Book_section heading="Klar til at give os et besøg?" linktext="Book nu" bg="bg-bg-coral-400" linkvariant="primary" />
   <!-- SLUT PÅ BOOK SECTION -->
 </MainLayout>
 <script>
-import { animate, stagger, inView, scroll } from "motion";
+  import { animate, stagger, inView, scroll } from "motion";
 
-	/*Progress-baren/læseindikatoren */
-	scroll( animate(".progress-bar", { scaleX: [0, 1] }));
+  /*Progress-baren/læseindikatoren */
+  scroll(animate(".progress-bar", { scaleX: [0, 1] }));
 </script>

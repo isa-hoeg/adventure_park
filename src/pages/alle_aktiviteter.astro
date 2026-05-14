@@ -9,9 +9,11 @@ import Book_section from "../components/Book_section.astro";
 
 <MainLayout title="Alle Aktiviteter">
   <main class="bg-bg-beige-200">
+    <div class="progress-bar h-4 z-110 fixed w-full bg-[url('/img/progress_bar.svg')] left-0 origin-top-left top-0 right-0"></div>
+    <!-- START PÅ HERO -->
     <!-- START HERO PÅ AKTIVITETER -->
     <section class="flex flex-col justify-center items-center gap-10">
-      <Heading htmlheading="h1" size="large" font="heading" stylingclasses="py-4 text-stronger text-center">Alle aktiviteter</Heading>
+      <Heading htmlheading="h1" size="large" font="heading" stylingclasses="py-4 text-stronger text-center intersect:animate-fade-down animate-once animate-duration-[2000ms]">Alle aktiviteter</Heading>
       <form class="w-80 lg:w-120">
         <label for="search" class="text-sm font-medium text-heading sr-only">Search</label>
         <div class="relative">
@@ -25,7 +27,7 @@ import Book_section from "../components/Book_section.astro";
     <!-- SLUT HERO PÅ AKTIVITETER -->
 
     <!-- START PÅ CARDS OVERSIGT -->
-    <section class="grid grid-cols-2 gap-2 px-4 py-20 justify-items-center lg:grid-cols-4 lg:mx-40 lg:gap-5">
+    <section class="grid grid-cols-2 gap-2 px-4 py-20 justify-items-center lg:grid-cols-4 lg:mx-40 lg:gap-5 intersect:animate-fade-up animate-once animate-duration-[2000ms]">
       <Aktivitet_card class="col-span-1 lg:col-span-2 order-1" 
       title="Sumobrydning" 
       personer="+2 personer" 
@@ -150,7 +152,6 @@ import Book_section from "../components/Book_section.astro";
     </section>
   </main>
 </MainLayout>
-
 <script>
 import { animate, stagger, inView, scroll } from "motion";
 

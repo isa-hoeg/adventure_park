@@ -12,6 +12,7 @@ import Selling_card from "../components/Selling_card.astro";
 import Map from "../components/Map.astro";
 import Fold_ud_card from "../components/Fold_ud_card.astro";
 import Insta_card from "../components/Insta_card.astro";
+
 ---
 
 <MainLayout title="Titel">
@@ -57,6 +58,10 @@ import Insta_card from "../components/Insta_card.astro";
             <span class="block lg:inline">Derfor vælger</span>
             <span class="block lg:inline">gæsterne os</span>
           </Heading>
+            <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-weakest intersect:animate-fade-left animate-once animate-duration-[2000ms]">
+             <span class="block lg:inline">Derfor vælger</span>
+              <span class="block lg:inline">gæsterne os</span>
+            </Heading>
         </div>
         <Text teksttype="brødtekst-body" stylingclasses="text-weakest lg:-mt-6 lg:max-w-xl lg:mx-auto"> Hos os får I mere end bare en aktivitet. I får en gennemført oplevelse fra start til slut. Med Sjællands største baner, skarpe priser og fokus på sikkerhed skaber vi rammerne for action, grin og stærke fællesskaber. Vi sørger for, at jeres dag bliver både nem at planlægge og svær at glemme. </Text>
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-x-4 lg:gap-x-8 gap-y-15 pt-10">
@@ -71,6 +76,16 @@ import Insta_card from "../components/Insta_card.astro";
           </div>
           <div class="intersect:animate-fade-down animate-once animate-duration-[2000ms]">
             <Selling_card icon="/icons/kapacitet.svg" iconalt="ikon for kapacitet" title="Kapacitet" cardtekst="Vi har en udendørs park med 80.000 m2 til afvikling af arrangementer og afholder events for grupper i alle størrelser." />
+          <Selling_card icon="/icons/fleksibilitet.svg" iconalt="ikon for fleksibilitet" title="Åbningstider" cardtekst="Åbent efter aftale: Vi kan afvikle events inde og ude hele døgnet."/>
+          </div>
+          <div class="intersect:animate-fade-down animate-once animate-duration-[2000ms]">
+          <Selling_card icon="/icons/sikkerhed.svg" iconalt="ikon for sikkerhed" title="Sikkerhed" cardtekst="Alle vores aktiviteter er godkendt og alle kunder er forsikret gennem os." />
+          </div>
+          <div class="intersect:animate-fade-up animate-once animate-duration-[2000ms]">    
+          <Selling_card icon="/icons/erfaring.svg" iconalt="ikon for erfaring" title="Erfaring" cardtekst="Vi har udviklet og afholdt fornøjelses- og teambuildings-arrangementer i ca. 20 år." />
+          </div>
+          <div class="intersect:animate-fade-down animate-once animate-duration-[2000ms]">
+          <Selling_card icon="/icons/kapacitet.svg" iconalt="ikon for kapacitet" title="Kapacitet" cardtekst="Vi har en udendørs park med 80.000 m2 til afvikling af arrangementer og afholder events for grupper i alle størrelser." />
           </div>
         </div>
       </div>
@@ -135,6 +150,12 @@ import Insta_card from "../components/Insta_card.astro";
       <Fold_ud_card stregHøjde="h-20" højde="h-[350px]" mobilBredde="w-[340px]" bredde="lg:w-[300px]" billede="/img/kategori_1.webp" titel="Baner gjort sommerklar!" href="/nyheder">
         <Text stylingclasses="text-stronger">Vores baner er klargjort til sommerens mange events. Glæd jer til forbedrede faciliteter, nye udfordringer og endnu bedre rammer for jeres oplevelse.</Text>
       </Fold_ud_card>
+    <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-stronger mb-8 intersect:animate-fade-right animate-once animate-duration-[2000ms]">Nyheder</Heading>
+    <div class="flex flex-col lg:flex-row gap-4 intersect:animate-fade-left animate-once animate-duration-[2000ms]">
+      <Fold_ud_card billede="/img/nyheder_1.webp" titel="Mystery Run" tekst="Forestil dig spænding fra Escape Rooms – men udendørs. I bevæger jer fra sted til sted, mens I løser gåder, knækker koder samt optjener og stjæler point undervejs." href="/nyheder" open={true} />
+      <Fold_ud_card billede="/img/paintball.webp" titel="Nye Lasertag Pistoler!" tekst="Oplev næste niveau af lasertag med vores nye pistoler. Hurtigere reaktion, bedre præcision og endnu mere intens gameplay – perfekt til både venner og firmaevents." href="/nyheder" />
+      <Fold_ud_card billede="/img/nyheder_2.webp" titel="Sommer Camp 2026!" tekst="En uge fyldt med action, fællesskab og uforglemmelige oplevelser. Vores sommer camp kombinerer sjove aktiviteter med nye venskaber i trygge rammer." href="/nyheder" />
+      <Fold_ud_card billede="/img/kategori_1.webp" titel="Baner gjort sommerklar!" tekst="Vores baner er klargjort til sommerens mange events. Glæd jer til forbedrede faciliteter, nye udfordringer og endnu bedre rammer for jeres oplevelse." href="/nyheder" />
     </div>
   </div>
   <!-- SLUT PÅ NYHEDSSEKTION -->

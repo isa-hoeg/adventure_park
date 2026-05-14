@@ -1,50 +1,194 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro";
-import Link from "../components/Link.astro";
-import Heading from "../components/Heading.astro";
-import Text from "../components/Text.astro";
-import Fold_ud_card from "../components/Fold_ud_card.astro";
-import Map from "../components/Map.astro";
-import FAQ_card from "../components/FAQ_card.astro";
-import Book_section from "../components/Book_section.astro";
+// =============================================
+// IMPORTS - importér layout og komponenter
+// =============================================
+import MainLayout from "../layouts/MainLayout.astro"; // Hovedlayout med header og footer
+import Link from "../components/Link.astro"; // Genbrugelig link/knap komponent
+import Heading from "../components/Heading.astro"; // Genbrugelig overskrift komponent
+import Text from "../components/Text.astro"; // Genbrugelig tekst komponent
+import Fold_ud_card from "../components/Fold_ud_card.astro"; // Accordion-kort der kan foldes ud
+import Map from "../components/Map.astro"; // Map-sektion komponent
+import FAQ_card from "../components/FAQ_card.astro"; // FAQ accordion komponent
+import Book_section from "../components/Book_section.astro"; // Bunden af siden med "book nu" CTA
 ---
 
 <MainLayout title="Titel">
-  <!-- HERO -->
+  <!-- ============================================== -->
+  <!-- HERO SEKTION - første der ses på siden         -->
+  <!-- ============================================== -->
+  <!-- 
+    relative                  = position relative (for at overlay og objekt-billede kan placeres ovenpå)
+    w-full                    = fylder hele bredden
+    bg-cover                  = baggrundsbilledet dækker hele div'en
+    bg-center                 = baggrunden centreres
+    lg:bg-bottom              = på desktop placeres baggrunden i bunden
+    h-80                      = højde 320px på mobil
+    lg:h-[500px]              = højde 500px på desktop
+    bg-[url('...')]           = baggrundsbillede
+  -->
   <div class="relative w-full bg-cover bg-center lg:bg-bottom h-80 lg:h-[500px] bg-[url('/img/praktisk_info_hero.webp')]">
+    <!-- MØRKT OVERLAY ovenpå baggrundsbilledet (gør teksten lettere at læse) -->
+    <!-- 
+      absolute inset-0        = fylder hele forælderen (top:0, right:0, bottom:0, left:0)
+      bg-bg-army-700          = mørk grøn farve
+      opacity-60              = 60% gennemsigtighed
+    -->
     <div class="absolute inset-0 bg-bg-army-700 opacity-60"></div>
 
-    <!-- OBJEKT BILLEDE -->
+    <!-- OBJEKT BILLEDE (udstyr-billede der ligger ovenpå hero) -->
+    <!-- 
+      absolute                = placeres ovenpå (position absolute)
+      scale-54                = 54% størrelse på mobil
+      left-37 top-32          = position på mobil
+      lg:scale-105            = 105% størrelse på desktop
+      lg:left-[840px]         = position fra venstre på desktop
+      lg:top-30               = position fra toppen på desktop
+    -->
     <img src="/img/object-praktisk.webp" alt="udstyr" class="absolute scale-54 left-37 top-32 lg:scale-105 lg:left-[840px] lg:top-30" />
 
-    <!-- TEKST -->
+    <!-- TEKST-INDHOLD (overskrift + coral streg) -->
+    <!-- 
+      relative                = sikrer at teksten ligger ovenpå overlay'et
+      h-full                  = fylder forælderens fulde højde
+      flex items-center       = centrerer indholdet vertikalt
+      px-10                   = padding 40px i siderne
+    -->
     <div class="relative h-full flex items-center px-10">
       <div>
         <Heading htmlheading="h1" size="large" font="display" stylingclasses="text-weakest text-center lg:text-left">Praktisk info</Heading>
+
+        <!-- CORAL STREG under overskriften -->
+        <!-- 
+          border-4              = 4px tyk
+          w-32 lg:w-80          = bredde 128px på mobil, 320px på desktop
+          border-bg-coral-400   = coral farve
+          mx-auto lg:mx-0       = centreret på mobil, venstrejusteret på desktop
+        -->
         <div class="border-4 w-32 lg:w-80 border-bg-coral-400 mx-auto lg:mx-0"></div>
       </div>
     </div>
   </div>
+  <!-- SLUT PÅ HERO -->
 
-  <!-- SPISNING -->
+  <!-- ============================================== -->
+  <!-- SPISNING SEKTION - kort med menuvalg           -->
+  <!-- ============================================== -->
+  <!-- 
+    bg-bg-beige-400          = beige baggrund
+    py-10                    = padding 40px top/bund på mobil
+    px-8                     = padding 32px i siderne
+    lg:py-20                 = padding 80px top/bund på desktop
+  -->
   <div class="bg-bg-beige-400 py-10 px-8 lg:py-20">
     <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-stronger">Spisning i parken</Heading>
+
+    <!-- Intro-tekst - py-4 = padding top/bund, lg:w-1/2 = halv bredde på desktop -->
     <Text teksttype="brødtekst-body" stylingclasses="text-stronger py-4 lg:w-1/2">Spisning i parken er et tilkøb, som kun kan vælges sammen med en booket aktivitet. Det er samtidig helt i orden at medbringe egen mad.</Text>
-    <div class="flex flex-col lg:flex-row gap-4 items-stretch">
-      <Fold_ud_card accentColor="#ecff37" billede="/img/mad_1.webp" titel="Mystery Run" tekst="Forestil dig spænding fra Escape Rooms – men udendørs." href="/nyheder" open={true} />
-      <Fold_ud_card accentColor="#ecff37" billede="/img/mad_2.webp" titel="Nye Lasertag Pistoler!" tekst="Lorem ipsum lorem ipsum" href="/nyheder" />
-      <Fold_ud_card accentColor="#ecff37" billede="/img/mad_3.webp" titel="Sommer Camp 2026!" tekst="Lorem ipsum lorem ipsum" href="/nyheder" />
-      <Fold_ud_card accentColor="#ecff37" billede="/img/mad_4.webp" titel="Baner gjort sommerklar!" tekst="Lorem ipsum lorem ipsum" href="/nyheder" />
+
+    <!-- WRAPPER FOR KORTENE - horisontal scroll både mobil og desktop -->
+    <!-- 
+      flex flex-row             = kortene ligger ved siden af hinanden (også på mobil)
+      gap-4                     = 16px afstand mellem kortene
+      items-stretch             = alle kort strækkes til samme højde
+      overflow-x-auto           = horisontal scroll når der ikke er plads
+    -->
+    <div class="flex flex-row gap-4 items-stretch overflow-x-auto">
+      <!-- FOLD UD KORTENE - hvert kort kan klikkes for at åbne/lukke -->
+      <!-- 
+        accentColor="#ecff37"       = gul streg (neongrøn-400)
+        stregHøjde="h-20"           = streg er 80px høj
+        højde="h-[380px]"           = kort er 380px højt
+        mobilBredde="w-[340px]"     = 340px bredt på mobil
+        bredde="lg:w-[340px]"       = 340px bredt på desktop (det åbne kort bliver 500px - styret i komponentet)
+        open={true}                 = dette kort starter åbent som standard
+      -->
+      <Fold_ud_card accentColor="#ecff37" stregHøjde="h-20" højde="h-[380px]" mobilBredde="w-[340px]" bredde="lg:w-[340px]" billede="/img/mad.webp" titel="Kyllingburger menu" href="/menu" open={true}>
+        <Text stylingclasses="text-stronger">Pulled chicken med coleslaw i en burgerbolle og ovnstegte kartofler.</Text>
+        <!-- list-disc = punkttegn, pl-5 = padding-left 20px, mt-4 = margin-top 16px -->
+        <ul class="list-disc pl-5 mt-4">
+          <li><Text stylingclasses="text-stronger">I samler selv burgerne.</Text></li>
+          <li><Text stylingclasses="text-stronger">Kan serveres inde eller ude.</Text></li>
+          <li><Text stylingclasses="text-stronger">Vi klarer oprydningen.</Text></li>
+        </ul>
+        <Heading htmlheading="h4" size="xsmall" font="heading" stylingclasses="text-stronger mt-4 mb-5">180 kr. pr. person</Heading>
+      </Fold_ud_card>
+
+      <Fold_ud_card accentColor="#ecff37" stregHøjde="h-20" højde="h-[380px]" mobilBredde="w-[340px]" bredde="lg:w-[340px]" billede="/img/mad_1.webp" titel="Okseburger menu" href="/menu">
+        <Text stylingclasses="text-stronger">Saftig okseburger med salat, ost og hjemmelavet dressing i sprødt brød.</Text>
+        <ul class="list-disc pl-5 mt-4">
+          <li><Text stylingclasses="text-stronger">Vi griller bøffer og anretter som buffet.</Text></li>
+          <li><Text stylingclasses="text-stronger">I samler selv burgerne.</Text></li>
+          <li><Text stylingclasses="text-stronger">Vi klarer oprydningen.</Text></li>
+        </ul>
+        <Heading htmlheading="h4" size="xsmall" font="heading" stylingclasses="text-stronger mt-4 mb-5">200 kr. pr. person</Heading>
+      </Fold_ud_card>
+
+      <Fold_ud_card accentColor="#ecff37" stregHøjde="h-20" højde="h-[380px]" mobilBredde="w-[340px]" bredde="lg:w-[340px]" billede="/img/mad_2.webp" titel="Sandwich & frugt" href="/menu">
+        <Text stylingclasses="text-stronger">Frisklavede sandwich med fyld efter ønske, serveret med sæsonens frugt.</Text>
+        <ul class="list-disc pl-5 mt-4">
+          <li><Text stylingclasses="text-stronger">Vælg mellem kylling, skinke eller vegetar.</Text></li>
+          <li><Text stylingclasses="text-stronger">Anrettes pænt på fade.</Text></li>
+          <li><Text stylingclasses="text-stronger">Nem og hurtig løsning.</Text></li>
+        </ul>
+        <Heading htmlheading="h4" size="xsmall" font="heading" stylingclasses="text-stronger mt-4 mb-5">120 kr. pr. person</Heading>
+      </Fold_ud_card>
+
+      <Fold_ud_card accentColor="#ecff37" stregHøjde="h-20" højde="h-[380px]" mobilBredde="w-[340px]" bredde="lg:w-[340px]" billede="/img/mad_3.webp" titel="Mix grill menu" href="/menu">
+        <Text stylingclasses="text-stronger">Stor grillbuffet med varierede kødretter, salater og hjemmelavede saucer.</Text>
+        <ul class="list-disc pl-5 mt-4">
+          <li><Text stylingclasses="text-stronger">Vi griller på stedet.</Text></li>
+          <li><Text stylingclasses="text-stronger">Buffet med flere salater og tilbehør.</Text></li>
+          <li><Text stylingclasses="text-stronger">Vi klarer oprydningen.</Text></li>
+        </ul>
+        <Heading htmlheading="h4" size="xsmall" font="heading" stylingclasses="text-stronger mt-4 mb-5">220 kr. pr. person</Heading>
+      </Fold_ud_card>
     </div>
   </div>
+  <!-- SLUT PÅ SPISNING -->
 
-  <!-- ÅBNINGSTIDER -->
+  <!-- ============================================== -->
+  <!-- ÅBNINGSTIDER SEKTION                           -->
+  <!-- Baggrundsbillede med tekstboks med overlay     -->
+  <!-- ============================================== -->
+  <!-- 
+    bg-[url('...')]           = baggrundsbillede til mobil
+    bg-cover                  = billedet dækker hele området
+    h-[600px]                 = højde 600px på mobil
+    w-full                    = fylder hele bredden
+    lg:h-[600px]              = højde 600px på desktop (samme her)
+    lg:bg-[url('...')]        = ANDET baggrundsbillede på desktop
+  -->
   <section class="bg-[url('/img/paintball_bane_mobil.webp')] bg-cover h-[600px] w-full lg:h-[600px] lg:bg-[url('/img/paintball_bane.webp')]">
+    <!-- Wrapper - pusher tekstboksen til højre på desktop -->
+    <!-- 
+      flex                    = flexbox layout
+      lg:justify-end          = på desktop placeres indholdet til højre
+      h-full                  = fylder forælderens højde
+    -->
     <div class="flex lg:justify-end h-full">
+      <!-- TEKSTBOKSEN - mørkt overlay med tekst -->
+      <!-- 
+        bg-bg-army-opacity      = mørk grøn med transparens
+        p-10                    = padding 40px hele vejen rundt
+        grid grid-cols-1        = grid med 1 kolonne
+        lg:w-[760px]            = 760px bred på desktop
+        lg:h-full               = fylder fuld højde på desktop
+        items-center            = centrerer indholdet vertikalt
+      -->
       <div class="bg-bg-army-opacity p-10 grid grid-cols-1 lg:w-[760px] lg:h-full items-center">
+        <!-- gap-6 = 24px afstand mellem elementerne -->
         <div class="flex flex-col gap-6">
           <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-weakest">Åbningstider – hvad betyder "åbent efter aftale"?</Heading>
+
+          <!-- CORAL STREG under overskriften -->
+          <!-- 
+            w-28                    = 112px bred
+            h-1.5                   = 6px høj
+            bg-stroke-secondary-accent = coral farve
+            -mt-4                   = NEGATIV margin-top -16px (rykker stregen tættere på overskriften)
+          -->
           <div class="w-28 h-1.5 bg-stroke-secondary-accent -mt-4"></div>
+
           <Text teksttype="brødtekst-body" stylingclasses="text-weakest">Hos Adventure Park har vi ikke faste åbningstider, da parken kun er åben i forbindelse med bookede aktiviteter. Det betyder, at jeres besøg planlægges efter jeres ønsker og behov.</Text>
           <Text teksttype="brødtekst-body" stylingclasses="text-weakest">Vi er meget fleksible og tilbyder aktiviteter både på hverdage og i weekender – samt morgen, dag og aften. Vi anbefaler dog, at I booker i god tid, da vi skal planlægge jeres aktivitet, finde instruktører og klargøre banerne, så I får den bedst mulige oplevelse.</Text>
           <Text teksttype="brødtekst-body" stylingclasses="text-weakest">I er altid velkomne til at ringe, hvis I har spørgsmål eller ønsker at høre om mulighederne på en specifik dag og tidspunkt.</Text>
@@ -52,20 +196,38 @@ import Book_section from "../components/Book_section.astro";
       </div>
     </div>
   </section>
-  <!-- START PÅ MAP SEKTION -->
-  <div class="w-full bg-cover bg-center py-20
-         bg-[url('/img/map_mobile.webp')]
-         lg:bg-[url('/img/map.webp')]">
+  <!-- SLUT PÅ ÅBNINGSTIDER -->
+
+  <!-- ============================================== -->
+  <!-- MAP SEKTION - kort med rutevejledning          -->
+  <!-- ============================================== -->
+  <!-- 
+    w-full                    = fylder hele bredden
+    bg-cover bg-center        = baggrundsbillede dækker og centreres
+    py-20                     = padding top/bund 80px
+    bg-[url('...')]           = mobil-baggrundsbillede
+    lg:bg-[url('...')]        = desktop-baggrundsbillede
+  -->
+  <div class="w-full bg-cover bg-center py-20 bg-[url('/img/map_mobile.webp')] lg:bg-[url('/img/map.webp')]">
     <Map />
   </div>
-
   <!-- SLUT PÅ MAP SEKTION -->
 
-  <!-- START PÅ FAQ -->
+  <!-- ============================================== -->
+  <!-- FAQ SEKTION - ofte stillede spørgsmål          -->
+  <!-- ============================================== -->
+  <!-- 
+    bg-bg-beige-400          = beige baggrund
+    py-20                    = padding top/bund 80px
+    px-8                     = padding sider 32px på mobil
+    lg:px-20                 = padding sider 80px på desktop
+  -->
   <div class="bg-bg-beige-400 py-20 px-8 lg:px-20">
     <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-stronger text-center mb-10">Få svar på dine spørgsmål</Heading>
 
+    <!-- Wrapper for FAQ kortene - max-w-3xl = max 768px bred, mx-auto = centreret -->
     <div class="max-w-3xl mx-auto">
+      <!-- Hvert FAQ-kort har spørgsmål og svar som props - lukker/åbner ved klik -->
       <FAQ_card spørgsmål="Hvor fysisk krævende er aktiviteterne?" svar="Vores aktiviteter varierer i intensitet, men de fleste kræver et moderat niveau af fysisk aktivitet. Sværhedsgrad og tempo kan tilpasses jeres gruppe, så alle kan være med – uanset erfaring og niveau." />
       <FAQ_card spørgsmål="Hvad skal vi selv have med?" svar="I skal som udgangspunkt blot møde op i praktisk tøj, der passer til vejret. Alt nødvendigt udstyr, såsom sikkerhedsudstyr og spillegrej, bliver stillet til rådighed. Det er også muligt at medbringe egen mad eller tilkøbe spisning i parken." />
       <FAQ_card spørgsmål="Kan vi kombinere flere aktiviteter på samme dag?" svar="Ja, vi tilbyder et bredt udvalg af aktiviteter, som kan kombineres efter jeres ønsker. Vi hjælper gerne med at sammensætte en aktivitetspakke, der passer til jeres gruppe og arrangement." />
@@ -75,20 +237,41 @@ import Book_section from "../components/Book_section.astro";
     </div>
   </div>
   <!-- SLUT PÅ FAQ -->
-  <!-- START PÅ KONTAKT -->
+
+  <!-- ============================================== -->
+  <!-- KONTAKT SEKTION - formular til at sende email  -->
+  <!-- ============================================== -->
+  <!-- bg-bg-army-700 = mørk grøn baggrund -->
   <div class="bg-bg-army-700 py-20 px-8 lg:px-20">
     <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-weakest text-center mb-6">Kontakt</Heading>
 
+    <!-- Intro-tekst med klikbart telefonnummer -->
+    <!-- max-w-2xl = max 672px bred, mx-auto = centreret -->
     <Text teksttype="brødtekst-body" stylingclasses="text-weakest text-center max-w-2xl mx-auto mb-10">
       Har du spørgsmål, eller vil du booke en tid? Udfyld formularen, så vender vi tilbage til dig hurtigst muligt. Du er også altid velkommen til at ringe direkte på <a href="tel:60887766" class="underline">60 88 77 66</a> – vi sidder klar til at hjælpe.
     </Text>
 
+    <!-- KONTAKTFORMULAR - max-w-4xl = max 896px bred -->
     <form class="max-w-4xl mx-auto">
       <Heading htmlheading="h3" size="small" font="heading" stylingclasses="text-weakest mb-6">Send os en e-mail</Heading>
 
+      <!-- FORNAVN + EFTERNAVN i flex (under hinanden på mobil, ved siden af hinanden på desktop) -->
+      <!-- 
+        flex-col                = under hinanden på mobil
+        lg:flex-row             = ved siden af hinanden på desktop
+        gap-4                   = 16px afstand
+        mb-6                    = margin-bottom 24px
+      -->
       <div class="flex flex-col lg:flex-row gap-4 mb-6">
+        <!-- flex-1 = hver div fylder lige meget plads -->
         <div class="flex-1">
           <Text teksttype="brødtekst-card" stylingclasses="text-weakest font-heading mb-2">FORNAVN</Text>
+          <!-- 
+            w-full                  = fylder fuld bredde
+            bg-bg-beige-200         = lys beige baggrund
+            p-3                     = padding 12px
+            border-stroke-dark      = mørk kantfarve
+          -->
           <input type="text" id="fornavn" name="fornavn" class="w-full bg-bg-beige-200 p-3 border-stroke-dark" />
         </div>
         <div class="flex-1">
@@ -97,11 +280,14 @@ import Book_section from "../components/Book_section.astro";
         </div>
       </div>
 
+      <!-- BESKED tekstfelt -->
       <div class="mb-6">
         <Text teksttype="brødtekst-card" stylingclasses="text-weakest font-heading mb-2">SKRIV DIN HENVENDELSE HER</Text>
+        <!-- rows="6" = højde svarende til 6 tekstlinjer -->
         <textarea id="besked" name="besked" rows="6" class="w-full bg-bg-beige-200 p-3 border-stroke-dark"></textarea>
       </div>
 
+      <!-- SEND KNAP - centreret -->
       <div class="flex justify-center">
         <Link href="#" variant="secondary" size="large">Send</Link>
       </div>
@@ -109,7 +295,10 @@ import Book_section from "../components/Book_section.astro";
   </div>
   <!-- SLUT PÅ KONTAKT -->
 
-  <!-- START PÅ BOOK SECTION -->
+  <!-- ============================================== -->
+  <!-- BOOK SEKTION - CTA i bunden af siden           -->
+  <!-- ============================================== -->
+  <!-- Komponent med coral baggrund + overskrift + book knap -->
   <Book_section heading="Klar til at give os et besøg?" linktext="Book nu" />
   <!-- SLUT PÅ BOOK SECTION -->
 </MainLayout>

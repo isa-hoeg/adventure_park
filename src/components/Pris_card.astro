@@ -8,7 +8,7 @@ import '../styles/tailwind.css';
 
 <article
   class:list={[
-    "flex flex-col justify-between w-full rounded-lg p-8", bg, height]}>
+    "flex flex-col justify-between w-full rounded-lg p-8 intersect:animate-fade-left animate-once animate-duration-[2000ms]", bg, height]}>
     <div class="bg-neongreen-400 px-2 py-1 rounded-md w-fit">
         <Heading htmlheading="h4" size="xsmall" font="heading" stylingclasses="text-stronger">{badge}</Heading>
     </div>
@@ -52,5 +52,5 @@ import '../styles/tailwind.css';
             </div>
         </div>
     </div>
-    <Link href="#" variant="primary" size="large">book</Link>
+    <Link href="/booking" variant="primary" size="large">book</Link>
 </article>

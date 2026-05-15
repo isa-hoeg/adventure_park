@@ -27,48 +27,15 @@ import Book_section from "../components/Book_section.astro"; // Bunden af siden 
     lg:h-[500px]              = højde 500px på desktop
     bg-[url('...')]           = baggrundsbillede
   -->
-  <div class="relative w-full bg-cover bg-center lg:bg-bottom h-80 lg:h-[500px] bg-[url('/img/praktisk_info_hero.webp')]">
-    <!-- MØRKT OVERLAY ovenpå baggrundsbilledet (gør teksten lettere at læse) -->
-    <!-- 
-      absolute inset-0        = fylder hele forælderen (top:0, right:0, bottom:0, left:0)
-      bg-bg-army-700          = mørk grøn farve
-      opacity-60              = 60% gennemsigtighed
-    -->
-    <div class="absolute inset-0 bg-bg-army-700 opacity-60"></div>
+  <!-- HERO MED BILLEDE OG TEKST OVENPÅ -->
 
-    <!-- OBJEKT BILLEDE (udstyr-billede der ligger ovenpå hero) -->
-    <!-- 
-      absolute                = placeres ovenpå (position absolute)
-      scale-54                = 54% størrelse på mobil
-      left-37 top-32          = position på mobil
-      lg:scale-105            = 105% størrelse på desktop
-      lg:left-[840px]         = position fra venstre på desktop
-      lg:top-30               = position fra toppen på desktop
-    -->
-    <img src="/img/object-praktisk.webp" alt="udstyr" class="absolute scale-54 left-37 top-32 lg:scale-105 lg:left-[840px] lg:top-30" />
-
-    <!-- TEKST-INDHOLD (overskrift + coral streg) -->
-    <!-- 
-      relative                = sikrer at teksten ligger ovenpå overlay'et
-      h-full                  = fylder forælderens fulde højde
-      flex items-center       = centrerer indholdet vertikalt
-      px-10                   = padding 40px i siderne
-    -->
-    <div class="relative h-full flex items-center px-10">
-      <div>
-        <Heading htmlheading="h1" size="large" font="display" stylingclasses="text-weakest text-center lg:text-left intersect:animate-fade-down animate-once animate-duration-[2000ms]">Praktisk info</Heading>
-
-        <!-- CORAL STREG under overskriften -->
-        <!-- 
-          border-4              = 4px tyk
-          w-32 lg:w-80          = bredde 128px på mobil, 320px på desktop
-          border-bg-coral-400   = coral farve
-          mx-auto lg:mx-0       = centreret på mobil, venstrejusteret på desktop
-        -->
-        <div class="border-4 lg:border-6 w-32 lg:w-80 border-bg-coral-400 mx-auto lg:mx-0 intersect:animate-fade-right animate-once animate-duration-[2000ms]"></div>
-      </div>
+  <div class="w-full h-[500px] md:h-[600px] lg:h-[500px] bg-cover bg-no-repeat bg-center lg:bg-bottom bg-[url('/img/hero-praktisk-info-mobil.webp')] md:bg-[url('/img/hero-praktisk-info.webp')]">
+    <div class="flex flex-col gap-2 py-20">
+      <Heading htmlheading="h1" size="large" font="display" stylingclasses="text-weakest text-center lg:text-start lg:pl-20 lg:pt-20 intersect:animate-fade-down animate-once animate-duration-[2000ms]"> Praktisk info </Heading>
+      <div class="mx-auto lg:mx-0 lg:ml-25 w-28 h-2 lg:h-3 lg:w-48 bg-stroke-secondary-accent intersect:animate-fade-right animate-once animate-duration-[2000ms]"></div>
     </div>
   </div>
+
   <!-- SLUT PÅ HERO -->
 
   <!-- ============================================== -->

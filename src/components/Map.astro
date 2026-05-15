@@ -3,14 +3,17 @@ import Heading from "./Heading.astro";
 import Text from "./Text.astro";
 import Link from "./Link.astro";
 ---
-<map class="w-full bg-cover bg-center py-20">
-  <div class="max-w-6xl mx-auto px-6 lg:px-10">
-    
-    <!-- GRID WRAPPER -->
-    <div class="grid grid-cols-1 grid-rows-2 lg:grid-rows-1 lg:grid-cols-2 gap-10 items-center">
 
-      <!-- TEKSTBOKS -->
-      <div class="bg-bg-beige-200 p-8 lg:p-12 rounded-xl intersect:animate-fade-right animate-once animate-duration-[2000ms]">
+ <section class="bg-bg-army-700 relative h-270 lg:h-160 overflow-hidden flex justify-center">
+             <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2236.044320885001!2d12.308429778295892!3d55.913931869918116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNTXCsDU0JzQ5LjciTiAxMsKwMTgnMzUuNiJF!5e0!3m2!1sda!2sdk!4v1778840302056!5m2!1sda!2sdk"
+                class="absolute inset-0 w-full h-full opacity-60" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            
+            <div class="bg-bg-beige-200 p-8 absolute w-90 top-10 lg:left-15 lg:top-18 lg:w-150 lg:p-12 rounded-xl intersect:animate-fade-right animate-once animate-duration-[2000ms]">
         
         <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-stronger mb-4">Sådan finder du os</Heading>
         <Text teksttype="brødtekst-body" stylingclasses="text-stronger">
@@ -29,10 +32,6 @@ import Link from "./Link.astro";
           href="https://www.google.com/maps/dir//AdventurePark,+Jagtvej,+3400+Hiller%C3%B8d/@55.9137561,12.306853,17z/data=!4m18!1m8!3m7!1s0x465240c50c2f8445:0x5716ee33179e4617!2sAdventurePark!8m2!3d55.913777!4d12.309476!15sChhhZHZlbnR1cmUgcGFyayBoaWxsZXLDuGSSAQRwYXJr4AEA!16s%2Fg%2F1thsp_fq!4m8!1m0!1m5!1m1!1s0x465240c50c2f8445:0x5716ee33179e4617!2m2!1d12.309476!2d55.913777!3e1" target="_blank" variant="secondary" size="large" stylingclasses="mt-6 inline-block intersect:animate-fade-left animate-once animate-duration-[2000ms]">
           Se rute
         </Link>
-     </div>
-
-      <!-- HØJRE SIDE (MAP VISUELT / TOM TIL BALANCE) -->
-      <div class="hidden lg:block"></div>
-    </div>
-  </div>
-</map>
+     </div> 
+            
+        </section>

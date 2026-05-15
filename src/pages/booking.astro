@@ -1,0 +1,54 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Link from "../components/Link.astro";
+import Heading from "../components/Heading.astro";
+import Text from "../components/Text.astro";
+import Button from "../components/Button.astro";
+---
+
+<MainLayout>
+    <main class="bg-bg-beige-200 p-8">
+        <section class="bg-bg-beige-300 rounded-lg">
+
+            <!-- PROGRESSBAR -->
+
+            <!-- TRIN 1 -->
+            <div class="p-8">
+                <div class="flex flex-row gap-4">
+                    <div class="relative">
+                        <select id="aktivitet" name="aktivitet" class=" bg-bg-beige-300 border-1 border-stroke-dark px-4 py-3  text-stronger text-base font-body w-fit appearance-none focus:border-2 focus:outline-none focus:border-stroke-primary-accent">
+                            <option value="">Vælg aktivitet</option>
+                            <option>Bowtag</option>
+                            <option>Bueskydning</option>
+                            <option>Dødningbold</option>
+                            <option>Forhindringsbane</option>
+                            <option>Hardball</option>
+                            <option>Kæmpe Bordfodbold</option>
+                            <option>Lasertag</option>
+                            <option>Megaboksning</option>
+                            <option>Paintball</option>
+                            <option>Spydkast</option>
+                            <option>Stokkekamp</option>
+                            <option>Sumobrydning</option>
+                        </select>
+                        <span class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-2xl"></span>
+                    </div>
+                    <div class="relative">
+                        <select id="tid" name="tid" class=" bg-bg-beige-300 border-1 border-stroke-dark px-4 py-3  text-stronger text-base font-body w-45 appearance-none focus:border-2 focus:outline-none focus:border-stroke-primary-accent">
+                            <option value="">Vælg varighed</option>
+                            <option>1 time</option>
+                            <option>2 timer</option>
+                        </select>
+                        <span class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-2xl"></span>
+                    </div>
+                    <div>
+                        <input id="amount" type="text" name="antal" placeholder="Antal deltagere" class="bg-bg-beige-300 border-1 border-stroke-dark placeholder:text-strong px-4 py-3 appearance-none focus:border-2 focus:outline-none focus:border-stroke-primary-accent" />
+                    </div>
+                </div>
+                
+            </div>
+
+        </section>
+    </main>
+
+</MainLayout>

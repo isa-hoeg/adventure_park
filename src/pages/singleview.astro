@@ -8,17 +8,17 @@ import Fold_ud_card from "../components/Fold_ud_card.astro";
 import Book_section from "../components/Book_section.astro";
 ---
 
-<MainLayout title="">
+<MainLayout title="Paintball">
      <div class="progress-bar h-4 z-110 fixed w-full bg-[url('/img/progress_bar.svg')] left-0 origin-top-left top-0 right-0"></div>
   <main class="">
     <!-- START PÅ HERO SEKTION -->
     <section class="bg-bg-army-700 relative h-150 w-full bg-cover bg-[77%_center] bg-[url('/img/hero_paintball_bg.webp')] pt-20 flex flex-col justify-between lg:pt-40 lg:h-157">
       <div class="flex flex-col justify-center items-center gap-7">
-        <Heading htmlheading="h1" size="large" font="display" stylingclasses="text-weakest">Paintball</Heading>
-        <Link href="#" variant="primary" size="large" stylingclasses="w-fit">book</Link>
+        <Heading htmlheading="h1" size="large" font="display" stylingclasses="text-weakest intersect:animate-fade-down animate-once animate-duration-[2000ms]">Paintball</Heading>
+        <Link href="/booking" variant="primary" size="large" stylingclasses="w-fit">book</Link>
       </div>
       <img src="/img/hero_paintball_overlay.webp" alt="Paintball overlay" class="absolute top-47 left-4 scale-102 z-0 origin-top lg:scale-31 lg:top-47 lg:left-77" />
-      <div class="z-20 grid grid-cols-2 gap-6 px-10 bg-bg-beige-opacity py-5 lg:flex lg:flex-row lg:justify-between lg:px-60 lg:py-10">
+      <div class="z-20 grid grid-cols-2 gap-6 px-10 bg-bg-beige-opacity py-5 lg:flex lg:flex-row lg:justify-between lg:px-60 lg:py-10 intersect:animate-fade-up animate-once animate-duration-[2000ms]">
         <div class="flex flex-row gap-2">
           <img src="/icons/personer_ikon_neon.svg" alt="ikon personer" class="w-7" />
           <Heading htmlheading="h3" size="small" font="heading" stylingclasses="text-stronger">8-24 pers</Heading>
@@ -42,7 +42,7 @@ import Book_section from "../components/Book_section.astro";
     <!-- START PÅ OM PAINTBALL I AP SEKTION -->
     <section class="bg-bg-beige-200 grid grid-cols-1 px-8 gap-10 lg:grid-cols-2 lg:items-center py-20">
       <div class="flex flex-col gap-6">
-        <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-stronger">paintball i adventure park</Heading>
+        <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-stronger intersect:animate-fade-right animate-once animate-duration-[2000ms]">paintball i adventure park</Heading>
         <Text teksttype="brødtekst-body" stylingclasses="text-stronger">Velkommen til Adventure Parks varierede udvalg af paintball baner. Paintball er en fantastisk sjov aktivitet, der kan spilles på mange niveauer. Derfor har vi valgt at have et varieret udvalg af paintball scenarier der kan tilfredsstille et hvert ønske.</Text>
         <Text teksttype="brødtekst-body" stylingclasses="text-stronger">Vi spiller med kvalitets udstyr fra Tippmann og med kvalitet paintballs fra en af verdens førende producenter. Når I spiller paintball i Adventure Park, er I altid sikre på at få udleveret rent og nyvasket udstyr (sikkerhedsmaske og heldragt). </Text>
         <Text teksttype="brødtekst-body" stylingclasses="text-stronger">Vi sætter en ære i at vores kunder forlader os med en god oplevelse.</Text>
@@ -56,14 +56,14 @@ import Book_section from "../components/Book_section.astro";
     <!-- START PÅ PRIS SEKTION -->
     <section class="flex flex-col px-10 py-20 lg:px-20 bg-bg-black-800 gap-8">
       <div class="flex flex-col items-center">
-        <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-weakest">Priser pr. person</Heading>
+        <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-weakest intersect:animate-fade-up animate-once animate-duration-[2000ms]">Priser pr. person</Heading>
       </div>
       <div class="grid grid-cols-1 gap-6 justify-center items-center lg:grid-cols-3">
         <Pris_card height="h-115 lg:h-130" bg="bg-bg-beige-200" title1="spil 200 kugler" pris="300 kr" pris2="350 kr" tid="1 time" tid2="2 timer" info1="3oo kugler" info2="Spiludstyr" info3="Instruktion" />
         <Pris_card badge="Mest populære" height="h-115 lg:h-145" bg="bg-bg-coral-400" title1="spil 300 kugler" pris="375 kr" pris2="400 kr" tid="1 time" tid2="2 timer" info1="3oo kugler" info2="Spiludstyr" info3="Instruktion" />
         <Pris_card height="h-115 lg:h-130" bg="bg-bg-beige-200" title1="spil fri antal kugler" pris="400 kr" pris2="500 kr" tid="1 time" tid2="2 timer" info1="Fri antal kugler" info2="Spiludstyr" info3="Instruktion" />
       </div>
-      <div class="flex flex-row gap-2 bg-bg-beige-200 p-4 rounded-lg items-center lg:gap-4 lg:p-8">
+      <div class="flex flex-row gap-2 bg-bg-beige-200 p-4 rounded-lg items-center lg:gap-4 lg:p-8 intersect:animate-fade-right animate-once animate-duration-[2000ms]">
         <img src="/icons/procent_ikon.svg" alt="" />
         <Text teksttype="brødtekst-body">Ved 20+ deltagere tilbyder vi 10% rabat på vejledende priser.</Text>
       </div>
@@ -74,7 +74,7 @@ import Book_section from "../components/Book_section.astro";
     <section class="bg-[url('/img/paintball_bane_mobil.webp')] bg-cover h-300 w-full lg:h-150 lg:bg-[url('/img/paintball_bane.webp')]">
       <div class="bg-bg-army-opacity p-10 grid grid-cols-1 lg:w-190 lg:h-full items-center">
         <div class="flex flex-col gap-6">
-          <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-weakest">om spillet</Heading>
+          <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-weakest intersect:animate-fade-up animate-once animate-duration-[2000ms]">om spillet</Heading>
           <Text teksttype="brødtekst-body" stylingclasses="text-weakest">Paintball er et holdspil, hvor det grundlæggende gælder om at fjerne modspillere fra banen, ved at markere dem med en farvemarkering.</Text>
           <Text teksttype="brødtekst-body" stylingclasses="text-weakest">Måske er der lagt missioner ind i spillet, som holdet skal samarbejde om at fuldføre. Når alle modstandere er markeret, eller når missionen er fuldført, er spillet færdigt og alle gør klar til et nyt spil.</Text>
           <Text teksttype="brødtekst-body" stylingclasses="text-weakest">Alle spillere er udstyret med en paintballmarkør, en sikkerhedsmaske der dækker hele ansigtet og en heldragt. Der spilles i 2 eller flere hold på et afgrænset område (bane), der er tilpasset antallet af deltagere.</Text>
@@ -85,8 +85,8 @@ import Book_section from "../components/Book_section.astro";
 
     <section class="bg-bg-beige-200 p-8 grid grid-cols-1 gap-10 lg:grid-cols-2 lg:py-20">
       <div class="flex flex-col gap-6 lg:order-2">
-        <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-stronger">praktisk info:</Heading>
-        <ul class="list-disc pl-4">
+        <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-stronger intersect:animate-fade-up animate-once animate-duration-[2000ms]">praktisk info:</Heading>
+        <ul class="list-disc pl-4 intersect:animate-fade-right animate-once animate-duration-[2000ms]">
           <li>
             <div class="flex flex-col">
               <Heading htmlheading="h4" size="xsmall" font="heading" stylingclasses="text-stronger">deltagere:</Heading>

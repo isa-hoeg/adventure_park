@@ -17,8 +17,8 @@ import Insta_card from "../components/Insta_card.astro";
 <MainLayout title="Forside">
    <div class="progress-bar h-4 z-110 fixed w-full bg-[url('/img/progress_bar.svg')] left-0 origin-top-left top-0 right-0"></div>
   <!-- START PÅ HERO -->
-  <section class="bg-[url('/img/hero_bg_mobil.webp')] bg-bg-army-700 relative h-192 w-full bg-contain bg-center bg-no-repeat lg:bg-[url('/img/hero_bg.webp')] lg:h-158 lg:gap-4">
-    <div class="bg-bg-army-opacity flex flex-col items-center justify-center text-center px-8 py-12 gap-6 lg:text-left lg:w-170 lg:items-start lg:ml-35 lg:py-8">
+  <section class="bg-[url('/img/hero_bg_mobil.webp')] bg-bg-army-700 relative h-188 w-full bg-contain bg-center bg-no-repeat lg:bg-[url('/img/hero_bg.webp')] lg:h-158 lg:gap-4">
+    <div class="bg-bg-army-opacity flex flex-col items-center justify-center text-center px-8 py-12 gap-6 lg:text-left lg:w-170 lg:items-start lg:ml-30 lg:py-8">
       <Heading htmlheading="h1" size="display" font="display" stylingclasses="text-neongreen-400 animate-fade-down animate-once animate-duration-500 animate-ease-linear">Klar til kamp?</Heading>
       <Text teksttype="brødtekst-body" stylingclasses="text-weakest font-semibold lg:w-120 animate-fade-right animate-once animate-duration-500 animate-delay-600 animate-ease-linear">Vi har Sjællands største baner. Saml vennerne, kollegaerne eller familien og book en oplevelse fyldt med fart, grin og konkurrence.</Text>
       <div class="flex flex-row gap-4 animate-fade-right animate-once animate-duration-500 animate-delay-1200 animate-ease-linear">
@@ -26,8 +26,8 @@ import Insta_card from "../components/Insta_card.astro";
         <Text><Link href="/alle_aktiviteter" variant="secondary" size="large">se alle aktiviteter</Link></Text>
       </div>
     </div>
-    <img src="/img/hero_bg_overlay_mobil.webp" alt="overlay af familie" class="absolute top-97 left-0.5 right-1 lg:hidden">
-    <img src="/img/hero_bg_overlay.webp" alt="overlay af familie" class="hidden lg:block lg:absolute lg:origin-top lg:top-25 lg:left-61 lg:scale-46 ">
+    <img src="/img/hero_bg_mobil_overlay.webp" alt="overlay af familie" class="absolute top-97 left-0.5 right-1 lg:hidden">
+    <img src="/img/hero_bg_overlay.webp" alt="overlay af familie" class="hidden lg:block lg:absolute lg:origin-top lg:top-17 lg:left-59 lg:scale-50 ">
   </section>
 
   <!-- SLUT PÅ HERO -->
@@ -173,13 +173,11 @@ import Insta_card from "../components/Insta_card.astro";
   <!-- SLUT PÅ ANMELDELSESSEKTION -->
 
   <!-- START PÅ MAP SEKTION -->
-  <div class="w-full bg-cover bg-center py-20
-         bg-[url('/img/map_mobile.webp')]
-         lg:bg-[url('/img/map.webp')]">
-    <Map />
-  </div>
-
+  <Map/>
   <!-- SLUT PÅ MAP SEKTION -->
+
+ 
+        
 
   <!--  SOME SEKTION -->
  <section class="bg-bg-beige-400 py-10 lg:py-20">

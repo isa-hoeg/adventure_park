@@ -4,6 +4,9 @@
 @plugin '@tailwindcss/forms';
 @import "tailwindcss-animated";
 @import "tailwindcss-intersect";
+@plugin "daisyui" {
+  themes: false;
+}
 
 /* @font-face {
   font-family: "Honk";
@@ -19,6 +22,8 @@
   font-family: "Domine";
   src: url("/fonts/Domine-Regular.ttf") format("truetype");
 } */
+
+
 
 @theme {
   /* Her tilføjes theme variable // tokens */
@@ -73,6 +78,7 @@
   --font-heading: "Oswald", sans-serif;
   --font-body: "DM Sans", sans-serif;
 }
+
 
 @keyframes scroll {
   0% {

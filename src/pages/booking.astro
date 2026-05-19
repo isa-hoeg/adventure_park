@@ -4,6 +4,7 @@ import Link from "../components/Link.astro";
 import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
 import Button from "../components/Button.astro";
+
 ---
 
 <MainLayout>
@@ -177,8 +178,24 @@ import Button from "../components/Button.astro";
             </div>
 
             <!-- TRIN 2 - DATO & TID-->
-             <div>
-
+             <div class="flex flex-col lg:flex-row gap-4 p-6 lg:p-8 lg:gap-10">
+                <div class="flex flex-col gap-2">
+                    <label for="dato" class="block text-sm lg:text-base font-body">Vælg dato</label>
+                    <calendar-date class="cally bg-bg-beige-200 border border-stroke-dark rounded-box">
+                        <svg aria-label="Previous" class="fill-current size-4" slot="previous" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M15.75 19.5 8.25 12l7.5-7.5"></path></svg>
+                        <svg aria-label="Next" class="fill-current size-4" slot="next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="m8.25 4.5 7.5 7.5-7.5 7.5"></path></svg>
+                        <calendar-month ></calendar-month>
+                    </calendar-date>
+                </div>
+                <div>
+                    <label for="dato" class="block text-sm lg:text-base font-body mb-2">Vælg start tidspunkt</label>
+                    <div class="flex flex-row gap-1 lg:justify-center items-center">
+                        <Text teksttype="brødtekst-body">KL</Text>
+                        <input id="time" type="text" name="time" placeholder="12" class="bg-bg-beige-200 border-1 border-stroke-dark placeholder:text-strong px-4 py-3 text-sm lg:text-base appearance-none focus:border-2 focus:outline-none  focus:border-stroke-dark focus:ring-0 w-20 lg:w-30" />
+                        <Text teksttype="brødtekst-body">:</Text>
+                        <input id="minutter" type="text" name="minutter" placeholder="30" class="bg-bg-beige-200 border-1 border-stroke-dark placeholder:text-strong px-4 py-3 text-sm lg:text-base appearance-none focus:border-2 focus:outline-none  focus:border-stroke-dark focus:ring-0 w-20 lg:w-30" />
+                    </div>
+                </div>
              </div>
 
 
@@ -260,7 +277,9 @@ import Button from "../components/Button.astro";
 
 </MainLayout>
 
-
+<script>
+  import "cally";
+</script>
 
 <!-- TILFØJER VALG AF EKSTRA AKTIVITETER -->
 <script>

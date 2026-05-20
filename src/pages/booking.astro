@@ -4,284 +4,522 @@ import Link from "../components/Link.astro";
 import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
 import Button from "../components/Button.astro";
-
 ---
 
 <MainLayout>
-    <main class="bg-bg-beige-200 p-6 lg:px-20 ">
-        <div class="flex justify-center items-center pb-10">
-            <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-stronger p-10 items-center">book din aktivitet her!</Heading>
+  <main class="bg-bg-beige-200 p-6 lg:px-20">
+    <div class="flex justify-center items-center pb-10">
+      <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-stronger text-center whitespace-nowrap p-5 lg:p-10">book din aktivitet her!</Heading>
+    </div>
+    <div class="flex flex-col lg:flex-row justify-between gap-10 mb-20">
+      <section class="bg-bg-beige-300 rounded-lg lg:w-200">
+        <!-- PROGRESSBAR -->
+        <div class="relative p-8 lg:p-10">
+          <div class="w-full border-1 lg:border-2 border-bg-beige-500 lg:w-170 lg:absolute lg:left-15"></div>
+          <div class="flex flex-row gap-8 absolute origin-top top-4 left-6 lg:top-4 lg:gap-40">
+            <!-- TRIN 1 -->
+            <div class="flex flex-col items-center gap-2" data-step="1">
+              <div class="bg-bg-beige-200 border-2 border-stroke-primary-accent w-9 h-9 rounded-full flex items-center justify-center lg:w-12 lg:h-12">
+                <Text teksttype="brødtekst-card" stylingclasses="text-stronger font-semibold">1</Text>
+              </div>
+              <Text teksttype="brødtekst-card" stylingclasses="text-stronger text-center">Aktiviteter</Text>
+            </div>
+
+            <!-- TRIN 2 -->
+            <div class="flex flex-col items-center gap-2" data-step="2">
+              <div class="bg-bg-beige-400 border-1 border-bg-beige-500 w-9 h-9 rounded-full flex items-center justify-center lg:w-12 lg:h-12">
+                <Text teksttype="brødtekst-card" stylingclasses="text-weak">2</Text>
+              </div>
+              <Text teksttype="brødtekst-card" stylingclasses="text-weak text-center">Dato & tid</Text>
+            </div>
+
+            <!-- TRIN 3  -->
+            <div class="flex flex-col items-center gap-2" data-step="3">
+              <div class="bg-bg-beige-400 border-1 border-bg-beige-500 w-9 h-9 rounded-full flex items-center justify-center lg:w-12 lg:h-12">
+                <Text teksttype="brødtekst-card" stylingclasses="text-weak text-center">3</Text>
+              </div>
+              <Text teksttype="brødtekst-card" stylingclasses="text-weak">Oplysninger</Text>
+            </div>
+
+            <!-- TRIN 4 -->
+            <div class="flex flex-col items-center gap-2" data-step="4">
+              <div class="bg-bg-beige-400 border-1 border-bg-beige-500 w-9 h-9 rounded-full flex items-center justify-center lg:w-12 lg:h-12">
+                <Text teksttype="brødtekst-card" stylingclasses="text-weak text-center">4</Text>
+              </div>
+              <Text teksttype="brødtekst-card" stylingclasses="text-weak">Bekræftelse</Text>
+            </div>
+          </div>
         </div>
-        <div class="flex flex-col lg:flex-row justify-between gap-10">
-        <section class="bg-bg-beige-300 rounded-lg lg:w-200">
-            <!-- PROGRESSBAR -->
-             <div class="relative p-8 lg:p-10">
-                <div class=" w-full border-1 lg:border-2 border-bg-beige-500 lg:w-170 lg:absolute lg:left-15 "></div>
-                <div class="flex flex-row gap-8 absolute origin-top top-4 left-6 lg:top-4 lg:gap-40">
-                    <!-- TRIN 1 -->
-                    <div class="flex flex-col items-center gap-2" data-step="1">
-                        <div class="bg-bg-beige-200 border-2 border-stroke-primary-accent w-9 h-9 rounded-full flex items-center justify-center lg:w-12 lg:h-12 ">
-                            <Text teksttype="brødtekst-card" stylingclasses="text-stronger">1</Text>
-                        </div> 
-                        <Text teksttype="brødtekst-card" stylingclasses="text-stronger text-center">Aktiviteter</Text>   
-                    </div>
 
-                    <!-- TRIN 2 -->
-                    <div class="flex flex-col items-center gap-2" data-step="2">
-                        <div class="bg-bg-beige-400 border-1 border-bg-beige-500 w-9 h-9  rounded-full flex items-center justify-center lg:w-12 lg:h-12">
-                            <Text teksttype="brødtekst-card" stylingclasses="text-weak">2</Text>
-                        </div> 
-                        <Text teksttype="brødtekst-card" stylingclasses="text-weak text-center">Dato & tid</Text>   
-                    </div>
+        <!-- TRIN 1 - VALG AF AKTIVITET-->
+        <!-- tilføjelse af step i hvert trin i diven. Første trin har ikke "hidden" da denne skal være synlig fra start. "Step" gør at javascript kan finded dem som én liste -->
+        <div class="step flex flex-col gap-6 p-6 mt-8 lg:gap-8 lg:p-8 lg:mt-6">
+          <div class="flex flex-wrap gap-x-2 gap-y-2 lg:gap-4">
+            <div class="relative lg:flex-1">
+              <select id="aktivitet" name="aktivitet" class="cursor-pointer bg-bg-beige-200 border-1 border-stroke-dark px-4 py-3 text-stronger text-sm lg:text-base font-body w-full appearance-none focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0">
+                <option value="">Vælg aktivitet</option>
+                <option>Bowtag</option>
+                <option>Bueskydning</option>
+                <option>Dødningbold</option>
+                <option>Forhindringsbane</option>
+                <option>Hardball</option>
+                <option>Kæmpe Bordfodbold</option>
+                <option>Lasertag</option>
+                <option>Megaboksning</option>
+                <option>Paintball</option>
+                <option>Spydkast</option>
+                <option>Stokkekamp</option>
+                <option>Sumobrydning</option>
+              </select>
+              <span class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-2xl"></span>
+            </div>
+            <div class="relative lg:flex-1">
+              <select id="tid" name="tid" class="cursor-pointer bg-bg-beige-200 border-1 border-stroke-dark px-4 py-3 text-stronger text-sm lg:text-base font-body w-full appearance-none focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0">
+                <option value="">Vælg varighed</option>
+                <option>1 time</option>
+                <option>2 timer</option>
+              </select>
+              <span class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-2xl"></span>
+            </div>
+            <div class="lg:flex-1">
+              <input id="amount" type="text" name="antal" placeholder="Antal deltagere" class="bg-bg-beige-200 border-1 border-stroke-dark placeholder:text-strong px-4 py-3 text-sm lg:text-base appearance-none focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0 w-full" />
+            </div>
+          </div>
 
-                    <!-- TRIN 3  -->
-                    <div class="flex flex-col items-center gap-2" data-step="3">
-                        <div class="bg-bg-beige-400 border-1 border-bg-beige-500 w-9 h-9  rounded-full flex items-center justify-center lg:w-12 lg:h-12">
-                            <Text teksttype="brødtekst-card" stylingclasses="text-weak text-center">3</Text>
-                        </div> 
-                        <Text teksttype="brødtekst-card" stylingclasses="text-weak">Oplysninger</Text>   
-                    </div>
+          <!-- TILFØJER NY RÆKKE -->
+          <div id="activitiesWrapper" class="flex flex-col gap-4"></div>
 
-                    <!-- TRIN 4 -->
-                    <div class="flex flex-col items-center gap-2" data-step="4">
-                        <div class="bg-bg-beige-400 border-1 border-bg-beige-500 w-9 h-9  rounded-full flex items-center justify-center lg:w-12 lg:h-12">
-                            <Text teksttype="brødtekst-card" stylingclasses="text-weak text-center">4</Text>
-                        </div> 
-                        <Text teksttype="brødtekst-card" stylingclasses="text-weak">Bekræftelse</Text>   
-                    </div>
-                </div>     
-             </div>
+          <button type="button" id="addActivity" class="cursor-pointer w-fit inline-flex items-center gap-3 border-b-2 border-stroke-dark text-stronger hover:font-semibold p-1 text-sm lg:text-base"
+            >Tilføj flere aktiviteter
+            <span class="text-3xl leading-none">+</span>
+          </button>
 
-            <!-- TRIN 1 - VALG AF AKTIVITET-->
-            <div class="flex flex-col gap-6 p-6 mt-8 lg:gap-8 lg:p-8 lg:mt-6">
-                <div class="flex flex-wrap gap-x-2 gap-y-2 lg:gap-4">
-                    <div class="relative lg:flex-1">
-                        <select id="aktivitet" name="aktivitet" class="cursor-pointer bg-bg-beige-200 border-1 border-stroke-dark px-4 py-3  text-stronger text-sm lg:text-base font-body w-full appearance-none focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0">
-                            <option value="">Vælg aktivitet</option>
-                            <option>Bowtag</option>
-                            <option>Bueskydning</option>
-                            <option>Dødningbold</option>
-                            <option>Forhindringsbane</option>
-                            <option>Hardball</option>
-                            <option>Kæmpe Bordfodbold</option>
-                            <option>Lasertag</option>
-                            <option>Megaboksning</option>
-                            <option>Paintball</option>
-                            <option>Spydkast</option>
-                            <option>Stokkekamp</option>
-                            <option>Sumobrydning</option>
-                        </select>
-                        <span class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-2xl"></span>
-                    </div>
-                    <div class="relative lg:flex-1">
-                        <select id="tid" name="tid" class="cursor-pointer bg-bg-beige-200 border-1 border-stroke-dark px-4 py-3  text-stronger text-sm lg:text-base font-body w-full appearance-none focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0">
-                            <option value="">Vælg varighed</option>
-                            <option>1 time</option>
-                            <option>2 timer</option>
-                        </select>
-                        <span class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-2xl"></span>
-                    </div>
-                    <div class="lg:flex-1">
-                        <input id="amount" type="text" name="antal" placeholder="Antal deltagere" class="bg-bg-beige-200 border-1 border-stroke-dark placeholder:text-strong px-4 py-3 text-sm lg:text-base appearance-none focus:border-2 focus:outline-none  focus:border-stroke-dark focus:ring-0 w-full" />
-                    </div>
-                </div>
+          <!-- RADIOBUTTON, TILFØJNING AF SPISEMULIGHED -->
+          <div class="flex flex-col">
+            <div class="flex flex-row gap-2 items-center">
+              <input id="tilkobSpisning" type="checkbox" value="" name="checkbox" class="w-4 h-4 text-bg-army-700 rounded-full checked:border-neongreen-400 focus:ring-2 focus:outline-none border border-default appearance-none" />
+              <div class="flex flex-col">
+                <label for="tilkobSpisning" class="select-none text-sm lg:text-base font-body">Tilkøb spisning efter endt aktivitet</label>
+                <label for="tilkobSpisning" class="select-none text-sm lg:text-base font-body text-strong">Det er også muligt at medbringe eget mad</label>
+              </div>
+            </div>
+          </div>
 
-                <!-- TILFØJER NY RÆKKE -->
-                <div id="activitiesWrapper" class="flex flex-col gap-4"></div>
-
-                <button type="button" id="addActivity" class="cursor-pointer w-fit inline-flex items-center gap-3 border-b-2 border-stroke-dark text-stronger hover:font-semibold p-1 text-sm lg:text-base">Tilføj flere aktiviteter
-                    <span class="text-3xl leading-none">+</span>
-                </button>
-
-                <!-- RADIOBUTTON, TILFØJNING AF SPISEMULIGHED -->
-                <div class="flex flex-col ">
-                    <div class="flex flex-row gap-2 items-center">
-                        <input id="tilkobSpisning" type="checkbox" value="" name="checkbox" class="w-4 h-4 text-bg-army-700 rounded-full bg-bg-army-700 checked:border-neongreen-400 focus:ring-2 focus:outline-none  border border-default appearance-none">
-                        <div class="flex flex-col">
-                            <label for="tilkobSpisning" class="select-none text-sm lg:text-base font-body">Tilkøb spisning efter endt aktivitet</label>
-                            <label for="tilkobSpisning" class="select-none text-sm lg:text-base font-body text-strong">Det er også muligt at medbringe eget mad</label>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- SKJULT SOM DEFAULT -->
-                <div id="spisningFields" class="hidden flex-col gap-6">
-                    <div class="flex flex-row gap-2 lg:gap-4">
-                        <div class="relative">
-                            <select id="aktivitet" name="aktivitet" class="cursor-pointer bg-bg-beige-200 border-1 border-stroke-dark px-4 py-3  text-stronger text-sm lg:text-base font-body w-full appearance-none focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0">
-                                <option value="">Vælg Menu</option>
-                                <option>Kyllingburger Menu</option>
-                                <option>Okseburger Menu</option>
-                                <option>Sandwich & Frugt</option>
-                                <option>Mix Grill Menu</option>
-                                <option>Grill Selv Buffet</option>
-                                <option>Kage Buffet</option>
-                                <option>Grill Buffet</option>
-                                <option>børnefødselsdags Menu</option>
-                            </select>
-                            <span class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-2xl"></span>
-                        </div>
-                        <div>
-                            <input id="amount" type="text" name="antal" placeholder="Antal deltagere" class="bg-bg-beige-200 border-1 border-stroke-dark placeholder:text-strong px-4 py-3 appearance-none w-full focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0 text-sm lg:text-base" />
-                        </div>
-                    </div>
-
-                    <!-- ALLERGENER - TEKSTBOKS -->
-                    <div>
-                        <label for="allergener" class="block text-sm lg:text-base font-body mb-2">Allergener</label>
-                        <textarea id="allergener" 
-                        placeholder="Skriv hvis der er nogle med allergener, samt antallet" class="w-full min-h-40 bg-bg-beige-200 border-1 border-stroke-dark placeholder:text-strong px-4 py-3 appearance-none focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0 lg:w-110"></textarea>
-                    </div>
-                </div>
-
-                <div class="flex justify-end" id="nextStep">
-                    <Link href="#" variant="tertiary" size="small">Fortsæt</Link>
-                </div>
-                
-                <!-- HVIS MAN TILFØJER FLERE AKTIVITETER -->
-                <template id="activityTemplate">
-                    <div class="flex flex-wrap lg:flex-row gap-x-2 gap-y-2 lg:gap-4">
-                    <!-- VÆLG AKTIVITET -->
-                    <div class="relative">
-                        <select id="aktivitet" name="aktivitet" class=" bg-bg-beige-200 border-1 border-stroke-dark px-4 py-3  text-stronger text-sm lg:text-base font-body w-fit appearance-none focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0">
-                            <option value="">Vælg aktivitet</option>
-                            <option>Bowtag</option>
-                            <option>Bueskydning</option>
-                            <option>Dødningbold</option>
-                            <option>Forhindringsbane</option>
-                            <option>Hardball</option>
-                            <option>Kæmpe Bordfodbold</option>
-                            <option>Lasertag</option>
-                            <option>Megaboksning</option>
-                            <option>Paintball</option>
-                            <option>Spydkast</option>
-                            <option>Stokkekamp</option>
-                            <option>Sumobrydning</option>
-                        </select>
-                        <span class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-2xl"></span>
-                    </div>
-
-                    <!-- VÆLG VARIGHED -->
-                    <div class="relative">
-                        <select id="tid" name="tid" class=" bg-bg-beige-200 border-1 border-stroke-dark px-4 py-3  text-stronger text-sm lg:text-base font-body w-35 appearance-none focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0t">
-                            <option value="">Vælg varighed</option>
-                            <option>1 time</option>
-                            <option>2 timer</option>
-                        </select>
-                        <span class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-2xl"></span>
-                    </div>
-                        <div>
-                            <input id="amount" type="text" name="antal" placeholder="Antal deltagere" class="bg-bg-beige-200 border-1 border-stroke-dark placeholder:text-strong px-4 py-3 appearance-none focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0 text-sm lg:text-base" />
-                        </div>
-                    </div>
-                </template>
+          <!-- SKJULT SOM DEFAULT -->
+          <div id="spisningFields" class="hidden flex-col gap-6">
+            <div class="flex flex-row gap-2 lg:gap-4">
+              <div class="relative">
+                <select id="aktivitet" name="aktivitet" class="cursor-pointer bg-bg-beige-200 border-1 border-stroke-dark px-4 py-3 text-stronger text-sm lg:text-base font-body w-full appearance-none focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0">
+                  <option value="">Vælg Menu</option>
+                  <option>Kyllingburger Menu</option>
+                  <option>Okseburger Menu</option>
+                  <option>Sandwich & Frugt</option>
+                  <option>Mix Grill Menu</option>
+                  <option>Grill Selv Buffet</option>
+                  <option>Kage Buffet</option>
+                  <option>Grill Buffet</option>
+                  <option>børnefødselsdags Menu</option>
+                </select>
+                <span class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-2xl"></span>
+              </div>
+              <div>
+                <input id="amount" type="text" name="antal" placeholder="Antal deltagere" class="bg-bg-beige-200 border-1 border-stroke-dark placeholder:text-strong px-4 py-3 appearance-none w-full focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0 text-sm lg:text-base" />
+              </div>
             </div>
 
-            <!-- TRIN 2 - DATO & TID-->
-             <div class="flex flex-col lg:flex-row gap-4 p-6 lg:p-8 lg:gap-10">
-                <div class="flex flex-col gap-2">
-                    <label for="dato" class="block text-sm lg:text-base font-body">Vælg dato</label>
-                    <calendar-date class="cally bg-bg-beige-200 border border-stroke-dark rounded-box">
-                        <svg aria-label="Previous" class="fill-current size-4" slot="previous" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M15.75 19.5 8.25 12l7.5-7.5"></path></svg>
-                        <svg aria-label="Next" class="fill-current size-4" slot="next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="m8.25 4.5 7.5 7.5-7.5 7.5"></path></svg>
-                        <calendar-month ></calendar-month>
-                    </calendar-date>
-                </div>
-                <div>
-                    <label for="dato" class="block text-sm lg:text-base font-body mb-2">Vælg start tidspunkt</label>
-                    <div class="flex flex-row gap-1 lg:justify-center items-center">
-                        <Text teksttype="brødtekst-body">KL</Text>
-                        <input id="time" type="text" name="time" placeholder="12" class="bg-bg-beige-200 border-1 border-stroke-dark placeholder:text-strong px-4 py-3 text-sm lg:text-base appearance-none focus:border-2 focus:outline-none  focus:border-stroke-dark focus:ring-0 w-20 lg:w-30" />
-                        <Text teksttype="brødtekst-body">:</Text>
-                        <input id="minutter" type="text" name="minutter" placeholder="30" class="bg-bg-beige-200 border-1 border-stroke-dark placeholder:text-strong px-4 py-3 text-sm lg:text-base appearance-none focus:border-2 focus:outline-none  focus:border-stroke-dark focus:ring-0 w-20 lg:w-30" />
-                    </div>
-                </div>
-             </div>
-
-
-             <!-- TRIN 3 - OPLYSNINGER -->
-             <div class="flex flex-col gap-4 p-6 lg:p-8">
-                <div class="flex flex-col lg:flex-row gap-4">
-                    <div class="flex flex-col gap-2 flex-1">
-                        <label for="fornavn" class="block text-sm lg:text-base font-body text-stronger">Fornavn</label>
-                        <input id="fornavn" type="text" name="fornavn" placeholder="Lars" class="bg-bg-beige-200 border-1 border-stroke-dark placeholder:text-strong px-4 py-3 appearance-none focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0 text-sm lg:text-base" />
-                    </div>
-                    <div class="flex flex-col gap-2 flex-1">
-                        <label for="efternavn" class="block text-sm lg:text-base font-body text-stronger">Efternavn</label>
-                        <input id="efternavn" type="text" name="efternavn" placeholder="Petersen" class="bg-bg-beige-200 border-1 border-stroke-dark placeholder:text-strong px-4 py-3 appearance-none focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0 text-sm lg:text-base" />
-                    </div>
-                </div>
-                <div class="flex flex-col lg:flex-row gap-4">
-                    <div class="flex flex-col gap-2 flex-1">
-                        <label for="email" class="block text-sm lg:text-base font-body text-stronger">E-mail</label>
-                        <input id="email" type="text" name="email" placeholder="larspetersen@gmail.com" class="bg-bg-beige-200 border-1 border-stroke-dark placeholder:text-strong px-4 py-3 appearance-none focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0 text-sm lg:text-base" />
-                    </div>
-                    <div class="flex flex-col gap-2 flex-1">
-                        <label for="tlf" class="block text-sm lg:text-base font-body text-stronger">Telefon</label>
-                        <input id="tlf" type="text" name="tlf" placeholder="+45" class="bg-bg-beige-200 border-1 border-stroke-dark placeholder:text-strong px-4 py-3 appearance-none focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0 text-sm lg:text-base" />
-                    </div>
-                </div>
-                <div class="flex flex-col gap-2 flex-1">
-                    <label for="adresse" class="block text-sm lg:text-base font-body text-stronger">Adresse</label>
-                    <input id="adresse" type="text" name="adresse" placeholder="Nordre Fasanvej 12" class="bg-bg-beige-200 border-1 border-stroke-dark placeholder:text-strong px-4 py-3 appearance-none focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0 text-sm lg:text-base" />
-                </div>
-                <div class="flex flex-col flex-1">
-                    <label for="kommentarer" class="block text-sm lg:text-base font-body mb-2">Kommentarer & Særlige ønsker</label>
-                    <textarea id="allergener" placeholder="Skriv hvis der er nogle med allergener, samt antallet" class=" min-h-40 bg-bg-beige-200 border-1 border-stroke-dark placeholder:text-strong px-4 py-3 appearance-none focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0 text-sm lg:text-base"></textarea>
-                </div>
-                <div class="flex justify-end" id="nextStep">
-                    <Link href="#" variant="primary" size="small">Book nu</Link>
-                </div>
+            <!-- ALLERGENER - TEKSTBOKS -->
+            <div>
+              <label for="allergener" class="block text-sm lg:text-base font-body mb-2">Allergener</label>
+              <textarea id="allergener" placeholder="Skriv hvis der er nogle med allergener, samt antallet" class="w-full min-h-40 bg-bg-beige-200 border-1 border-stroke-dark placeholder:text-strong px-4 py-3 appearance-none focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0 lg:w-110"></textarea>
             </div>
+          </div>
 
-            <!-- TRIN 4 - BEKRÆFTELSE -->
-             <div class="flex flex-col gap-1 p-8 justify-center items-center">
-                <Heading htmlheading="h3" size="small" font="heading" stylingclasses="">DU HAR NU BOOKET!</Heading>
-                <Text teksttype="brødtekst-body" stylingclasses="text-stronger text-center w-full lg:w-130"><strong>Bemærk:</strong> Alle bookinger skal foretages og bliver bekræftet skriftligt. Bookinger er bindende og kan ikke afbestilles den sidste uge inden arrangementet.</Text>
-             </div>
-        </section>
+          <!-- Fjernet id="nextStep" fra div'en (du har samme id på flere trin, og id skal være unikt — derfor bruger vi en klasse på selve knappen i stedet)
+          Tilføjet class="next-btn" på <Link> så JavaScript kan finde knappen -->
+          <div class="flex justify-end">
+            <Link href="#" variant="tertiary" size="small" class="next-btn">Fortsæt</Link>
+          </div>
 
-        <section class="lg:w-100 bg-bg-beige-300 p-6 rounded-xl h-fit flex flex-col gap-4">
-            <Heading htmlheading="h3" size="small" font="heading" stylingclasses="py-4">Booking oversigt</Heading>
+          <!-- HVIS MAN TILFØJER FLERE AKTIVITETER -->
+          <template id="activityTemplate">
+            <div class="flex flex-wrap lg:flex-row gap-x-2 gap-y-2 lg:gap-4">
+              <!-- VÆLG AKTIVITET -->
+              <div class="relative">
+                <select id="aktivitet" name="aktivitet" class="bg-bg-beige-200 border-1 border-stroke-dark px-4 py-3 text-stronger text-sm lg:text-base font-body w-fit appearance-none focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0">
+                  <option value="">Vælg aktivitet</option>
+                  <option>Bowtag</option>
+                  <option>Bueskydning</option>
+                  <option>Dødningbold</option>
+                  <option>Forhindringsbane</option>
+                  <option>Hardball</option>
+                  <option>Kæmpe Bordfodbold</option>
+                  <option>Lasertag</option>
+                  <option>Megaboksning</option>
+                  <option>Paintball</option>
+                  <option>Spydkast</option>
+                  <option>Stokkekamp</option>
+                  <option>Sumobrydning</option>
+                </select>
+                <span class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-2xl"></span>
+              </div>
 
-            <!-- Vis kun udfyldte felter -->
-            <div x-show="data.aktivitet" class="flex flex-col gap-2">
-                <Heading htmlheading="h4" size="xsmall" font="heading" stylingclasses="">Aktivitet</Heading>
-                <div class="flex flex-row gap-2">
-                    <img src="/personer_ikon.svg" alt="personer" class="lg:w-7 lg:h-7">
-                    <Text teksttype="brødtekst-body" stylingclasses="text-stronger">Antal personer</Text>
-                </div>
-                <div class="flex flex-row gap-2">
-                    <img src="/ur_ikon.svg" alt="personer" class="lg:w-7 lg:h-7">
-                    <Text teksttype="brødtekst-body" stylingclasses="text-stronger">Tid</Text>
-                </div>
+              <!-- VÆLG VARIGHED -->
+              <div class="relative">
+                <select id="tid" name="tid" class="bg-bg-beige-200 border-1 border-stroke-dark px-4 py-3 text-stronger text-sm lg:text-base font-body w-35 appearance-none focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0t">
+                  <option value="">Vælg varighed</option>
+                  <option>1 time</option>
+                  <option>2 timer</option>
+                </select>
+                <span class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-2xl"></span>
+              </div>
+              <div>
+                <input id="amount" type="text" name="antal" placeholder="Antal deltagere" class="bg-bg-beige-200 border-1 border-stroke-dark placeholder:text-strong px-4 py-3 appearance-none focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0 text-sm lg:text-base" />
+              </div>
             </div>
-
-             <div x-show="data.aktivitet" class="flex flex-col gap-2 border-t border-stroke-dark py-4">
-                <Heading htmlheading="h4" size="xsmall" font="heading" stylingclasses="">Dato & tid</Heading>
-                <div class="flex flex-row gap-2">
-                    <img src="/icons/calendar.svg" alt="personer" class="lg:w-7 lg:h-7">
-                    <Text teksttype="brødtekst-body" stylingclasses="text-stronger">Antal personer</Text>
-                </div>
-            </div>
-
-            <!-- Total beregnes automatisk -->
-            <div x-show="total > 0" class="border-t border-stroke-dark flex flex-row justify-between pt-2">
-                <Heading htmlheading="h4" size="xsmall" font="heading" stylingclasses="">I alt</Heading>
-                <Heading htmlheading="h4" size="xsmall" font="heading" stylingclasses="">0000kr</Heading>
-            </div>
-
-        </section>
+          </template>
         </div>
-    </main>
+        <!-- TRIN 2 - DATO & TID-->
+        <div class="step hidden flex-col gap-4 p-6 lg:p-8">
+          <!-- Kalender + tidspunkt ved siden af hinanden på desktop -->
+          <div class="flex flex-col lg:flex-row gap-4 lg:gap-10">
+            <div class="flex flex-col gap-2">
+              <label for="dato" class="block text-sm lg:text-base font-body">Vælg dato</label>
+              <calendar-date class="cally bg-bg-beige-200 border border-stroke-dark rounded-box">
+                <svg aria-label="Previous" class="fill-current size-4" slot="previous" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M15.75 19.5 8.25 12l7.5-7.5"></path></svg>
+                <svg aria-label="Next" class="fill-current size-4" slot="next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="m8.25 4.5 7.5 7.5-7.5 7.5"></path></svg>
+                <calendar-month></calendar-month>
+              </calendar-date>
+            </div>
 
+            <div>
+              <label for="dato" class="block text-sm lg:text-base font-body mb-2">Vælg start tidspunkt</label>
+              <div class="flex flex-row gap-1 lg:justify-center items-center">
+                <Text teksttype="brødtekst-body">kl.</Text>
+                <input id="time" type="text" name="time" placeholder="12" class="bg-bg-beige-200 border-1 border-stroke-dark placeholder:text-strong px-4 py-3 text-sm lg:text-base appearance-none focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0 w-20 lg:w-30" />
+                <Text teksttype="brødtekst-body">:</Text>
+                <input id="minutter" type="text" name="minutter" placeholder="30" class="bg-bg-beige-200 border-1 border-stroke-dark placeholder:text-strong px-4 py-3 text-sm lg:text-base appearance-none focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0 w-20 lg:w-30" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Fortsæt-knap for sig selv nederst -->
+          <!-- Tilbage + Fortsæt knapper -->
+          <div class="flex justify-between">
+            <Link href="#" variant="tertiary" size="small" class="prev-btn">Tilbage</Link>
+            <Link href="#" variant="tertiary" size="small" class="next-btn">Fortsæt</Link>
+          </div>
+        </div>
+
+        <!-- TRIN 3 - OPLYSNINGER -->
+        <div class="step hidden flex-col gap-4 p-6 lg:p-8">
+          <div class="flex flex-col lg:flex-row gap-4">
+            <div class="flex flex-col gap-2 flex-1">
+              <label for="fornavn" class="block text-sm lg:text-base font-body text-stronger">Fornavn</label>
+              <input id="fornavn" type="text" name="fornavn" placeholder="Lars" class="bg-bg-beige-200 border-1 border-stroke-dark placeholder:text-strong px-4 py-3 appearance-none focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0 text-sm lg:text-base" />
+            </div>
+            <div class="flex flex-col gap-2 flex-1">
+              <label for="efternavn" class="block text-sm lg:text-base font-body text-stronger">Efternavn</label>
+              <input id="efternavn" type="text" name="efternavn" placeholder="Petersen" class="bg-bg-beige-200 border-1 border-stroke-dark placeholder:text-strong px-4 py-3 appearance-none focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0 text-sm lg:text-base" />
+            </div>
+          </div>
+          <div class="flex flex-col lg:flex-row gap-4">
+            <div class="flex flex-col gap-2 flex-1">
+              <label for="email" class="block text-sm lg:text-base font-body text-stronger">E-mail</label>
+              <input id="email" type="text" name="email" placeholder="larspetersen@gmail.com" class="bg-bg-beige-200 border-1 border-stroke-dark placeholder:text-strong px-4 py-3 appearance-none focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0 text-sm lg:text-base" />
+            </div>
+            <div class="flex flex-col gap-2 flex-1">
+              <label for="tlf" class="block text-sm lg:text-base font-body text-stronger">Telefon</label>
+              <input id="tlf" type="text" name="tlf" placeholder="+45" class="bg-bg-beige-200 border-1 border-stroke-dark placeholder:text-strong px-4 py-3 appearance-none focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0 text-sm lg:text-base" />
+            </div>
+          </div>
+          <div class="flex flex-col gap-2 flex-1">
+            <label for="adresse" class="block text-sm lg:text-base font-body text-stronger">Adresse</label>
+            <input id="adresse" type="text" name="adresse" placeholder="Nordre Fasanvej 12" class="bg-bg-beige-200 border-1 border-stroke-dark placeholder:text-strong px-4 py-3 appearance-none focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0 text-sm lg:text-base" />
+          </div>
+          <div class="flex flex-col flex-1">
+            <label for="kommentarer" class="block text-sm lg:text-base font-body mb-2">Kommentarer & Særlige ønsker</label>
+            <textarea id="allergener" placeholder="Skriv hvis der er nogle med allergener, samt antallet" class="min-h-40 bg-bg-beige-200 border-1 border-stroke-dark placeholder:text-strong px-4 py-3 appearance-none focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0 text-sm lg:text-base"></textarea>
+          </div>
+          <!-- HANDELSBETINGELSER -->
+          <div class="flex flex-col pb-6">
+            <div class="flex flex-row gap-2 items-center">
+              <input id="handelsbetingelser" type="checkbox" value="" name="checkbox" class="w-4 h-4 text-bg-army-700 rounded-full checked:border-neongreen-400 focus:ring-2 focus:outline-none border border-default appearance-none" />
+              <div class="flex flex-col">
+                <label for="handelsbetingelser" class="select-none text-sm lg:text-base font=" heading" ">Accepter handelsbetingelser</label>
+                <label for="handelsbetingelser" class="select-none text-sm lg:text-base font-body text-strong">Ved at acceptere handelsbetingelserne, accepterer du vores vilkår og betingelser</label>
+              </div>
+            </div>
+          </div>
+
+          <!--   "Book nu" er en <button type="submit"> (ikke en <Link>) fordi den sender formularen.
+          En button har ingen styling fra start, så klasserne nedenfor er kopieret 1:1 fra 
+          Link.astro's variant="primary" + size="small", så den ser ud som de andre knapper.-->
+          <div class="flex justify-between">
+            <Link href="#" variant="tertiary" size="small" class="prev-btn">Tilbage</Link>
+            <button type="submit" class="next-btn flex border-1 justify-center px-4 py-2 border-stroke-dark bg-primary-accent font-heading font-semibold text-stronger hover:bg-primary hover:text-neongreen-400 uppercase text-xs lg:text-sm cursor-pointer">Book nu</button>
+          </div>
+        </div>
+
+        <!-- TRIN 4 - BEKRÆFTELSE -->
+        <div class="step hidden flex-col gap-1 p-10 py-20 justify-center items-center lg:py-10">
+          <Heading htmlheading="h3" size="small" font="heading" stylingclasses="text-center lg:pt-20">DU HAR NU BOOKET!</Heading>
+          <Text teksttype="brødtekst-body" stylingclasses="text-stronger text-center w-full lg:w-130"><strong>Bemærk:</strong> Alle bookinger skal foretages og bliver bekræftet skriftligt. Bookinger er bindende og kan ikke afbestilles den sidste uge inden arrangementet.</Text>
+        </div>
+      </section>
+
+      <section class="lg:w-100 bg-bg-beige-300 p-6 rounded-xl h-fit flex flex-col gap-4">
+        <Heading htmlheading="h3" size="small" font="heading" stylingclasses="py-4">Booking oversigt</Heading>
+
+        <!-- AKTIVITET - altid synlig, felterne udfyldes når man vælger -->
+        <div id="oversigt-aktivitet" class="flex flex-col gap-2">
+          <Heading htmlheading="h4" size="xsmall" font="heading" stylingclasses="">Aktivitet</Heading>
+          <div class="flex flex-row gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#323232" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lg:w-7 lg:h-7"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"></path><path d="m9 12 2 2 4-4"></path></svg>
+            <Text teksttype="brødtekst-body" stylingclasses="text-stronger"><span id="vis-aktivitet"></span></Text>
+          </div>
+
+          <div class="flex flex-row gap-2">
+            <img src="/ur_ikon.svg" alt="tid" class="lg:w-7 lg:h-7" />
+            <Text teksttype="brødtekst-body" stylingclasses="text-stronger"><span id="vis-varighed"></span></Text>
+          </div>
+          <div class="flex flex-row gap-2">
+            <img src="/personer_ikon.svg" alt="personer" class="lg:w-7 lg:h-7" />
+            <Text teksttype="brødtekst-body" stylingclasses="text-stronger"><span id="vis-antal"></span> </Text>
+          </div>
+        </div>
+
+        <!-- DATO & TID - altid synlig -->
+        <div id="oversigt-dato" class="flex flex-col gap-2 border-t border-stroke-dark py-4">
+          <Heading htmlheading="h4" size="xsmall" font="heading" stylingclasses="">Dato & tid</Heading>
+          <div class="flex flex-row gap-2">
+            <img src="/icons/calendar.svg" alt="dato" class="lg:w-7 lg:h-7" />
+            <Text teksttype="brødtekst-body" stylingclasses="text-stronger"><span id="vis-tidspunkt"></span></Text>
+          </div>
+        </div>
+
+        <!-- I ALT -->
+        <div class="border-t border-stroke-dark flex flex-row justify-between pt-2">
+          <Heading htmlheading="h4" size="xsmall" font="heading" stylingclasses="">I alt</Heading>
+          <Heading htmlheading="h4" size="xsmall" font="heading" stylingclasses=""><span id="vis-total">0</span> kr</Heading>
+        </div>
+      </section>
+
+      <!-- <section class="lg:w-100 bg-bg-beige-300 p-6 rounded-xl h-fit flex flex-col gap-4">
+        <Heading htmlheading="h3" size="small" font="heading" stylingclasses="py-4">Booking oversigt</Heading>
+
+        Vis kun udfyldte felter
+       <div x-show="data.aktivitet" class="flex flex-col gap-2">
+          <Heading htmlheading="h4" size="xsmall" font="heading" stylingclasses="">Aktivitet</Heading>
+          <div class="flex flex-row gap-2">
+            <img src="/personer_ikon.svg" alt="personer" class="lg:w-7 lg:h-7" />
+            <Text teksttype="brødtekst-body" stylingclasses="text-stronger">Antal personer</Text>
+          </div>
+          <div class="flex flex-row gap-2">
+            <img src="/ur_ikon.svg" alt="personer" class="lg:w-7 lg:h-7" />
+            <Text teksttype="brødtekst-body" stylingclasses="text-stronger">Tid</Text>
+          </div>
+        </div> -->
+
+      <!-- <div x-show="data.aktivitet" class="flex flex-col gap-2 border-t border-stroke-dark py-4">
+          <Heading htmlheading="h4" size="xsmall" font="heading" stylingclasses="">Dato & tid</Heading>
+          <div class="flex flex-row gap-2">
+            <img src="/icons/calendar.svg" alt="personer" class="lg:w-7 lg:h-7" />
+            <Text teksttype="brødtekst-body" stylingclasses="text-stronger">Antal personer</Text>
+          </div>
+        </div> -->
+
+      <!-- Total beregnes automatisk -->
+      <!-- <div x-show="total > 0" class="border-t border-stroke-dark flex flex-row justify-between pt-2">
+          <Heading htmlheading="h4" size="xsmall" font="heading" stylingclasses="">I alt</Heading>
+          <Heading htmlheading="h4" size="xsmall" font="heading" stylingclasses="">0000kr</Heading>
+        </div>
+      </section>  -->
+    </div>
+  </main>
 </MainLayout>
+
+<!-- /* KALENDER-FARVER (cally web component) Cally-kalenderen bruger sine egne CSS-variabler (kommer fra daisyUI) til at style den valgte dag. Vi kan ikke style den direkte med Tailwind fordi kalenderen ligger i en "shadow DOM" (et lukket område som CSS udefra normalt ikke kan nå ind i). Løsningen er at overskrive cally's CSS-variabler: --color-primary = baggrundsfarven på den valgte dag (gul neongrøn) --color-primary-content = tekstfarven på den valgte dag (mørk) */ -->
+<style>
+  calendar-month {
+    --color-primary: #ecff37;
+    --color-primary-content: #323232;
+  }
+</style>
 
 <script>
   import "cally";
 </script>
 
-<!-- TILFØJER VALG AF EKSTRA AKTIVITETER -->
+<!-- ============================================================ -->
+<!-- TRIN-NAVIGATION - viser ét trin ad gangen                    -->
+<!-- ============================================================ -->
+<script>
+  // Finder alle trin, knapper og progressbar-cirkler som lister
+  const trin = document.querySelectorAll(".step");
+  const naesteKnapper = document.querySelectorAll(".next-btn");
+  const forrigeKnapper = document.querySelectorAll(".prev-btn");
+  const progressTrin = document.querySelectorAll("[data-step]");
+
+  // Husker hvilket trin vi er på (0 = første trin, da lister tæller fra 0)
+  let aktivtTrin = 0;
+
+  // Viser kun det aktive trin og opdaterer progressbarens cirkler.
+  function visTrin() {
+    // 1. Vis/skjul selve trinene
+    trin.forEach((t, index) => {
+      if (index === aktivtTrin) {
+        t.classList.remove("hidden");
+        t.classList.add("flex");
+      } else {
+        t.classList.add("hidden");
+        t.classList.remove("flex");
+      }
+    });
+
+    // 2. Opdater progressbarens cirkler (tre tilstande: gennemført, aktiv, kommende)
+    progressTrin.forEach((p, index) => {
+      const cirkel = p.querySelector("div"); // den runde cirkel
+      const tal = cirkel.querySelector("span") || cirkel; // tallet inde i cirklen
+
+      // Nulstil alle styling-klasser på cirklen først, så vi starter rent
+      cirkel.classList.remove("bg-bg-beige-200", "border-2", "border-stroke-primary-accent", "bg-bg-beige-400", "border-1", "border-bg-beige-500", "bg-neongreen-400", "border-neongreen-400");
+
+      // Nulstil tekstfarven på tallet, så vi styrer den herfra (ikke fra HTML'en)
+      tal.classList.remove("text-stronger", "text-weak", "font-semibold");
+
+      if (index < aktivtTrin) {
+        // GENNEMFØRT - gul udfyldt cirkel med check-ikon
+        cirkel.classList.add("bg-neongreen-400", "border-2", "border-neongreen-400");
+        tal.innerHTML = '<img src="icons/check-booking-icon.svg" alt="gennemført" class="w-10 h-10">';
+      } else if (index === aktivtTrin) {
+        // AKTIV - lys cirkel med gul kant og mørkt tal
+        cirkel.classList.add("bg-bg-beige-200", "border-2", "border-stroke-primary-accent");
+        tal.classList.add("text-stronger", "font-semibold");
+        tal.textContent = index + 1;
+      } else {
+        // KOMMENDE - brun cirkel med brunt/svagt tal (forbliver brun indtil man når dertil)
+        cirkel.classList.add("bg-bg-beige-400", "border-1", "border-bg-beige-500");
+        tal.classList.add("text-weak");
+        tal.textContent = index + 1;
+      }
+    });
+  }
+
+  // Klik på "gå videre" rykker et trin frem (hvis vi ikke er på sidste trin).
+  // preventDefault() forhindrer at links hopper til toppen af siden.
+  naesteKnapper.forEach((knap) => {
+    knap.addEventListener("click", (event) => {
+      event.preventDefault();
+      if (aktivtTrin < trin.length - 1) {
+        aktivtTrin++;
+        visTrin();
+      }
+    });
+  });
+
+  // Klik på "tilbage" rykker et trin tilbage (hvis vi ikke er på første trin).
+  forrigeKnapper.forEach((knap) => {
+    knap.addEventListener("click", (event) => {
+      event.preventDefault();
+      if (aktivtTrin > 0) {
+        aktivtTrin--;
+        visTrin();
+      }
+    });
+  });
+
+  // Kør med det samme, så trin 1 er aktivt og 2-4 forbliver brune fra start
+  visTrin();
+</script>
+<!-- ============================================================ -->
+<!-- BOOKING-OVERSIGT - udfylder højre side + beregner pris       -->
+<!-- ============================================================ -->
+<script>
+  // Finder felterne i trin 1 (det brugeren vælger)
+  const aktivitetFelt = document.querySelector("#aktivitet");
+  const varighedFelt = document.querySelector("#tid");
+  const antalFelt = document.querySelector("#amount");
+
+  // Finder spans i oversigten (hvor værdierne skal vises) + blokken der vises/skjules
+  const visAktivitet = document.querySelector("#vis-aktivitet");
+  const visVarighed = document.querySelector("#vis-varighed");
+  const visAntal = document.querySelector("#vis-antal");
+  const visTotal = document.querySelector("#vis-total");
+  const oversigtAktivitet = document.querySelector("#oversigt-aktivitet");
+
+  // Prisliste (opslagstabel) - pris per person per time for hver aktivitet
+  const priser = {
+    Paintball: 375,
+    Bowtag: 300,
+    Bueskydning: 300,
+    Dødningbold: 300,
+    Forhindringsbane: 300,
+    Hardball: 300,
+    "Kæmpe Bordfodbold": 300,
+    Lasertag: 300,
+    Megaboksning: 300,
+    Spydkast: 300,
+    Stokkekamp: 300,
+    Sumobrydning: 300,
+  };
+
+  // Opdaterer hele oversigten - køres hver gang et felt ændres.
+  // Læser værdierne med .value og skriver dem ud med .textContent. Viser
+  // oversigten når der er valgt en aktivitet, og beregner til sidst prisen
+  // som: pris per person × antal deltagere × antal timer.
+  function opdaterOversigt() {
+    visAktivitet.textContent = aktivitetFelt.value;
+    visVarighed.textContent = varighedFelt.value;
+    visAntal.textContent = antalFelt.value;
+
+    const prisPerPerson = priser[aktivitetFelt.value] || 0; // pris, ellers 0 hvis ingen findes
+    const antal = Number(antalFelt.value) || 0; // tekst om til tal
+    const timer = varighedFelt.value === "2 timer" ? 2 : 1; // 2 timer = 2, ellers 1
+
+    // OBS! Fjern "* antal" hvis prisen IKKE skal regnes pr. person
+    const total = prisPerPerson * antal * timer;
+    visTotal.textContent = total;
+  }
+
+  // Lytter på ændringer i felterne. "change" til dropdowns, "input" til tekstfelt.
+  aktivitetFelt.addEventListener("change", opdaterOversigt);
+  varighedFelt.addEventListener("change", opdaterOversigt);
+  antalFelt.addEventListener("input", opdaterOversigt);
+</script>
+
+<!-- DATO & TID I OVERSIGTEN -->
+<script>
+  // Find kalenderen og de to tidsfelter
+  const kalender = document.querySelector("calendar-date");
+  const timeFelt = document.querySelector("#time");
+  const minutterFelt = document.querySelector("#minutter");
+
+  // Find oversigtens span + blokken der skal vises
+  const visTidspunkt = document.querySelector("#vis-tidspunkt");
+  const oversigtDato = document.querySelector("#oversigt-dato");
+
+  // Funktion der samler dato + klokkeslæt og viser det i oversigten
+  function opdaterDato() {
+    const dato = kalender.value; // fx "2026-05-20"
+    const time = timeFelt.value; // fx "12"
+    const minutter = minutterFelt.value; // fx "30"
+
+    // Byg teksten: vis dato, og klokkeslæt hvis begge felter er udfyldt
+    let tekst = dato;
+    if (time !== "" && minutter !== "") {
+      tekst = tekst + " kl. " + time + ":" + minutter;
+    }
+
+    visTidspunkt.textContent = tekst;
+  }
+
+  // Lyt på ændringer
+  kalender.addEventListener("change", opdaterDato); // når man vælger en dato
+  timeFelt.addEventListener("input", opdaterDato); // mens man skriver timer
+  minutterFelt.addEventListener("input", opdaterDato); // mens man skriver minutter
+</script>
+
+TILFØJER VALG AF EKSTRA AKTIVITETER -->
 <script>
   const addButton = document.querySelector("#addActivity");
   const wrapper = document.querySelector("#activitiesWrapper");
@@ -292,7 +530,6 @@ import Button from "../components/Button.astro";
     wrapper.appendChild(clone);
   });
 </script>
-
 
 <!-- VISER VALG AF SPISNING -->
 <script>
@@ -305,7 +542,7 @@ import Button from "../components/Button.astro";
   });
 </script>
 
-<!-- <script>
+<script>
   let currentStep = 1;
 
   const nextButton = document.querySelector("#nextStep");
@@ -323,16 +560,12 @@ import Button from "../components/Button.astro";
         number.textContent = "✓";
         number.className = "step-number text-stronger font-bold";
         label.className = "step-label text-stronger";
-      }
-
-      else if (stepNumber === currentStep) {
+      } else if (stepNumber === currentStep) {
         circle.className = "step-circle bg-bg-beige-200 border-2 border-stroke-primary-accent w-14 h-14 rounded-full flex items-center justify-center";
         number.textContent = stepNumber;
         number.className = "step-number text-stronger";
         label.className = "step-label text-stronger";
-      }
-
-      else {
+      } else {
         circle.className = "step-circle bg-bg-beige-400 border border-bg-beige-500 w-14 h-14 rounded-full flex items-center justify-center";
         number.textContent = stepNumber;
         number.className = "step-number text-weak";
@@ -347,4 +580,4 @@ import Button from "../components/Button.astro";
       updateProgress();
     }
   });
-</script> -->
+</script>

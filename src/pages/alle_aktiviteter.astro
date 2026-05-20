@@ -5,6 +5,7 @@ import Text from "../components/Text.astro";
 import Button from "../components/Button.astro";
 import Aktivitet_card from "../components/Aktivitet_card.astro";
 import Book_section from "../components/Book_section.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
 ---
 
 <MainLayout title="Alle Aktiviteter">
@@ -12,6 +13,16 @@ import Book_section from "../components/Book_section.astro";
     <div class="progress-bar h-4 z-110 fixed w-full bg-[url('/img/progress_bar.svg')] left-0 origin-top-left top-0 right-0"></div>
     <!-- START PÅ HERO -->
     <!-- START HERO PÅ AKTIVITETER -->
+     <div class="px-20 py-4">
+      <Breadcrumbs
+        textColor="text-stronger"
+        homeIcon="/icons/home.svg"
+        items={[
+          { label: "Forside", href: "/" },
+          { label: "Aktiviteter", href: "/alle_aktiviteter" },
+        ]}
+      />
+      </div>
     <section class="flex flex-col justify-center items-center gap-10">
       <Heading htmlheading="h1" size="large" font="heading" stylingclasses="py-4 text-stronger text-center intersect:animate-fade-down animate-once animate-duration-[2000ms]">Alle aktiviteter</Heading>
       <form class="w-80 lg:w-120">

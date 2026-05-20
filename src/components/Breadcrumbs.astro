@@ -1,0 +1,31 @@
+---
+const { items, textColor, homeIcon } = Astro.props;
+---
+<nav aria-label="Breadcrumb" class="relative z-10">
+  <ol class="flex gap-2 items-center">
+    {items.map((item, index) => (
+      <li class="flex gap-2 items-center">
+
+        <!-- Link med dynamisk tekstfarve -->
+        <a href={item.href} class={textColor}>
+
+          {/* Hvis label er "Forside", vises home-ikonet */}
+          {item.label === "Forside" ? (
+            <img
+              src={homeIcon}
+              alt="Forside"
+              class="w-5 h-5"
+            />
+          ) : (
+            item.label
+          )}
+        </a>
+
+        {/* Viser "/" mellem breadcrumbs */}
+        {index < items.length - 1 && (
+          <span class={textColor}>/</span>
+        )}
+      </li>
+    ))}
+  </ol>
+</nav>

@@ -107,9 +107,9 @@ import Button from "../components/Button.astro";
 
           <!-- SKJULT SOM DEFAULT -->
           <div id="spisningFields" class="hidden flex-col gap-6">
-            <div class="flex flex-row gap-2 lg:gap-4">
-              <div class="relative">
-                <select id="aktivitet" name="aktivitet" class="cursor-pointer bg-bg-beige-200 border-1 border-stroke-dark px-4 py-3 text-stronger text-sm lg:text-base font-body w-full appearance-none focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0">
+            <div class="flex flex-wrap gap-x-2 gap-y-2 lg:gap-4">
+              <div class="relative lg:flex-1">
+                <select id="menu" name="menu" class="cursor-pointer bg-bg-beige-200 border-1 border-stroke-dark px-4 py-3 text-stronger text-sm lg:text-base font-body w-full appearance-none focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0">
                   <option value="">Vælg Menu</option>
                   <option>Kyllingburger Menu</option>
                   <option>Okseburger Menu</option>
@@ -122,15 +122,15 @@ import Button from "../components/Button.astro";
                 </select>
                 <span class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-2xl"></span>
               </div>
-              <div>
-                <input id="amount" type="text" name="antal" placeholder="Antal deltagere" class="bg-bg-beige-200 border-1 border-stroke-dark placeholder:text-strong px-4 py-3 appearance-none w-full focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0 text-sm lg:text-base" />
+              <div class="lg:flex-1">
+                <input id="menuAntal" type="text" name="menuAntal" placeholder="Antal deltagere" class="bg-bg-beige-200 border-1 border-stroke-dark placeholder:text-strong px-4 py-3 text-sm lg:text-base appearance-none w-full focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0" />
               </div>
             </div>
 
             <!-- ALLERGENER - TEKSTBOKS -->
-            <div>
+            <div class="w-full">
               <label for="allergener" class="block text-sm lg:text-base font-body mb-2">Allergener</label>
-              <textarea id="allergener" placeholder="Skriv hvis der er nogle med allergener, samt antallet" class="w-full min-h-40 bg-bg-beige-200 border-1 border-stroke-dark placeholder:text-strong px-4 py-3 appearance-none focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0 lg:w-110"></textarea>
+              <textarea id="allergener" placeholder="Skriv hvis der er nogle med allergener, samt antallet" class="w-full min-h-40 bg-bg-beige-200 border-1 border-stroke-dark placeholder:text-strong px-4 py-3 appearance-none focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0"></textarea>
             </div>
           </div>
 
@@ -141,11 +141,12 @@ import Button from "../components/Button.astro";
           </div>
 
           <!-- HVIS MAN TILFØJER FLERE AKTIVITETER -->
+          <!-- HVIS MAN TILFØJER FLERE AKTIVITETER -->
           <template id="activityTemplate">
-            <div class="flex flex-wrap lg:flex-row gap-x-2 gap-y-2 lg:gap-4">
+            <div class="flex flex-wrap gap-x-2 gap-y-2 lg:gap-4">
               <!-- VÆLG AKTIVITET -->
-              <div class="relative">
-                <select id="aktivitet" name="aktivitet" class="bg-bg-beige-200 border-1 border-stroke-dark px-4 py-3 text-stronger text-sm lg:text-base font-body w-fit appearance-none focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0">
+              <div class="relative lg:flex-1">
+                <select id="aktivitet" name="aktivitet" class="cursor-pointer bg-bg-beige-200 border-1 border-stroke-dark px-4 py-3 text-stronger text-sm lg:text-base font-body w-full appearance-none focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0">
                   <option value="">Vælg aktivitet</option>
                   <option>Bowtag</option>
                   <option>Bueskydning</option>
@@ -164,16 +165,18 @@ import Button from "../components/Button.astro";
               </div>
 
               <!-- VÆLG VARIGHED -->
-              <div class="relative">
-                <select id="tid" name="tid" class="bg-bg-beige-200 border-1 border-stroke-dark px-4 py-3 text-stronger text-sm lg:text-base font-body w-35 appearance-none focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0t">
+              <div class="relative lg:flex-1">
+                <select id="tid" name="tid" class="cursor-pointer bg-bg-beige-200 border-1 border-stroke-dark px-4 py-3 text-stronger text-sm lg:text-base font-body w-full appearance-none focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0">
                   <option value="">Vælg varighed</option>
                   <option>1 time</option>
                   <option>2 timer</option>
                 </select>
                 <span class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-2xl"></span>
               </div>
-              <div>
-                <input id="amount" type="text" name="antal" placeholder="Antal deltagere" class="bg-bg-beige-200 border-1 border-stroke-dark placeholder:text-strong px-4 py-3 appearance-none focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0 text-sm lg:text-base" />
+
+              <!-- ANTAL DELTAGERE -->
+              <div class="lg:flex-1">
+                <input id="amount" type="text" name="antal" placeholder="Antal deltagere" class="bg-bg-beige-200 border-1 border-stroke-dark placeholder:text-strong px-4 py-3 text-sm lg:text-base appearance-none w-full focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0" />
               </div>
             </div>
           </template>

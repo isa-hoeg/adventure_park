@@ -6,6 +6,7 @@ import Link from "../components/Link.astro";
 import Text from "../components/Text.astro";
 import Fold_ud_card from "../components/Fold_ud_card.astro";
 import Book_section from "../components/Book_section.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
 ---
 
 <MainLayout title="Paintball">
@@ -13,6 +14,20 @@ import Book_section from "../components/Book_section.astro";
   <main class="">
     <!-- START PÅ HERO SEKTION -->
     <section class="bg-bg-army-700 relative h-150 w-full bg-cover bg-[77%_center] bg-[url('/img/hero_paintball_bg.webp')] pt-20 flex flex-col justify-between lg:pt-40 lg:h-157">
+      <!-- BREADCRUMBS -->
+      <!-- Absolute gør, at breadcrumbs placeres oven på hero-billedet
+       og ikke påvirkes af sectionens pt-20 -->
+    <div class="absolute top-8 lg:top-10 left-20 z-20">
+     <Breadcrumbs
+        textColor="text-weakest"
+        homeIcon="/icons/home_light.svg"
+        items={[
+        { label: "Forside", href: "/" },
+        { label: "Aktiviteter", href: "/alle_aktiviteter" },
+        { label: "Paintball", href: "/singleview" }
+        ]}
+      />
+    </div>
       <div class="flex flex-col justify-center items-center gap-7">
         <Heading htmlheading="h1" size="large" font="display" stylingclasses="text-weakest intersect:animate-fade-down animate-once animate-duration-[2000ms]">Paintball</Heading>
         <Link href="/booking" variant="primary" size="large" stylingclasses="w-fit">book</Link>

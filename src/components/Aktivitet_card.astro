@@ -31,7 +31,7 @@ import "../styles/tailwind.css";
     </div>
     <div class="flex flex-row gap-2">
       <Link href={href} variant="tertiary" stylingclasses="flex-1" size="small" onclick="event.stopPropagation()">Læs mere</Link>
-      <Link href="/booking" variant="primary" stylingclasses="flex-1" size="small" onclick="event.stopPropagation()">BOOK</Link>
+      <Link href={`/booking?aktivitet=${encodeURIComponent(title)}`} variant="primary" stylingclasses="flex-1" size="small" onclick="event.stopPropagation()">BOOK</Link>
     </div>
   </div>
 </article>

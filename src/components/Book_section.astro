@@ -2,10 +2,10 @@
 import Heading from "./Heading.astro";
 import Link from "./Link.astro";
 
-const {heading="", linktext="", bg="", linkvariant=""} = Astro.props;
+const {heading="", linktext="", bg="", href, linkvariant=""} = Astro.props;
 ---
 
 <book_section class:list={["flex flex-col gap-8 py-10 lg:py-20 px-20 items-center", bg]}>
         <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-strongest text-center intersect:animate-fade-down animate-once animate-duration-[2000ms]">{heading}</Heading>
-        <Link href=/booking variant={linkvariant} size="large" stylingclasses="w-fit intersect:animate-fade-up animate-once animate-duration-[2000ms]">{linktext}</Link>
+        <Link href={href} variant={linkvariant} size="large" stylingclasses="w-fit intersect:animate-fade-up animate-once animate-duration-[2000ms]">{linktext}</Link>
 </book_section>

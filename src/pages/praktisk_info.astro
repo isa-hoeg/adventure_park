@@ -58,7 +58,7 @@ import Breadcrumbs from "../components/Breadcrumbs.astro";
     px-8                     = padding 32px i siderne
     lg:py-20                 = padding 80px top/bund på desktop
   -->
-  <div class="bg-bg-beige-400 py-10 px-8 lg:py-20">
+  <div class="bg-bg-beige-400 py-10 px-8 lg:py-20" id="spisning">
     <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-stronger intersect:animate-fade-left animate-once animate-duration-[2000ms]">Spisning i parken</Heading>
 
     <!-- Intro-tekst - py-4 = padding top/bund, lg:w-1/2 = halv bredde på desktop -->
@@ -290,7 +290,7 @@ import Breadcrumbs from "../components/Breadcrumbs.astro";
   <!-- BOOK SEKTION - CTA i bunden af siden           -->
   <!-- ============================================== -->
   <!-- Komponent med coral baggrund + overskrift + book knap -->
-  <Book_section heading="Klar til at give os et besøg?" linktext="Book nu" bg="bg-bg-coral-400" linkvariant="primary" />
+  <Book_section heading="Klar til at give os et besøg?" linktext="Book nu" bg="bg-bg-coral-400" linkvariant="primary" href="/booking"/>
   <!-- SLUT PÅ BOOK SECTION -->
 </MainLayout>
 <script>

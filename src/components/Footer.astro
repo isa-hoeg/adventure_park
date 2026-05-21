@@ -29,16 +29,20 @@ import Text from "./Text.astro";
             <div class="flex flex-col lg:flex-row gap-10 lg:gap-20">
                 <div>
                     <Heading htmlheading="h3" size="small" font="heading" stylingclasses="text-weakest mb-4">kontakt os</Heading>
-                    <div class="flex gap-2 py-2">
+                    <!-- <div class="flex gap-2 py-2">
                         <img src="/icons/phone.svg" alt="phone" class="w-6 h-6">
                          <Text teksttype="brødtekst-body" stylingclasses="text-weakest">+45 60 88 77 66</Text>
-                    </div>
+                    </div> -->
+                    <a href="tel:+4560887766" class="flex gap-2 py-2 items-center text-weakest hover:text-primary-accent transition">
+                        <img src="/icons/phone.svg" alt="telefon ikon" class="w-6 h-6">
+                        <Text teksttype="brødtekst-body">+45 60 88 77 66</Text>
+                    </a>
                     <div class="flex gap-2 py-2">
-                        <img src="/icons/mail.svg" alt="mail" class="w-6 h-6">
+                        <img src="/icons/mail.svg" alt="mail ikon" class="w-6 h-6">
                         <Link href="mailto:info@adventurepark.dk" variant="textlink" size="textlink">info@adventurepark.dk</Link>
                     </div>
                     <div class="flex gap-2 py-2">
-                        <img src="/icons/compass.svg" alt="compass" class="w-6 h-6">
+                        <img src="/icons/compass.svg" alt="ikon til rutevejledning" class="w-6 h-6">
                         <Link href="https://www.google.com/maps/dir//AdventurePark,+Jagtvej,+3400+Hiller%C3%B8d/@55.91378,12.3068957,17z/data=!4m17!1m7!3m6!1s0x465240c50c2f8445:0x5716ee33179e4617!2sAdventurePark!8m2!3d55.913777!4d12.309476!16s%2Fg%2F1thsp_fq!4m8!1m0!1m5!1m1!1s0x465240c50c2f8445:0x5716ee33179e4617!2m2!1d12.309476!2d55.913777!3e1?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D" variant="textlink" size="textlink">Jagtvej, 3400 Hillerød</Link>
                     </div>
                 </div>

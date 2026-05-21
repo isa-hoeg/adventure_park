@@ -23,7 +23,7 @@ const currentPath = pathname.slice(1); // fjerner det første "/"
     </nav>
 
     <!-- BURGERKNAP - kun synlig på mobil -->
-    <button class="lg:hidden z-50 text-stronger" x-on:click="showmenu = ! showmenu">
+    <button class="lg:hidden z-50 text-stronger" x-on:click="showmenu = ! showmenu" aria-label="Åbn menu">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-7">
         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
       </svg>

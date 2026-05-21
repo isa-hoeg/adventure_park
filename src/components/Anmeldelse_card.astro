@@ -7,7 +7,7 @@ const {url="#", userimage="", userimagealt="", username="", rating1="", rating2=
 ---
 <anmeldelse class="bg-bg-black-800 rounded-xl flex flex-col p-8 lg:p-10 max-w-sm lg:max-w-lg flex-shrink-0">
     <div class="flex flex-row gap-5">
-        <img src={userimage} alt={userimagealt} class="w-12 h-12 rounded-full">
+        <img src={userimage} alt={userimagealt} loading="lazy" decoding="async" class="w-12 h-12 rounded-full">
         <Heading htmlheading="h4" size="xsmall" font="heading" stylingclasses="text-weakest pt-3 lg:pt-2">{username}</Heading>
     </div>
     <div class="flex flex-row py-3 lg:py-5 gap-1">

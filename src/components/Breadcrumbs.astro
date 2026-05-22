@@ -7,14 +7,14 @@ const { items, textColor, homeIcon } = Astro.props;
       <li class="flex gap-2 items-center">
 
         <!-- Link med dynamisk tekstfarve -->
-        <a href={item.href} class={textColor}>
+        <a href={item.href} class:list={[textColor, "flex items-center"]}>
 
           {/* Hvis label er "Forside", vises home-ikonet */}
           {item.label === "Forside" ? (
             <img
               src={homeIcon}
               alt="Forside"
-              class="w-5 h-5"
+              class="block w-5 h-5 shrink-0"
             />
           ) : (
             item.label

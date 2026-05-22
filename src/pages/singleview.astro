@@ -12,12 +12,11 @@ import Breadcrumbs from "../components/Breadcrumbs.astro";
 <MainLayout title="Paintball">
      <div class="progress-bar h-4 z-110 fixed w-full bg-[url('/img/progress_bar.svg')] left-0 origin-top-left top-0 right-0"></div>
   <main class="">
-    <!-- START PÅ HERO SEKTION -->
-    <section class="bg-bg-army-700 relative h-150 w-full bg-cover bg-[77%_center] bg-[url('/img/hero_paintball_bg.webp')] pt-20 flex flex-col justify-between lg:pt-40 lg:h-157">
+   <!-- START PÅ HERO -->
+     <section class="bg-bg-army-700 h-140 w-full grid grid-cols-6 grid-rows-12 lg:grid-cols-12 lg:grid-rows-12 relative overflow-hidden">
+      <img src="/img/hero_paintball_bg.webp" alt="" class="col-start-1 col-end-7 row-start-1 row-end-13 w-full h-140 object-cover object-[77%_center] lg:col-end-13">
       <!-- BREADCRUMBS -->
-      <!-- Absolute gør, at breadcrumbs placeres oven på hero-billedet
-       og ikke påvirkes af sectionens pt-20 -->
-    <div class="absolute top-8 lg:top-10 left-20 z-20">
+    <div class="col-start-2 col-end-4 z-20 row-start-1 pt-6 items-center pl-4 md:col-start-1 md:col-end-2">
      <Breadcrumbs
         textColor="text-weakest"
         homeIcon="/icons/home_light.svg"
@@ -28,12 +27,19 @@ import Breadcrumbs from "../components/Breadcrumbs.astro";
         ]}
       />
     </div>
-      <div class="flex flex-col justify-center items-center gap-7">
+      <div class="col-start-3 col-end-5 row-start-2 flex flex-col items-center gap-4 pt-6 md:col-start-3 md:col-end-5 md:row-start-3 md:pt-10 lg:col-start-4 lg:col-end-10 lg:row-start-3 lg:pt-14 lg:pr-2">
         <Heading htmlheading="h1" size="large" font="display" stylingclasses="text-weakest intersect:animate-fade-down animate-once animate-duration-[2000ms]">Paintball</Heading>
         <Link href="/booking" variant="primary" size="large" stylingclasses="w-fit">book</Link>
       </div>
-      <img src="/img/hero_paintball_overlay.webp" alt="Paintball overlay" class="absolute top-47 left-4 scale-102 z-0 origin-top lg:scale-31 lg:top-47 lg:left-77" />
-      <div class="z-20 grid grid-cols-2 gap-6 px-10 bg-bg-beige-opacity py-5 lg:flex lg:flex-row lg:justify-between lg:px-60 lg:py-10 intersect:animate-fade-up animate-once animate-duration-[2000ms]">
+     <div class="col-start-1 col-end-7 row-start-8 row-end-13 z-10 flex justify-end items-end md:col-start-2 md:col-end-6 md:row-start-9 lg:col-start-8 lg:col-end-11">
+        <img
+          src="/img/hero_paintball_overlay.webp"
+          alt="Paintball overlay"
+          class="w-[417px] max-w-none h-auto translate-y-31 translate-x-8 md:w-[419px] md:translate-y-18 md:translate-x-18 lg:w-[470px] lg:translate-y-37 lg:translate-x-10"/>
+      </div>
+      
+      <!-- INFO OM AKTIVITET -->
+      <div class="z-20 grid grid-cols-2 gap-6 px-10 bg-bg-beige-opacity py-5 col-start-1 col-end-13 md:flex md:flex-row md:justify-between lg:flex lg:flex-row lg:justify-between lg:px-60 lg:py-10 intersect:animate-fade-up animate-once animate-duration-[2000ms]">
         <div class="flex flex-row gap-2">
           <img src="/icons/personer_ikon_neon.svg" alt="ikon personer" class="w-7" />
           <Heading htmlheading="h3" size="small" font="heading" stylingclasses="text-stronger">8-24 pers</Heading>
@@ -52,7 +58,7 @@ import Breadcrumbs from "../components/Breadcrumbs.astro";
         </div>
       </div>
     </section>
-    <!-- SLUT PÅ HERO SEKTION -->
+    <!-- SLUT PÅ HERO -->
 
     <!-- START PÅ OM PAINTBALL I AP SEKTION -->
     <section class="bg-bg-beige-200 grid grid-cols-1 px-8 gap-10 lg:grid-cols-2 lg:items-center py-20">
@@ -62,20 +68,20 @@ import Breadcrumbs from "../components/Breadcrumbs.astro";
         <Text teksttype="brødtekst-body" stylingclasses="text-stronger">Vi spiller med kvalitets udstyr fra Tippmann og med kvalitet paintballs fra en af verdens førende producenter. Når I spiller paintball i Adventure Park, er I altid sikre på at få udleveret rent og nyvasket udstyr (sikkerhedsmaske og heldragt). </Text>
         <Text teksttype="brødtekst-body" stylingclasses="text-stronger">Vi sætter en ære i at vores kunder forlader os med en god oplevelse.</Text>
       </div>
-      <div>
+      <div class="flex flex-col justify-center">
         <img src="/img/paintball1.webp" alt="paintball" />
       </div>
     </section>
     <!-- SLUT PÅ OM PAINTBALL I AP SEKTION -->
 
     <!-- START PÅ PRIS SEKTION -->
-    <section class="flex flex-col px-10 py-20 lg:px-20 bg-bg-black-800 gap-8">
+    <section class="flex flex-col px-10 py-20 md:px-5 lg:px-20 bg-bg-black-800 gap-8">
       <div class="flex flex-col items-center">
         <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-weakest intersect:animate-fade-up animate-once animate-duration-[2000ms]">Priser pr. person</Heading>
       </div>
-      <div class="grid grid-cols-1 gap-6 justify-center items-center lg:grid-cols-3">
+      <div class="grid grid-cols-1 gap-6 justify-center items-center md:grid-cols-3 md:gap-4 lg:grid-cols-3">
         <Pris_card height="h-115 lg:h-130" bg="bg-bg-beige-200" title1="spil 200 kugler" pris="300 kr" pris2="350 kr" tid="1 time" tid2="2 timer" info1="3oo kugler" info2="Spiludstyr" info3="Instruktion" />
-        <Pris_card badge="Mest populære" height="h-115 lg:h-145" bg="bg-bg-coral-400" title1="spil 300 kugler" pris="375 kr" pris2="400 kr" tid="1 time" tid2="2 timer" info1="3oo kugler" info2="Spiludstyr" info3="Instruktion" class="order-first lg:order-none"/>
+        <Pris_card badge="Mest populære" height="h-115 md:h-130 lg:h-145" bg="bg-bg-coral-400" title1="spil 300 kugler" pris="375 kr" pris2="400 kr" tid="1 time" tid2="2 timer" info1="3oo kugler" info2="Spiludstyr" info3="Instruktion" class="order-firs md:order-none lg:order-none"/>
         <Pris_card height="h-115 lg:h-130" bg="bg-bg-beige-200" title1="spil fri antal kugler" pris="400 kr" pris2="500 kr" tid="1 time" tid2="2 timer" info1="Fri antal kugler" info2="Spiludstyr" info3="Instruktion" />
       </div>
       <div class="flex flex-row gap-2 bg-bg-beige-200 p-4 rounded-lg items-center lg:gap-4 lg:p-8 intersect:animate-fade-right animate-once animate-duration-[2000ms]">
@@ -86,8 +92,8 @@ import Breadcrumbs from "../components/Breadcrumbs.astro";
     </section>
 
     <!-- START PÅ OM SPILLET -->
-    <section class="bg-[url('/img/paintball_bane_mobil.webp')] bg-cover h-300 w-full lg:h-150 lg:bg-[url('/img/paintball_bane.webp')]">
-      <div class="bg-bg-army-opacity p-10 grid grid-cols-1 lg:w-190 lg:h-full items-center">
+    <section class="bg-[url('/img/paintball_bane_mobil.webp')] bg-cover h-300 w-full md:h-150 md:bg-[url('/img/paintball_bane.webp')] lg:h-150 lg:bg-[url('/img/paintball_bane.webp')]">
+      <div class="bg-bg-army-opacity p-10 grid grid-cols-1 md:w-100 md:h-full lg:w-190 lg:h-full items-center">
         <div class="flex flex-col gap-6">
           <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-weakest intersect:animate-fade-up animate-once animate-duration-[2000ms]">om spillet</Heading>
           <Text teksttype="brødtekst-body" stylingclasses="text-weakest">Paintball er et holdspil, hvor det grundlæggende gælder om at fjerne modspillere fra banen, ved at markere dem med en farvemarkering.</Text>
@@ -99,9 +105,10 @@ import Breadcrumbs from "../components/Breadcrumbs.astro";
     <!-- SLUT PÅ OM SPILLET -->
 
     <section class="bg-bg-beige-200 p-8 grid grid-cols-1 gap-10 lg:grid-cols-2 lg:py-20">
-      <div class="flex flex-col gap-6 lg:order-2">
+      <div class="flex flex-col gap-6  lg:order-2">
         <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-stronger intersect:animate-fade-up animate-once animate-duration-[2000ms]">praktisk info:</Heading>
-        <ul class="list-disc pl-4 intersect:animate-fade-right animate-once animate-duration-[2000ms]">
+        <ul class="list-disc pl-4 md:grid md:grid-cols-2 md:gap-8 lg:grid-cols-1 intersect:animate-fade-right animate-once animate-duration-[2000ms]">
+          <div>
           <li>
             <div class="flex flex-col">
               <Heading htmlheading="h4" size="xsmall" font="heading" stylingclasses="text-stronger">deltagere:</Heading>
@@ -120,14 +127,18 @@ import Breadcrumbs from "../components/Breadcrumbs.astro";
               <Text teksttype="brødtekst-body" stylingclasses="text-stronger">Minimum 16 år</Text>
             </div>
           </li>
+          
+          
           <li>
             <div class="flex flex-col pt-4">
               <Heading htmlheading="h4" size="xsmall" font="heading" stylingclasses="text-stronger ">Udstyr inkluderet:</Heading>
               <Text teksttype="brødtekst-body" stylingclasses="text-stronger">Sikkerhedsmaske, heldragt og paintballmarkør</Text>
             </div>
           </li>
+          </div>
+          <div>
           <li>
-            <div class="flex flex-col pt-4">
+            <div class="flex flex-col">
               <Heading htmlheading="h4" size="xsmall" font="heading" stylingclasses="text-stronger">Kugler:</Heading>
               <Text teksttype="brødtekst-body" stylingclasses="text-stronger">Vælg mellem 200, 300, 400 eller fri antal kugler pr. person</Text>
             </div>
@@ -138,6 +149,7 @@ import Breadcrumbs from "../components/Breadcrumbs.astro";
               <Text teksttype="brødtekst-body" stylingclasses="text-stronger">Holdspil med missioner og varierede baner i naturen</Text>
             </div>
           </li>
+          </div>
         </ul>
         <div class="flex flex-col items-center">
           <Link href="#" variant="secondary" size="large" stylingclasses="w-fit">HER FINDER DU OS</Link>

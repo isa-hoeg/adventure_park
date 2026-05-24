@@ -4,7 +4,7 @@ const { billede, titel, tag1, tag2, href } = Astro.props;
 ---
 
 <a href={href} class="block group flex-1">
-  <div class="relative rounded-xl overflow-hidden w-full h-[230px] lg:h-[493px]">
+  <div class="relative rounded-xl overflow-hidden w-full h-[230px] md:h-[350px] md:w-[370px] lg:h-[493px]">
     <img src={billede} alt={titel} loading="lazy" decoding="async" width="600" height="400" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
    <div class="absolute inset-0 bg-gradient-to-t from-bg-army-700 to-transparent"></div> 
     <div class="absolute bottom-0 left-0 p-4">

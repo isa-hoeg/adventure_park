@@ -6,9 +6,9 @@ import Link from "./Link.astro";
 import "../styles/tailwind.css";
 ---
 
-<article onclick={`window.location='${href}'`} class:list={["group flex flex-col w-full lg:flex-row cursor-pointer", extraClass]}>
-  <div class="bg-bg-army-700 relative rounded-t-lg lg:rounded-l-lg lg:rounded-tr-none lg:h-70">
-    <img src={img} alt="" class="w-80 h-50 object-cover object-top opacity-60 rounded-t-lg md:w-full lg:rounded-l-lg lg:rounded-tr-none lg:h-70 lg:w-90" />
+<article onclick={`window.location='${href}'`} class:list={["group flex flex-col w-full lg:flex-row cursor-pointer ", extraClass]}>
+  <div class="bg-bg-army-700 relative rounded-t-lg overflow-hidden lg:rounded-l-lg lg:rounded-tr-none lg:h-70">
+    <img src={img} alt="" class="w-80 h-50 object-cover object-top opacity-60 rounded-t-lg group-hover:scale-105 transition-transform duration-300 md:w-full lg:rounded-l-lg lg:rounded-tr-none lg:h-70 lg:w-90" />
     <div class="bg-neongreen-200 rounded-md px-2 py-1 inline-block absolute left-3 top-4">
       <Heading htmlheaing="h4" size="xsmall" font="heading">{badge}</Heading>
     </div>

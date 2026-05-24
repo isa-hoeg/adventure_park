@@ -1,5 +1,5 @@
 ---
-const { variant = "closed" } = Astro.props as { variant: "closed" | "open" };
+const { variant = "closed", class: extraClass = "" } = Astro.props as { variant: "closed" | "open"; class?: string };
 
 const variantClasses = {
   closed: "bg-bg-beige-200",
@@ -7,6 +7,6 @@ const variantClasses = {
 };
 ---
 
-<button class={`w-10 h-10 rounded-full flex items-center justify-center ${variantClasses[variant]}`}>
+<button class={`w-10 h-10 rounded-full flex items-center justify-center cursor-pointer ${variantClasses[variant]} ${extraClass}`}>
   {variant === "open" ? <img src="/icons/icon-cross.svg" alt="luk" class="w-8 h-8" /> : <img src="/icons/arrow-diagonal.svg" alt="åbn" class="w-5 h-5" />}
 </button>

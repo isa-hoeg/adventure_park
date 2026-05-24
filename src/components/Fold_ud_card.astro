@@ -43,6 +43,8 @@ const {
   <!-- ============================================== -->
   <!-- 
     x-show="open"           = vises KUN når open er true
+    x-on:click="open=!open" = HELE det åbne kort er klikbart og lukker ved klik
+    cursor-pointer          = hånd-markør over hele kortet (også over krydset)
     bg-bg-beige-200         = lys beige baggrund
     rounded-xl              = afrundede hjørner
     relative                = position relative (for at indre elementer kan placeres)
@@ -51,8 +53,8 @@ const {
     justify-between         = pusher første og sidste element til top og bund
     p-6                     = padding 24px hele vejen rundt
   -->
-  <div x-show="open" class={`bg-bg-beige-200 rounded-xl relative ${højde} flex flex-col justify-between p-6`}>
-    <!-- TOP: streg + titel/tekst + pil-knap til at lukke -->
+  <div x-show="open" x-on:click="open = !open" class={`bg-bg-beige-200 rounded-xl relative ${højde} flex flex-col justify-between p-6 cursor-pointer`}>
+    <!-- TOP: streg + titel/tekst + kryds-knap -->
     <div class="flex justify-between items-start">
       <!-- Venstre side: den lodrette streg + indhold -->
       <div class="flex gap-4">
@@ -78,15 +80,23 @@ const {
         </div>
       </div>
 
-      <!-- Højre side: pil-knappen der lukker kortet ved klik -->
-      <!-- x-on:click="open = !open" = vender open fra true til false (lukker kortet) -->
-      <div x-on:click="open = !open">
+      <!-- 
+        Højre side: KRYDS-knappen
+        Den har IKKE sit eget klik længere - hele kortet lukker ved klik (se ydre div).
+        transition-transform duration-300 = animerer skaleringen blødt
+        hover:scale-125                = krydset vokser til 125% når musen er over det
+      -->
+      <div class="transition-transform duration-300 hover:scale-125">
         <ArrowButton variant="open" />
       </div>
     </div>
 
-    <!-- BUND: "LÆS MERE" knappen -->
-    <Link href={href} variant="secondary" size="small" stylingclasses="w-fit">LÆS MERE!</Link>
+    <!-- 
+      BUND: "LÆS MERE" knappen
+      onclick="event.stopPropagation()" = stopper klikket i at "boble op" til kortet,
+      så linket virker uden at lukke kortet.
+    -->
+    <Link href={href} variant="secondary" size="small" stylingclasses="w-fit" onclick="event.stopPropagation()">LÆS MERE!</Link>
   </div>
 
   <!-- ================================================ -->
@@ -95,20 +105,25 @@ const {
   <!-- 
     x-show="!open"          = vises KUN når open er false (modsat af åben)
     x-on:click="..."        = HELE kortet er klikbart - åbner kortet
+    group                   = gør at børn kan reagere på hover af HELE kortet (group-hover:)
+    cursor-pointer          = musen bliver en hånd, så man kan se kortet er klikbart
     relative                = for at de absolute-elementer indeni kan placeres
     rounded-xl              = afrundede hjørner
-    overflow-hidden         = skjuler indhold der går ud over kanten (vigtigt for billedet)
+    overflow-hidden         = skjuler indhold der går ud over kanten (vigtigt når billedet zoomer)
     bg-bg-army-700          = mørk grøn baggrund hvis billedet ikke loader
     ${højde}                = samme højde som åben version
   -->
-  <div x-show="!open" x-on:click="open = !open" class={`relative rounded-xl overflow-hidden bg-bg-army-700 ${højde}`}>
+  <div x-show="!open" x-on:click="open = !open" class={`group cursor-pointer relative rounded-xl overflow-hidden bg-bg-army-700 ${højde}`}>
     <!-- BAGGRUNDSBILLEDE -->
     <!-- 
       w-full h-full            = fylder hele kortet
       object-cover             = beskærer billedet pænt så det fylder uden at strækkes
       opacity-60               = 60% gennemsigtighed så teksten kan ses ovenpå
+      transition-transform     = animerer skaleringen blødt
+      duration-300             = animationen tager 300ms
+      group-hover:scale-105    = zoomer billedet til 105% når man hover kortet
     -->
-    <img src={billede} alt={titel} width="600" height="900" loading="lazy" decoding="async" class="w-full h-full object-cover opacity-60" />
+    <img src={billede} alt={titel} width="600" height="900" loading="lazy" decoding="async" class="w-full h-full object-cover opacity-60 transition-transform duration-300 group-hover:scale-105" />
 
     <!-- GRADIENT OVERLAY - lys i top, transparent i bund (for at titlen kan læses) -->
     <!-- 
@@ -116,22 +131,24 @@ const {
       bg-gradient-to-b         = gradient fra top til bund
       from-bg-army-700         = mørk grøn i toppen
       to-transparent           = ingen farve i bunden
+      pointer-events-none      = lader musen "passere igennem", så klik/hover når kortet bagved
     -->
-    <div class="absolute inset-0 bg-gradient-to-b from-bg-army-700 to-transparent"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-bg-army-700 to-transparent pointer-events-none"></div>
 
     <!-- TITEL + PIL-KNAP - placeret øverst med absolute -->
     <!-- 
       absolute top-0 left-0 right-0  = fastgjort til toppen og fylder bredden
       p-4                            = padding 16px
       flex justify-between           = titel til venstre, pil til højre
+      pointer-events-none            = lader musen "passere igennem" til kortet bagved
     -->
-    <div class="absolute top-0 left-0 right-0 p-4 flex justify-between items-start">
+    <div class="absolute top-0 left-0 right-0 p-4 flex justify-between items-start pointer-events-none">
       <!-- Titel - flex-1 lader den fylde tilgængelig plads, mr-2 = lille margin til pilen -->
       <Heading htmlheading="h3" size="small" font="heading" stylingclasses="text-weakest flex-1 mr-2">{titel}</Heading>
 
       <!-- Pil-knappen - flex-shrink-0 sørger for den ikke krymper -->
-      <div class="flex-shrink-0">
-        <ArrowButton variant="closed" />
+      <div class="flex-shrink-0 pointer-events-auto">
+        <ArrowButton variant="closed" class="transition-transform duration-300 hover:scale-125" />
       </div>
     </div>
   </div>

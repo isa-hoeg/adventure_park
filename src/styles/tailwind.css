@@ -23,8 +23,6 @@
   src: url("/fonts/Domine-Regular.ttf") format("truetype");
 } */
 
-
-
 @theme {
   /* Her tilføjes theme variable // tokens */
 
@@ -53,7 +51,6 @@
   --color-primary: #323232;
   --color-secondary: #af9b58;
 
-
   /* Text */
   --color-strongest: #1a1a1a;
   --color-stronger: #323232;
@@ -79,7 +76,6 @@
   --font-body: "DM Sans", sans-serif;
 }
 
-
 @keyframes scroll {
   0% {
     transform: translateX(0);
@@ -90,7 +86,7 @@
 }
 
 .animate-scroll {
-  animation: scroll 40s linear infinite;
+  animation: scroll 30s linear infinite;
 }
 
 .animate-scroll:hover {
@@ -98,7 +94,6 @@
 }
 
 @layer base {
-  
 }
 
 @layer components {

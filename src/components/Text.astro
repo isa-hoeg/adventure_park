@@ -6,6 +6,7 @@ const { teksttype="brødtekst", stylingclasses=""} = Astro.props;
 const sizeClasses = {
 "brødtekst-body": "text-base lg:text-xl font-extralight",
 "brødtekst-card": "text-xs lg:text-sm font-extralight",
+"bigger-card":  "text-sm lg:text-base font-extralight",
 };
 ---
 <p class:list={[sizeClasses[teksttype], stylingclasses]}><slot /></p>

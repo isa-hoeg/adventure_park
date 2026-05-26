@@ -7,12 +7,18 @@ import Button from "../components/Button.astro";
 import Aktivitet_card from "../components/Aktivitet_card.astro";
 import Insta_card from "../components/Insta_card.astro";
 import Pris_card from "../components/Pris_card.astro";
-import { Image } from "astro:assets";
-import AktivitetCard from "../components/Aktivitet_card.astro";
-
+import Map from "../components/Map.astro";
+import Anmeldelse_card from "../components/Anmeldelse_card.astro";
+import ArrowButton from "../components/ArrowButton.astro";
+import Book_section from "../components/Book_section.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import FAQCard from "../components/FAQ_card.astro";
+import Fold_ud_card from "../components/Fold_ud_card.astro";
+import Kategori_card from "../components/Kategori_card.astro";
+import Selling_card from "../components/Selling_card.astro";
 ---
 <MainLayout title="Titel">
-	<main class="container p-4">
+	<main class="container p-4 flex flex-col gap-10">
 		<Heading htmlheading="h1" size="large">Komponentbibliotek</Heading>
         <Text stylingclasses="italic">Her kan du finde alle de komponenter, der er brugt i dette projekt.</Text>
         <hr class="my-4" />
@@ -59,25 +65,32 @@ import AktivitetCard from "../components/Aktivitet_card.astro";
             <Text><Button href="#" variant="secondary" size="small">LINK VARIANT: SECONDARY SIZE SMALL</Button></Text>
         </section>
         <!-- Slut på Buttons komponent instanser -->
-           <section class="grid grid-cols-2 gap-2">
-            <Aktivitet_card
-            title="Sumobrydning"
-            personer="+2 personer"
-            tid="1 time"
-            img="/sumobrydning.webp"
-            pris="FRA 2500"
-            badge="LEG"
-            />
-             <Aktivitet_card
-            title="Sumobrydning"
-            personer="+2 personer"
-            tid="1 time"
-            img="/sumobrydning.webp"
-            pris="FRA 2500"
-            badge="LEG"
-            />
+         <hr class="my-4" />
+         <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="py-4">UI Komponenter</Heading>
+           <section >
+            <Heading htmlheading="h3" size="small" font="heading" stylingclasses="py-4">aktivitetscard</Heading>
+            <div class="grid grid-cols-2 gap-2">
+                <Aktivitet_card
+                title="Sumobrydning"
+                personer="+2 personer"
+                tid="1 time"
+                img="/sumobrydning.webp"
+                pris="FRA 2500"
+                badge="LEG"
+                />
+                <Aktivitet_card
+                title="Sumobrydning"
+                personer="+2 personer"
+                tid="1 time"
+                img="/sumobrydning.webp"
+                pris="FRA 2500"
+                badge="LEG"
+                />
+            </div>
         </section>
-        <section class="grid grid-cols-2 gap-2 lg:flex my-10">
+        <section >
+            <Heading htmlheading="h3" size="small" font="heading" stylingclasses="py-4">Some cards</Heading>
+            <div class="grid grid-cols-2 gap-2 lg:flex">
             <Insta_card
             likes="254"
             comments="5"
@@ -102,51 +115,88 @@ import AktivitetCard from "../components/Aktivitet_card.astro";
             caption="Kom ud i naturen og mærk suset 🌿Hos Adventure Park danner omgivelserne rammen for oplevelser, du ikke glemmer."
             img="/img/instapost4.webp"
             />
+            </div>
         </section>
-        <section class="grid grid-cols-1 gap-6 justify-center items-center lg:grid-cols-3">
-            <Pris_card
-            height="h-120"
-            bg="bg-bg-beige-200"
-            title1="spil +300 kugler"
-            pris="375 kr"
-            tid="1 time"
-            info1="3oo kugler"
-            info2="Spiludstyr"
-            info3="Instruktion"
-            />
-            <Pris_card
-            badge="Mest populære"
-            height="h-140"
-            bg="bg-bg-coral-400"
-            title1="spil +300 kugler"
-            pris="375 kr"
-            tid="1 time"
-            info1="3oo kugler"
-            info2="Spiludstyr"
-            info3="Instruktion"
-            />
-            <Pris_card
-            height="h-120"
-            bg="bg-bg-beige-200"
-            title1="spil +300 kugler"
-            pris="375 kr"
-            tid="1 time"
-            info1="3oo kugler"
-            info2="Spiludstyr"
-            info3="Instruktion"
-            />
+        <section class="flex flex-col gap-8">
+            <Heading htmlheading="h3" size="small" font="heading" stylingclasses="text-stronger intersect:animate-fade-up animate-once animate-duration-[2000ms]">Pris cards</Heading>
+            <div class="grid grid-cols-1 gap-6 justify-center items-center md:grid-cols-3 md:gap-4 lg:grid-cols-3">
+                <Pris_card height="h-115 lg:h-130" bg="bg-bg-beige-200" title1="spil 200 kugler" pris="300 kr" pris2="350 kr" tid="1 time" tid2="2 timer" info1="3oo kugler" info2="Spiludstyr" info3="Instruktion" />
+                <Pris_card badge="Mest populære" height="h-115 md:h-130 lg:h-145" bg="bg-bg-coral-400" title1="spil 300 kugler" pris="375 kr" pris2="400 kr" tid="1 time" tid2="2 timer" info1="3oo kugler" info2="Spiludstyr" info3="Instruktion" class="order-firs md:order-none lg:order-none" />
+                <Pris_card height="h-115 lg:h-130" bg="bg-bg-beige-200" title1="spil fri antal kugler" pris="400 kr" pris2="500 kr" tid="1 time" tid2="2 timer" info1="Fri antal kugler" info2="Spiludstyr" info3="Instruktion" />
+            </div>
         </section>
-        <section class="bg-bg-army-700 relative h-160 overflow-hidden mt-8">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2236.053252512869!2d12.309476!3d55.913776999999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465240c50c2f8445%3A0x5716ee33179e4617!2sAdventurePark!5e0!3m2!1sda!2sdk!4v1778794825041!5m2!1sda!2sdk"
-                class="absolute inset-0 w-full h-full opacity-60" 
-                style="border:0;" 
-                allowfullscreen="" 
-                loading="lazy" 
-                referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-            <!-- MØRK OVERLAY -->
-            
+        
+        <Map/>
+        
+        <section>
+         <Heading htmlheading="h3" size="small" font="heading" stylingclasses="py-4">Selling Cards</Heading>   
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-x-4 lg:gap-x-8 gap-y-15 pt-10">
+          <div class="intersect:animate-fade-up animate-once animate-duration-[2000ms]">
+            <Selling_card icon="/icons/fleksibilitet.svg" iconalt="ikon for fleksibilitet" title="Åbningstider" cardtekst="Åbent efter aftale: Vi kan afvikle events inde og ude hele døgnet." />
+          </div>
+
+          <div class="intersect:animate-fade-down animate-once animate-duration-[2000ms]">
+            <Selling_card icon="/icons/sikkerhed.svg" iconalt="ikon for sikkerhed" title="Sikkerhed" cardtekst="Alle vores aktiviteter er godkendt og alle kunder er forsikret gennem os." />
+          </div>
+
+          <div class="intersect:animate-fade-up animate-once animate-duration-[2000ms]">
+            <Selling_card icon="/icons/erfaring.svg" iconalt="ikon for erfaring" title="Erfaring" cardtekst="Vi har udviklet og afholdt fornøjelses- og teambuildingevents i ca. 20 år." />
+          </div>
+
+          <div class="intersect:animate-fade-down animate-once animate-duration-[2000ms]">
+            <Selling_card icon="/icons/kapacitet.svg" iconalt="ikon for kapacitet" title="Kapacitet" cardtekst="Vores udendørs park på 80.000 m² danner ramme om events for både små og store grupper." />
+          </div>
+        </div>
         </section>
-	</main>
+        
+        <section>
+        <Heading htmlheading="h3" size="small" font="heading" stylingclasses="py-4">Fold ud Cards</Heading>  
+        <Fold_ud_card stregHøjde="h-20" højde="h-[350px]" mobilBredde="w-[340px]" bredde="lg:w-[340px]" billede="/img/nyheder_1.webp" titel="Mystery Run" href="/nyheder" open={true}>
+            <Text stylingclasses="text-stronger">Forestil dig spænding fra Escape Rooms – men udendørs. I bevæger jer fra sted til sted, mens I løser gåder, knækker koder samt optjener og stjæler point undervejs.</Text>
+        </Fold_ud_card>
+        </section>
+
+        <section>
+        <Heading htmlheading="h3" size="small" font="heading" stylingclasses="py-4">Anmeldelses Cards</Heading>  
+        <Anmeldelse_card userimage="user1.svg" userimagealt="user bruger 1" username="Maria, 28 år" rating1="/icons/filled_star.svg" rating2="/icons/filled_star.svg" rating3="/icons/filled_star.svg" rating4="/icons/filled_star.svg" rating5="/icons/filled_star.svg" ratingsalt="" cardtekst1="Vi havde en fantastisk oplevelse hos Adventure Park! Min veninde skal giftes og elsker action, hvorfor vi valgte at holde hendes polterabend hos dem. Vi bookede 2 timers paintball, hvorefter vi tilkøbte parkens grill-menu, så vi ikke skulle finde et andet sted at spise. Super god service og gode faciliteter!" cardtekst2="Jeg vil i den grad anbefale parken til andre, der skal bruge en sjov gruppeaktivitet!" />
+        </section>
+
+        <section>
+        <Heading htmlheading="h3" size="small" font="heading" stylingclasses="py-4">Arrow Button</Heading>  
+        <ArrowButton></ArrowButton>
+        </section>
+
+        <section>
+            <Heading htmlheading="h3" size="small" font="heading" stylingclasses="py-4">Book Section</Heading>  
+            <Book_section heading="Klar til at booke jeres aktivitet?" linktext="Book paintball her" bg="bg-bg-coral-400" linkvariant="primary" href="/booking?aktivitet=Paintball" />
+            <Book_section heading="Vil i spise i parken?" linktext="Se vores menu" bg="bg-bg-beige-400" linkvariant="tertiary" href="/praktisk_info#spisning"/>
+        </section>
+
+        <section>
+        <Heading htmlheading="h3" size="small" font="heading" stylingclasses="py-4">Kategori Cards</Heading>  
+        <div class="flex flex-col md:justify-center md:items-center lg:flex-row gap-4">
+            <Kategori_card billede="/img/kategori_1.webp" titel="Firmaer" tag1="Samarbejde" tag2="Fællesskab" href="/alle_aktiviteter" />
+            <Kategori_card billede="/img/kategori_2.webp" titel="Børn & Unge" tag1="Leg" tag2="Sjov" href="/alle_aktiviteter" />
+            <Kategori_card billede="/img/kategori_3.webp" titel="Private" tag1="Fødselsdag" tag2="Polterabend" href="/alle_aktiviteter" />
+        </div>
+        </section>
+
+        <section>
+        <Heading htmlheading="h3" size="small" font="heading" stylingclasses="py-4">FAQ</Heading> 
+        <FAQCard spørgsmål="Hvor fysisk krævende er aktiviteterne?" svar="Vores aktiviteter varierer i intensitet, men de fleste kræver et moderat niveau af fysisk aktivitet. Sværhedsgrad og tempo kan tilpasses jeres gruppe, så alle kan være med – uanset erfaring og niveau." />
+        </section>
+
+        <Heading htmlheading="h3" size="small" font="heading" stylingclasses="py-4">Breadcrumbs</Heading> 
+        <div class=" py-4">
+      <Breadcrumbs
+        textColor="text-stronger"
+        homeIcon="/icons/home.svg"
+        items={[
+          { label: "Forside", href: "/" },
+          { label: "Aktiviteter", href: "/alle_aktiviteter" },
+        ]}
+      />
+    </div>
+    </main>
 </MainLayout>
 

@@ -75,8 +75,8 @@ import Button from "../components/Button.astro";
           Trin 1 har IKKE "hidden", da det skal være synligt fra start.
         -->
         <div class="step flex flex-col gap-6 p-6 mt-8 lg:gap-8 lg:p-8 lg:mt-6">
-          <div class="flex flex-wrap gap-x-2 gap-y-2 lg:gap-4">
-            <div class="relative lg:flex-1">
+          <div class="flex flex-col gap-x-2 gap-y-2 md:flex-row lg:flex-row lg:gap-4">
+            <div class="relative lg:flex-1 w-full">
               <select id="aktivitet" name="aktivitet" class="cursor-pointer bg-bg-beige-200 border-1 border-stroke-dark px-4 py-3 text-stronger text-sm lg:text-base font-body w-full appearance-none focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0">
                 <option value="">Vælg aktivitet</option>
                 <option>Bowtag</option>
@@ -94,7 +94,7 @@ import Button from "../components/Button.astro";
               </select>
               <span class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-2xl"></span>
             </div>
-            <div class="relative lg:flex-1">
+            <div class="relative lg:flex-1 w-full">
               <select id="tid" name="tid" class="cursor-pointer bg-bg-beige-200 border-1 border-stroke-dark px-4 py-3 text-stronger text-sm lg:text-base font-body w-full appearance-none focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0">
                 <option value="">Vælg varighed</option>
                 <option>1 time</option>
@@ -102,8 +102,8 @@ import Button from "../components/Button.astro";
               </select>
               <span class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-2xl"></span>
             </div>
-            <div class="lg:flex-1">
-              <input id="amount" type="number" min="1" max="50" required name="antal" placeholder="Antal deltagere" class="bg-bg-beige-200 border-1 border-stroke-dark placeholder:text-strong px-4 py-3 text-sm lg:text-base appearance-none focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0 w-full" />
+            <div class="lg:flex-1 w-full">
+              <input id="amount" type="number" min="1" max="50" required name="antal" placeholder="Antal deltagere" class="bg-bg-beige-200 border-1 border-stroke-dark placeholder:text-strong px-4 py-3 text-sm lg:text-base appearance-none focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0 w-full " />
             </div>
           </div>
 
@@ -128,8 +128,8 @@ import Button from "../components/Button.astro";
 
           <!-- SPISNINGS-FELTER - skjult som standard, vises når checkboxen sættes -->
           <div id="spisningFields" class="hidden flex-col gap-6">
-            <div class="flex flex-wrap gap-x-2 gap-y-2 lg:gap-4">
-              <div class="relative lg:flex-1">
+            <div class="flex flex-col gap-x-2 gap-y-2 md:flex-row lg:flex-row lg:gap-4">
+              <div class="relative lg:flex-1 w-full">
                 <select id="menu" name="menu" class="cursor-pointer bg-bg-beige-200 border-1 border-stroke-dark px-4 py-3 text-stronger text-sm lg:text-base font-body w-full appearance-none focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0">
                   <option value="">Vælg Menu</option>
                   <option>Kyllingburger Menu</option>
@@ -143,7 +143,7 @@ import Button from "../components/Button.astro";
                 </select>
                 <span class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-2xl"></span>
               </div>
-              <div class="lg:flex-1">
+              <div class="lg:flex-1 w-full">
                 <input id="amount" type="number" min="1" max="50" required name="antal" placeholder="Antal deltagere" class="bg-bg-beige-200 border-1 border-stroke-dark placeholder:text-strong px-4 py-3 text-sm lg:text-base appearance-none w-full focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0" />
               </div>
             </div>
@@ -162,9 +162,9 @@ import Button from "../components/Button.astro";
 
           <!-- SKABELON - klones af JavaScript når man klikker "Tilføj flere aktiviteter" -->
           <template id="activityTemplate">
-            <div class="flex flex-wrap gap-x-2 gap-y-2 lg:gap-4">
+            <div class="flex flex-col gap-x-2 gap-y-2 md:flex-row lg:flex-row lg:gap-4">
               <!-- VÆLG AKTIVITET -->
-              <div class="relative lg:flex-1">
+              <div class="relative lg:flex-1 w-full">
                 <select name="aktivitet" class="cursor-pointer bg-bg-beige-200 border-1 border-stroke-dark px-4 py-3 text-stronger text-sm lg:text-base font-body w-full appearance-none focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0">
                   <option value="">Vælg aktivitet</option>
                   <option>Bowtag</option>
@@ -184,7 +184,7 @@ import Button from "../components/Button.astro";
               </div>
 
               <!-- VÆLG VARIGHED -->
-              <div class="relative lg:flex-1">
+              <div class="relative lg:flex-1 w-full">
                 <select name="tid" class="cursor-pointer bg-bg-beige-200 border-1 border-stroke-dark px-4 py-3 text-stronger text-sm lg:text-base font-body w-full appearance-none focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0">
                   <option value="">Vælg varighed</option>
                   <option>1 time</option>
@@ -194,7 +194,7 @@ import Button from "../components/Button.astro";
               </div>
 
               <!-- ANTAL DELTAGERE -->
-              <div class="lg:flex-1">
+              <div class="lg:flex-1 w-full">
                 <input type="text" name="antal" placeholder="Antal deltagere" class="bg-bg-beige-200 border-1 border-stroke-dark placeholder:text-strong px-4 py-3 text-sm lg:text-base appearance-none w-full focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0" />
               </div>
             </div>
@@ -273,7 +273,8 @@ import Button from "../components/Button.astro";
               <input id="handelsbetingelser" type="checkbox" value="" name="checkbox" class="w-4 h-4 text-bg-army-700 rounded-full checked:border-neongreen-400 focus:ring-2 focus:outline-none border border-default appearance-none hover:cursor-pointer" />
               <div class="flex flex-col">
                 <label for="handelsbetingelser" class="select-none text-sm lg:text-base font-heading">Accepter handelsbetingelser</label>
-                <label for="handelsbetingelser" class="select-none text-sm lg:text-base font-body text-strong">Ved at acceptere handelsbetingelserne, accepterer du vores vilkår og betingelser</label>
+                <!-- Åbn dialogen -->
+                <button type="button" onclick="document.body.classList.add('modal-open'); document.getElementById('terms').showModal();" class="text-strong underline cursor-pointer "> Læs om handelsbetingelserne her</button>
               </div>
             </div>
           </div>
@@ -336,6 +337,74 @@ import Button from "../components/Button.astro";
           <Heading htmlheading="h4" size="xsmall" font="heading" stylingclasses=""><span id="vis-total">0</span> kr</Heading>
         </div>
       </section>
+
+      <dialog id="terms" class="backdrop:bg-black/50 p-6 rounded-lg w-full fixed inset-0 m-auto lg:w-[600px] ">
+        <Heading htmlheading="h3" size="small" font="heading" stylingclasses="py-4">Handelsbetingelser</Heading>
+        <div class="flex flex-col gap-6 mb-6">
+          <Text teksttype="brødtekst-card">Booking betingelser og ordensreglement for Adventurepark</Text> 
+          <div>
+            <Heading htmlheading="h4" size="xxsmall" font="heading" stylingclasses="text-stronger">1. Generelt:</Heading>
+            <Text teksttype="brødtekst-card" stylingclasses="text-stronger">Ved booking af arrangementer i Adventurepark forventes kunden at have læst og accepteret disse betingelser. Betingelserne finder anvendelse, medmindre andet skriftligt er aftalt mellem kunden og Adventurepark.</Text>
+          </div>
+          <div>
+            <Heading htmlheading="h4" size="xxsmall" font="heading" stylingclasses="text-stronger">2. Priser:</Heading>
+            <Text teksttype="brødtekst-card" stylingclasses="text-stronger">Alle priser angives i danske kroner inklusiv moms, danske skatter og afgifter.</Text>
+          </div>
+          <div>
+            <Heading htmlheading="h4" size="xxsmall" font="heading" stylingclasses="text-stronger">3. Betaling:</Heading>
+            <Text teksttype="brødtekst-card" stylingclasses="text-stronger">Hele beløbet for arrangementet betales på dagen - med mindre andet er aftalt skriftligt. Der kan betales med kontanter og med Dankort.</Text>
+          </div>
+          <div>
+            <Heading htmlheading="h4" size="xxsmall" font="heading" stylingclasses="text-stronger">4. Sikkerhed & personoplysninger:</Heading>
+            <Text teksttype="brødtekst-card" stylingclasses="text-stronger">Informationer der indsamles på websiden videresælges ikke. Informationen anvendes alene internt i virksomheden og til kontakt med kunden.</Text>
+          </div>
+          <div>
+            <Heading htmlheading="h4" size="xxsmall" font="heading" stylingclasses="text-stronger">5. Booking:</Heading>
+            <Text teksttype="brødtekst-card" stylingclasses="text-stronger">Alle bookinger skal foretages skriftligt ved at udfylde kontakt formular på website. Når bookingen er endelig vil kunden modtage en skriftlig bekræftelse på den email adresse, der er angivet i formularen.</Text>
+          </div>
+          <div>
+            <Heading htmlheading="h4" size="xxsmall" font="heading" stylingclasses="text-stronger">6. Fortrydelsesret / afbestilling:</Heading>
+            <Text teksttype="brødtekst-card" stylingclasses="text-stronger">Ønsker en kunde at ændre eller afbestille booking, kan dette gøres op til 1 uge før selve arrangement. De sidste 7 dage før arrangementsdagen, hæfter kunden økonomisk for det arrangement, der er booket.</Text>
+          </div>
+          <div>
+            <Heading htmlheading="h4" size="xxsmall" font="heading" stylingclasses="text-stronger">7. Aflysning / refundering m.v.:</Heading>
+            <Text teksttype="brødtekst-card" stylingclasses="text-stronger">Bookingen kan aflyses på grund af udefra kommende omstændigheder, som Adventurepark og dets samarbejdspartnere ikke har indflydelse på eller haft mulighed for at forudse. Adventurepark er ikke ansvarlig for force majeure . I dette tilfælde refunderes arrangementets fulde pris, og kunden kan derudover ikke gøre krav på erstatning. Adventurepark kan aldrig gøres erstatningsansvarlige for beløb udover det beløb, der er betalt for arrangementet.</Text>
+          </div>
+          <div>
+            <Heading htmlheading="h4" size="xxsmall" font="heading" stylingclasses="text-stronger">8. Erstatning:</Heading>
+            <Text teksttype="brødtekst-card" stylingclasses="text-stronger">Alle former for ophold og færdsel i Adventurepark sker på den besøgendes eget ansvar.
+            Alle former for hærværk på Adventureparks område - rettet mod Adventurepark eller andre kunder/brugere vil kunne medføre politianmeldelse samt mulighed for et civilt søgsmål. Personer, der udviser en adfærd og/eller udfører en handling, som påfører Adventurepark tab i form af bøder og/eller sanktioner for virksomheden, vil blive gjort personligt ansvarlige for Adventureparks tab, og vil modtage et erstatningskrav.</Text>
+          </div>
+          <div>
+            <Heading htmlheading="h4" size="xxsmall" font="heading" stylingclasses="text-stronger">9. Bortvisning / karantæne m.v.:</Heading>
+            <Text teksttype="brødtekst-card" stylingclasses="text-stronger">Overtrædelse af ordensreglementet kan uden videre føre til bortvisning og karantæne af gæster. Instruktøren er berettiget til at bortvise enkelt personer - og persongrupper, såfremt overtrædelsen ikke kan tilordnes en enkelt person eller overtrædelsen i øvrigt er karakteristisk for hele gruppens opførsel. Bortvisning/udelukkelse som følge af deltagernes egne forhold, berettiger ikke til nogen form for erstatning.</Text>
+          </div>
+          <div>
+            <Heading htmlheading="h4" size="xxsmall" font="heading" stylingclasses="text-stronger">10. Reklamation:</Heading>
+            <Text teksttype="brødtekst-card" stylingclasses="text-stronger">Reklamation over mangler under arrangementet skal rettes til Adventureparks instruktører på dagen og skriftligt senest 5 dage efter afvikling.</Text>
+          </div>
+          <div class="flex flex-col gap-4">
+            <div>
+              <Heading htmlheading="h4" size="xxsmall" font="heading" stylingclasses="text-stronger">Ordensreglement og sikkerhedsregler i AdventurePark.</Heading>
+              <Text teksttype="brødtekst-card" stylingclasses="text-stronger">Alle gæster i AdventurePark forpligter sig til at overholde de instrukser og sikkerhedsregler, der gives af instruktørerne i AdventurePark inden hver aktivitet påbegyndes. Det er strengt forbudt at gå ind på områder, hvor der er andre aktiviteter i gang end den aktivitet man selv deltager i. Gæsterne må ikke benytte andet udstyr end det udstyr, der er blevet udleveret eller godkendt af AdventureParks instruktører.</Text>
+            </div>
+            <Text teksttype="brødtekst-card" stylingclasses="text-stronger">Det er forbudt at være påvirket af nogen form for alkohol eller euforiserende stoffer, før eller under aktiviteterne i Adventurepark</Text>
+            <Text teksttype="brødtekst-card" stylingclasses="text-stronger">Instruktørerne i AdventurePark har ret til at nægte gæster at deltage i aktiviteterne i AdventurePark, hvis de vurderer at det ikke er sikkert. Hvis en deltager bevidst overskrider sikkerhedsreglerne, ikke adlyder instruktørens påbud eller på anden måde er til gene eller fare for sine omgivelser, kan dette medføre øjeblikkelig bortvisning. Bortviste gæster vil ikke få refunderet deres depositum/betaling for dagens aktiviteter.</Text>
+          </div>
+          <div class="flex flex-col gap-4">
+            <div>
+              <Heading htmlheading="h4" size="xxsmall" font="heading" stylingclasses="text-stronger">Resten skal kun læses hvis paintball er en del af arrangementet !!!!</Heading>
+              <Text teksttype="brødtekst-card" stylingclasses="text-stronger">Det er et krav fra myndighederne og Adventurepark at man minimum er fyldt 16 for at kunne deltage i paintballspil. 16 og 17-årige må kun deltage med skriftlig samtykke fra værge. Gyldig billedlegitimation skal kunne fremvises.</Text>
+            </div>
+            <Text teksttype="brødtekst-card" stylingclasses="text-stronger">Paintballmarkøren (skyderen) må aldrig tages med ud fra spilleområdet, og der skal altid bæres godkendt sikkerhedsmaske på spilleområdet under et paintballarrangement. Der er en sikkerhedsafstand på minimum 1 meter. Er man indenfor 1 meter skal der råbes ”bang, du er død” til vedkommende i stedet for at skyde. Det er ikke tilladt bevidst at sigte eller skyde efter hovedet. Det er ikke tilladt bevidst at komme i fysisk kontakt med hinanden under spillet.</Text>
+          </div>     
+        </div>
+
+        <div class="flex justify-end gap-2">
+          <Button variant="secondary" size="small" onclick="document.body.classList.remove('modal-open'); document.getElementById('terms').close();"> Luk </Button>
+          <Button variant="primary" size="small" onclick="document.getElementById('terms').close(); document.getElementById('handelsbetingelser').checked = true;">Accepter</Button>
+        </div>
+      </dialog>
     </div>
   </main>
 </MainLayout>
@@ -567,4 +636,11 @@ import Button from "../components/Button.astro";
     spisningFields.classList.toggle("hidden", !tilkobSpisning.checked);
     spisningFields.classList.toggle("flex", tilkobSpisning.checked);
   });
+</script>
+
+<!-- Åbner dialog -->
+<script is:client>
+  if (window.location.hash === "#terms") {
+    document.getElementById("terms")?.showModal();
+  }
 </script>

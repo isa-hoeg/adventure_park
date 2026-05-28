@@ -93,6 +93,10 @@
   animation-play-state: paused;
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
 @layer base {
 }
 

@@ -10,6 +10,7 @@ import Fold_ud_card from "../components/Fold_ud_card.astro"; // Accordion-kort d
 import Map from "../components/Map.astro"; // Map-sektion komponent
 import FAQ_card from "../components/FAQ_card.astro"; // FAQ accordion komponent
 import Book_section from "../components/Book_section.astro"; // Bunden af siden med "book nu" CTA
+import Button from "../components/Button.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
 ---
 
@@ -30,7 +31,7 @@ import Breadcrumbs from "../components/Breadcrumbs.astro";
   -->
   <!-- HERO MED BILLEDE OG TEKST OVENPÅ -->
 
-  <div class="w-full h-[500px] md:h-[600px] lg:h-[500px] bg-cover bg-no-repeat bg-center lg:bg-bottom bg-[url('/img/hero-praktisk-info-mobil.webp')] md:bg-[url('/img/hero-praktisk-info.webp')] relative">
+  <div class="w-full h-[500px] md:h-[600px] lg:h-[500px] bg-cover bg-no-repeat bg-center lg:bg-bottom bg-[url('/img/hero-praktisk-info-mobil.webp')] md:bg-[url('/img/hero-praktisk-info-mobil.webp')] md:bg-bottom lg:bg-[url('/img/hero-praktisk-info.webp')] relative">
     <div class="absolute top-8 lg:top-10 left-10 lg:left-20 z-20">
      <Breadcrumbs
         textColor="text-weakest"
@@ -58,12 +59,13 @@ import Breadcrumbs from "../components/Breadcrumbs.astro";
     px-8                     = padding 32px i siderne
     lg:py-20                 = padding 80px top/bund på desktop
   -->
-  <div class="bg-bg-beige-400 py-10 px-8 lg:py-20" id="spisning">
-    <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-stronger intersect:animate-fade-left animate-once animate-duration-[2000ms]">Spisning i parken</Heading>
+  <div class="bg-bg-beige-400 flex flex-col py-20 gap-6 lg:py-20 px-0 pl-8 lg:pl-20" id="spisning">
+    <div class="flex flex-col gap-2">
+      <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-stronger intersect:animate-fade-left animate-once animate-duration-[2000ms]">Spisning i parken</Heading>
 
     <!-- Intro-tekst - py-4 = padding top/bund, lg:w-1/2 = halv bredde på desktop -->
-    <Text teksttype="brødtekst-body" stylingclasses="text-stronger py-4 lg:w-1/2">Spisning i parken er et tilkøb, som kun kan vælges sammen med en booket aktivitet. Det er samtidig helt i orden at medbringe egen mad.</Text>
-
+      <Text teksttype="brødtekst-body" stylingclasses="text-stronger w-80 md:w-120 lg:w-1/2">Spisning i parken er et tilkøb, som kun kan vælges sammen med en booket aktivitet. Det er samtidig helt i orden at medbringe egen mad.</Text>
+    </div>
     <!-- WRAPPER FOR KORTENE - horisontal scroll både mobil og desktop -->
     <!-- 
       flex flex-row             = kortene ligger ved siden af hinanden (også på mobil)
@@ -126,7 +128,7 @@ import Breadcrumbs from "../components/Breadcrumbs.astro";
   <!-- SLUT PÅ SPISNING -->
 
   <!-- START PÅ ALDERSGRÆNSE SEKTION -->
-  <section class="bg-bg-beige-200 grid grid-cols-1 px-8 gap-10 lg:grid-cols-2 lg:items-center py-20">
+  <section class="bg-bg-beige-200 grid grid-cols-1 px-8 gap-10 lg:px-20 lg:grid-cols-2 lg:items-center py-20">
     <div class="flex flex-col gap-6">
       <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-stronger intersect:animate-fade-right animate-once animate-duration-[2000ms]">Aldersgrænse</Heading>
       <Text teksttype="brødtekst-body" stylingclasses="text-stronger">For yngre deltagere, der ønsker en oplevelse, som minder om hardball og paintball, anbefaler vi lasertag. Det er et sikkert og populært alternativ med samme actionprægede elementer.</Text>
@@ -150,7 +152,7 @@ import Breadcrumbs from "../components/Breadcrumbs.astro";
     lg:h-[600px]              = højde 600px på desktop (samme her)
     lg:bg-[url('...')]        = ANDET baggrundsbillede på desktop
   -->
-  <section id="aabningstider" class="bg-[url('/img/paintball_bane_mobil.webp')] bg-cover h-[600px] w-full lg:h-[600px] lg:bg-[url('/img/paintball_bane.webp')]">
+  <section id="aabningstider" class="bg-[url('/img/paintball_bane_mobil.webp')] bg-cover h-[700px] w-full md:bg-[url('/img/paintball_bane.webp')] lg:h-[600px] lg:bg-[url('/img/paintball_bane.webp')]">
     <!-- Wrapper - pusher tekstboksen til højre på desktop -->
     <!-- 
       flex                    = flexbox layout
@@ -167,10 +169,11 @@ import Breadcrumbs from "../components/Breadcrumbs.astro";
         lg:h-full               = fylder fuld højde på desktop
         items-center            = centrerer indholdet vertikalt
       -->
-      <div class="bg-bg-army-opacity p-10 grid grid-cols-1 lg:w-[760px] lg:h-full items-center">
+      <div class="bg-bg-army-opacity p-8 grid grid-cols-1 w-150 md:w-100 lg:w-[760px] lg:h-full items-center">
         <!-- gap-6 = 24px afstand mellem elementerne -->
         <div class="flex flex-col gap-6">
-          <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-weakest intersect:animate-fade-right animate-once animate-duration-[2000ms] leading-15">Åbningstider – hvad betyder "åbent efter aftale"?</Heading>
+          <div class="flex flex-col gap-2">
+            <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-weakest intersect:animate-fade-right animate-once animate-duration-[2000ms] leading-10 lg:leading-15">Åbningstider – hvad betyder "åbent efter aftale"?</Heading>
 
           <!-- CORAL STREG under overskriften -->
           <!-- 
@@ -179,8 +182,8 @@ import Breadcrumbs from "../components/Breadcrumbs.astro";
             bg-stroke-secondary-accent = coral farve
             -mt-4                   = NEGATIV margin-top -16px (rykker stregen tættere på overskriften)
           -->
-          <div class="w-28 h-1.5 bg-stroke-secondary-accent -mt-4 intersect:animate-fade-left animate-once animate-duration-[2000ms]"></div>
-
+            <div class="w-28 h-1.5 bg-stroke-secondary-accent intersect:animate-fade-left animate-once animate-duration-[2000ms]"></div>
+          </div>
           <Text teksttype="brødtekst-body" stylingclasses="text-weakest">Hos Adventure Park har vi ikke faste åbningstider, da parken kun er åben i forbindelse med bookede aktiviteter. Det betyder, at jeres besøg planlægges efter jeres ønsker og behov.</Text>
           <Text teksttype="brødtekst-body" stylingclasses="text-weakest">Vi er meget fleksible og tilbyder aktiviteter både på hverdage og i weekender – samt morgen, dag og aften. Vi anbefaler dog, at I booker i god tid, da vi skal planlægge jeres aktivitet, finde instruktører og klargøre banerne, så I får den bedst mulige oplevelse.</Text>
           <Text teksttype="brødtekst-body" stylingclasses="text-weakest">I er altid velkomne til at ringe, hvis I har spørgsmål eller ønsker at høre om mulighederne på en specifik dag og tidspunkt - <a href="tel:60887766" class="underline">60 88 77 66</a> . </Text>
@@ -280,7 +283,7 @@ import Breadcrumbs from "../components/Breadcrumbs.astro";
 
       <!-- SEND KNAP - centreret -->
       <div class="flex justify-center">
-        <Link href="#" variant="secondary" size="large">Send</Link>
+        <Button href="#" variant="secondary" size="large">Send</Button>
       </div>
     </form>
   </div>

@@ -30,7 +30,7 @@ import Breadcrumbs from "../components/Breadcrumbs.astro";
       <div class="col-start-3 col-end-5 row-start-2 flex flex-col items-center gap-4 pt-6 md:col-start-3 md:col-end-5 md:row-start-3 md:pt-10 lg:col-start-4 lg:col-end-10 lg:row-start-3 lg:pt-14 lg:pr-2">
         <Heading htmlheading="h1" size="large" font="display" stylingclasses="text-weakest intersect:animate-fade-down animate-once animate-duration-[2000ms]">Paintball</Heading>
         <!-- ?aktivitet=Paintball gør at bookingsiden auto-udfylder aktiviteten -->
-        <Link href="/booking?aktivitet=Paintball" variant="primary" size="large" stylingclasses="w-fit">book</Link>
+        <Link href="/booking?aktivitet=Paintball" variant="primary" size="large" stylingclasses="w-fit hover:cursor-pointer">book</Link>
       </div>
       <div class="col-start-1 col-end-7 row-start-8 row-end-13 z-10 flex justify-end items-end md:col-start-2 md:col-end-6 md:row-start-9 lg:col-start-8 lg:col-end-11">
         <img src="/img/singleview_overlay.webp" alt="Paintball overlay" class="w-[417px] max-w-none h-auto translate-y-31 translate-x-8 md:w-[419px] md:translate-y-18 md:translate-x-18 lg:w-[470px] lg:translate-y-37 lg:translate-x-10" />
@@ -103,8 +103,8 @@ import Breadcrumbs from "../components/Breadcrumbs.astro";
     <!-- SLUT PÅ OM SPILLET -->
 
     <section class="bg-bg-beige-200 p-8 grid grid-cols-1 gap-10 lg:grid-cols-2 lg:py-20">
-      <div class="flex flex-col gap-6 lg:order-2">
-        <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-stronger intersect:animate-fade-up animate-once animate-duration-[2000ms]">praktisk info:</Heading>
+      <div class="flex flex-col gap-6 lg:order-2 lg:pl-15">
+        <Heading htmlheading="h2" size="medium" font="heading" stylingclasses="text-stronger lg:pb-5 intersect:animate-fade-up animate-once animate-duration-[2000ms]">praktisk info:</Heading>
         <ul class="list-disc pl-4 md:grid md:grid-cols-2 md:gap-8 lg:grid-cols-1 intersect:animate-fade-right animate-once animate-duration-[2000ms]">
           <div>
             <li>
@@ -125,17 +125,16 @@ import Breadcrumbs from "../components/Breadcrumbs.astro";
                 <Text teksttype="brødtekst-body" stylingclasses="text-stronger">Minimum 16 år</Text>
               </div>
             </li>
-
             <li>
               <div class="flex flex-col pt-4">
                 <Heading htmlheading="h4" size="xsmall" font="heading" stylingclasses="text-stronger ">Udstyr inkluderet:</Heading>
                 <Text teksttype="brødtekst-body" stylingclasses="text-stronger">Sikkerhedsmaske, heldragt og paintballmarkør</Text>
               </div>
             </li>
-          </div>
+         
           <div>
             <li>
-              <div class="flex flex-col">
+              <div class="flex flex-col pt-4">
                 <Heading htmlheading="h4" size="xsmall" font="heading" stylingclasses="text-stronger">Kugler:</Heading>
                 <Text teksttype="brødtekst-body" stylingclasses="text-stronger">Vælg mellem 200, 300, 400 eller fri antal kugler pr. person</Text>
               </div>
@@ -147,9 +146,10 @@ import Breadcrumbs from "../components/Breadcrumbs.astro";
               </div>
             </li>
           </div>
+         </div>
         </ul>
-        <div class="flex flex-col items-center">
-          <Link href="#" variant="secondary" size="large" stylingclasses="w-fit">HER FINDER DU OS</Link>
+        <div class="flex flex-col items-center lg:pt-4">
+          <Link href="https://www.google.com/maps/dir//AdventurePark,+Jagtvej,+3400+Hiller%C3%B8d/@55.91378,12.3068957,17z/data=!4m17!1m7!3m6!1s0x465240c50c2f8445:0x5716ee33179e4617!2sAdventurePark!8m2!3d55.913777!4d12.309476!16s%2Fg%2F1thsp_fq!4m8!1m0!1m5!1m1!1s0x465240c50c2f8445:0x5716ee33179e4617!2m2!1d12.309476!2d55.913777!3e1?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" aria-label="Maps" variant="secondary" size="large" stylingclasses="w-fit">HER FINDER DU OS</Link>
         </div>
       </div>
       <div>

@@ -118,7 +118,7 @@ import Button from "../components/Button.astro";
           <!-- CHECKBOX - TILKØB AF SPISNING -->
           <div class="flex flex-col">
             <div class="flex flex-row gap-2 items-center">
-              <input id="tilkobSpisning" type="checkbox" value="" name="checkbox" class="w-4 h-4 text-bg-army-700 rounded-full checked:border-neongreen-400 focus:ring-2 focus:outline-none border border-default appearance-none" />
+              <input id="tilkobSpisning" type="checkbox" value="" name="checkbox" class="w-4 h-4 text-bg-army-700 rounded-full checked:border-neongreen-400 focus:ring-2 focus:outline-none border border-default appearance-none hover:cursor-pointer" />
               <div class="flex flex-col">
                 <label for="tilkobSpisning" class="select-none text-sm lg:text-base font-body">Tilkøb spisning efter endt aktivitet</label>
                 <label for="tilkobSpisning" class="select-none text-sm lg:text-base font-body text-strong">Det er også muligt at medbringe eget mad</label>
@@ -144,7 +144,7 @@ import Button from "../components/Button.astro";
                 <span class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-2xl"></span>
               </div>
               <div class="lg:flex-1">
-                <input id="menuAntal" type="text" name="menuAntal" placeholder="Antal deltagere" class="bg-bg-beige-200 border-1 border-stroke-dark placeholder:text-strong px-4 py-3 text-sm lg:text-base appearance-none w-full focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0" />
+                <input id="amount" type="number" min="1" max="50" required name="antal" placeholder="Antal deltagere" class="bg-bg-beige-200 border-1 border-stroke-dark placeholder:text-strong px-4 py-3 text-sm lg:text-base appearance-none w-full focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0" />
               </div>
             </div>
 
@@ -220,7 +220,7 @@ import Button from "../components/Button.astro";
               <label for="dato" class="block text-sm lg:text-base font-body mb-2">Vælg start tidspunkt</label>
               <div class="flex flex-row gap-1 lg:justify-center items-center">
                 <Text teksttype="brødtekst-body">kl.</Text>
-                <input id="time" type="text" name="time" placeholder="12" class="bg-bg-beige-200 border-1 border-stroke-dark placeholder:text-strong px-4 py-3 text-sm lg:text-base appearance-none focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0 w-20 lg:w-30" />
+                <input id="time" type="number" name="time" placeholder="12" class="bg-bg-beige-200 border-1 border-stroke-dark placeholder:text-strong px-4 py-3 text-sm lg:text-base appearance-none focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0 w-20 lg:w-30" />
                 <Text teksttype="brødtekst-body">:</Text>
                 <input id="minutter" type="text" name="minutter" placeholder="30" class="bg-bg-beige-200 border-1 border-stroke-dark placeholder:text-strong px-4 py-3 text-sm lg:text-base appearance-none focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0 w-20 lg:w-30" />
               </div>
@@ -255,7 +255,7 @@ import Button from "../components/Button.astro";
             </div>
             <div class="flex flex-col gap-2 flex-1">
               <label for="tlf" class="block text-sm lg:text-base font-body text-stronger">Telefon</label>
-              <input id="tlf" type="text" name="tlf" placeholder="+45" class="bg-bg-beige-200 border-1 border-stroke-dark placeholder:text-strong px-4 py-3 appearance-none focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0 text-sm lg:text-base" />
+              <input id="tlf" type="number" name="tlf" placeholder="+45" class="bg-bg-beige-200 border-1 border-stroke-dark placeholder:text-strong px-4 py-3 appearance-none focus:border-2 focus:outline-none focus:border-stroke-dark focus:ring-0 text-sm lg:text-base" />
             </div>
           </div>
           <div class="flex flex-col gap-2 flex-1">
@@ -270,7 +270,7 @@ import Button from "../components/Button.astro";
           <!-- HANDELSBETINGELSER -->
           <div class="flex flex-col pb-6">
             <div class="flex flex-row gap-2 items-center">
-              <input id="handelsbetingelser" type="checkbox" value="" name="checkbox" class="w-4 h-4 text-bg-army-700 rounded-full checked:border-neongreen-400 focus:ring-2 focus:outline-none border border-default appearance-none" />
+              <input id="handelsbetingelser" type="checkbox" value="" name="checkbox" class="w-4 h-4 text-bg-army-700 rounded-full checked:border-neongreen-400 focus:ring-2 focus:outline-none border border-default appearance-none hover:cursor-pointer" />
               <div class="flex flex-col">
                 <label for="handelsbetingelser" class="select-none text-sm lg:text-base font-heading">Accepter handelsbetingelser</label>
                 <label for="handelsbetingelser" class="select-none text-sm lg:text-base font-body text-strong">Ved at acceptere handelsbetingelserne, accepterer du vores vilkår og betingelser</label>
